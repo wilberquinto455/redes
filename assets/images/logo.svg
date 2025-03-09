@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Background -->
+  <rect width="400" height="400" fill="#121212" rx="20" ry="20"/>
+  
+  <!-- Simplified ST network topology -->
+  <!-- The "S" part -->
+  <path d="M140 120 C200 120, 200 180, 140 180 C80 180, 80 240, 140 240" 
+        stroke="#00D8FF" stroke-width="20" fill="none" stroke-linecap="round"/>
+  
+  <!-- The "T" part -->
+  <line x1="220" y1="120" x2="320" y2="120" stroke="#00D8FF" stroke-width="20" stroke-linecap="round"/>
+  <line x1="270" y1="120" x2="270" y2="240" stroke="#00D8FF" stroke-width="20" stroke-linecap="round"/>
+  
+  <!-- Network nodes -->
+  <circle cx="140" cy="120" r="10" fill="#FFFFFF"/>
+  <circle cx="140" cy="180" r="10" fill="#FFFFFF"/>
+  <circle cx="140" cy="240" r="10" fill="#FFFFFF"/>
+  <circle cx="220" cy="120" r="10" fill="#FFFFFF"/>
+  <circle cx="270" cy="120" r="10" fill="#FFFFFF"/>
+  <circle cx="320" cy="120" r="10" fill="#FFFFFF"/>
+  <circle cx="270" cy="180" r="10" fill="#FFFFFF"/>
+  <circle cx="270" cy="240" r="10" fill="#FFFFFF"/>
+  
+  <!-- Connection lines -->
+  <line x1="140" y1="180" x2="270" y2="180" stroke="#00D8FF" stroke-width="4" stroke-dasharray="7,7"/>
+  
+  <!-- Small text for context -->
+  <text x="200" y="300" font-family="Arial, sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle">REDES</text>
+</svg>

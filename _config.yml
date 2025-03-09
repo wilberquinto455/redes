@@ -1,0 +1,21 @@
+title: Sr. Torres Blogs
+email: wilberquint455@gamil.com
+description: La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.
+baseurl: ""
+url: "https://github.com/wilberquinto455/redes.git"
+theme: jekyll-theme-cayman
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - .gitignore
+  - .jekyll-cache
+  - .sass-cache
+  - .DS_Store

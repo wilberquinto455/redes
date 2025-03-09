@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-03-09T14:25:21-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Sr. Torres Vlogs</title><subtitle>La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.</subtitle><entry><title type="html">Modelo de Referencia OSI: La base de las comunicaciones de red modernas</title><link href="http://localhost:4000/redes/2025/03/07/Moldelo-de-Referencia-OSI/" rel="alternate" type="text/html" title="Modelo de Referencia OSI: La base de las comunicaciones de red modernas" /><published>2025-03-07T12:00:00-05:00</published><updated>2025-03-07T12:00:00-05:00</updated><id>http://localhost:4000/redes/2025/03/07/Moldelo-de-Referencia-OSI</id><content type="html" xml:base="http://localhost:4000/redes/2025/03/07/Moldelo-de-Referencia-OSI/"><![CDATA[<h1 id="modelo-de-referencia-osi-entendiendo-el-fundamento-de-las-redes">Modelo de Referencia OSI: Entendiendo el fundamento de las redes</h1>
+
+<p>El modelo de referencia OSI (Open Systems Interconnection) es un marco conceptual que caracteriza y estandariza las funciones de un sistema de comunicación o red de telecomunicaciones en términos de capas abstractas. Desarrollado por la Organización Internacional de Normalización (ISO) en 1984, este modelo es fundamental para entender cómo funcionan las redes modernas.</p>
+
+<p><img src="/assets/images/contenido/modelo-osi.svg" alt="Modelo OSI" />
+<em>Representación de las siete capas del Modelo OSI</em></p>
+
+<p>El modelo OSI surgió ante la necesidad de un estándar unificado para las redes de comunicación. En sus inicios, cada fabricante desarrollaba su propio sistema de comunicación, lo que impedía la interoperabilidad entre dispositivos de diferentes marcas. Para solucionar este problema, la ISO creó el modelo OSI, que establece un esquema de siete capas de abstracción a través del cual la información fluye de manera bidireccional, desde la capa superior hasta la inferior y viceversa.</p>
+
+<p>Este modelo permite la comunicación entre dispositivos de distintos fabricantes y facilita la interoperabilidad en redes modernas.</p>
+
+<p><em>Imagina que cada PC (Toshiba, HP, Dell, Lenovo) tuviera su propio “idioma” para comunicarse. Sin un lenguaje común, cada dispositivo no entendería al otro, lo que imposibilitaría la interconexión, ya sea por cable o WiFi.</em></p>
+
+<h2 id="importancia-del-modelo-osi">Importancia del Modelo OSI</h2>
+
+<p>Aunque en la práctica el modelo TCP/IP se utiliza más ampliamente, el modelo OSI sigue siendo crucial por varias razones:</p>
+
+<ul>
+  <li>Proporciona un lenguaje común para describir funciones de red</li>
+  <li>Divide funciones complejas en componentes más simples</li>
+  <li>Permite la interoperabilidad entre diferentes tecnologías de red</li>
+  <li>Facilita el desarrollo y evolución de estándares de red</li>
+</ul>
+
+<p>Ahora, exploremos cada una de las siete capas desde la más baja a la más alta:</p>
+
+<h2 id="capa-1-física">Capa 1: Física</h2>
+
+<p>La capa física se encarga de la transmisión y recepción de los datos en forma de bits a través de un medio físico.</p>
+
+<p><strong>Funciones principales:</strong></p>
+<ul>
+  <li>Definición de características eléctricas, mecánicas y funcionales</li>
+  <li>Establecimiento y terminación de conexiones físicas</li>
+  <li>Transmisión bit a bit de la información</li>
+  <li>Modulación y codificación de señales</li>
+</ul>
+
+<p><strong>Dispositivos comunes:</strong></p>
+<ul>
+  <li>Hubs</li>
+  <li>Repetidores</li>
+  <li>Cables (coaxial, par trenzado, fibra óptica)</li>
+  <li>Conectores y transceptores</li>
+</ul>
+
+<p><strong>Estándares relevantes:</strong></p>
+<ul>
+  <li>Ethernet (IEEE 802.3)</li>
+  <li>USB</li>
+  <li>Bluetooth</li>
+</ul>
+
+<h2 id="capa-2-enlace-de-datos">Capa 2: Enlace de Datos</h2>
+
+<p>La capa de enlace de datos permite la transferencia de información entre dispositivos dentro de la misma red, detectando y corrigiendo errores para garantizar una comunicación confiable.</p>
+
+<p><strong>Funciones principales:</strong></p>
+<ul>
+  <li>Control de acceso al medio (MAC)</li>
+  <li>Direccionamiento físico (direcciones MAC)</li>
+  <li>Detección y corrección de errores</li>
+  <li>Control de flujo</li>
+</ul>
+
+<p><strong>Subdivisiones:</strong></p>
+<ul>
+  <li>Subcapa MAC (Media Access Control)</li>
+  <li>Subcapa LLC (Logical Link Control)</li>
+</ul>
+
+<p><strong>Dispositivos comunes:</strong></p>
+<ul>
+  <li>Switches</li>
+  <li>Puentes (bridges)</li>
+  <li>Tarjetas de red (NIC)</li>
+</ul>
+
+<p><strong>Unidad de datos:</strong> Trama (Frame)</p>
+
+<h2 id="capa-3-red">Capa 3: Red</h2>
+
+<p>La capa de red se encarga de la determinación de la ruta y el encaminamiento de los datos desde el origen hasta el destino, incluso a través de múltiples redes.</p>
+
+<p><strong>Funciones principales:</strong></p>
+<ul>
+  <li>Direccionamiento lógico (direcciones IP)</li>
+  <li>Enrutamiento de paquetes</li>
+  <li>Fragmentación y reensamblaje</li>
+  <li>Control de congestión</li>
+</ul>
+
+<p><strong>Protocolos comunes:</strong></p>
+<ul>
+  <li>IPv4, IPv6</li>
+  <li>ICMP</li>
+  <li>OSPF, EIGRP, BGP</li>
+</ul>
+
+<p><strong>Dispositivos comunes:</strong></p>
+<ul>
+  <li>Routers</li>
+  <li>Layer 3 switches</li>
+</ul>
+
+<p><strong>Unidad de datos:</strong> Paquete (Packet)</p>
+
+<h2 id="capa-4-transporte">Capa 4: Transporte</h2>
+
+<p>La capa de transporte asegura la transferencia de datos de extremo a extremo entre dos dispositivos, independientemente de la red física subyacente.</p>
+
+<p><strong>Funciones principales:</strong></p>
+<ul>
+  <li>Segmentación y reensamblaje de datos</li>
+  <li>Control de conexiones</li>
+  <li>Control de flujo</li>
+  <li>Recuperación de errores</li>
+  <li>Multiplexación</li>
+</ul>
+
+<p><strong>Protocolos comunes:</strong></p>
+<ul>
+  <li>TCP (Transmission Control Protocol)</li>
+  <li>UDP (User Datagram Protocol)</li>
+  <li>SCTP</li>
+</ul>
+
+<p><strong>Unidad de datos:</strong></p>
+<ul>
+  <li>Segmento (en TCP)</li>
+  <li>Datagrama (en UDP)</li>
+</ul>
+
+<h2 id="capa-5-sesión">Capa 5: Sesión</h2>
+
+<p>La capa de sesión establece, gestiona y termina las conexiones entre aplicaciones locales y remotas.</p>
+
+<p><strong>Funciones principales:</strong></p>
+<ul>
+  <li>Establecimiento, mantenimiento y finalización de sesiones</li>
+  <li>Sincronización de diálogo</li>
+  <li>Control de diálogo</li>
+  <li>Puntos de sincronización para recuperación</li>
+</ul>
+
+<p><strong>Protocolos comunes:</strong></p>
+<ul>
+  <li>NetBIOS</li>
+  <li>RPC (Remote Procedure Call)</li>
+  <li>SQL</li>
+</ul>
+
+<h2 id="capa-6-presentación">Capa 6: Presentación</h2>
+
+<p>La capa de presentación se encarga de la traducción, cifrado y compresión de los datos para garantizar que la información enviada por la capa de aplicación sea legible.</p>
+
+<p><strong>Funciones principales:</strong></p>
+<ul>
+  <li>Traducción de datos</li>
+  <li>Cifrado/descifrado</li>
+  <li>Compresión/descompresión</li>
+  <li>Conversión de formatos</li>
+</ul>
+
+<p><strong>Estándares comunes:</strong></p>
+<ul>
+  <li>JPEG, GIF, PNG</li>
+  <li>MIME</li>
+  <li>SSL/TLS</li>
+  <li>ASCII, EBCDIC</li>
+</ul>
+
+<h2 id="capa-7-aplicación">Capa 7: Aplicación</h2>
+
+<p>La capa de aplicación proporciona servicios de red a las aplicaciones del usuario final, actuando como la interfaz directa con el usuario.</p>
+
+<p><strong>Funciones principales:</strong></p>
+<ul>
+  <li>Identificación de comunicantes</li>
+  <li>Determinación de disponibilidad de recursos</li>
+  <li>Sincronización de comunicaciones</li>
+  <li>Servicios para aplicaciones de usuario</li>
+</ul>
+
+<p><strong>Protocolos comunes:</strong></p>
+<ul>
+  <li>HTTP/HTTPS</li>
+  <li>FTP</li>
+  <li>SMTP, POP3, IMAP</li>
+  <li>DNS</li>
+  <li>Telnet, SSH</li>
+</ul>
+
+<h2 id="comparación-con-el-modelo-tcpip">Comparación con el Modelo TCP/IP</h2>
+
+<p>Aunque el modelo OSI es teóricamente más completo, en la práctica el modelo TCP/IP (con sus 4 capas) es el más utilizado:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Modelo OSI</th>
+      <th>Modelo TCP/IP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>7. Aplicación</td>
+      <td>4. Aplicación</td>
+    </tr>
+    <tr>
+      <td>6. Presentación</td>
+      <td>↑</td>
+    </tr>
+    <tr>
+      <td>5. Sesión</td>
+      <td>↑</td>
+    </tr>
+    <tr>
+      <td>4. Transporte</td>
+      <td>3. Transporte</td>
+    </tr>
+    <tr>
+      <td>3. Red</td>
+      <td>2. Internet</td>
+    </tr>
+    <tr>
+      <td>2. Enlace de Datos</td>
+      <td>1. Acceso a Red</td>
+    </tr>
+    <tr>
+      <td>1. Física</td>
+      <td>↑</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>El modelo OSI proporciona un marco conceptual valioso para entender las comunicaciones de red. Aunque raramente se implementa exactamente como está definido, sigue siendo una herramienta pedagógica fundamental y una referencia importante en el mundo de las redes.</p>
+
+<p>Para los estudiantes de CCNA, dominar el modelo OSI es esencial, ya que proporciona el vocabulario y la estructura para comprender los conceptos más avanzados de redes.</p>
+
+<h2 id="referencias">Referencias</h2>
+
+<ol>
+  <li>Cisco Networking Academy. (2024). <em>Introduction to Networks Companion Guide</em></li>
+  <li>Forouzan, B. A. (2023). <em>Data Communications and Networking</em></li>
+  <li>Tanenbaum, A. S., &amp; Wetherall, D. J. (2021). <em>Computer Networks</em></li>
+</ol>
+
+<p>¿Tienes dudas sobre alguna de las capas del modelo OSI? ¡Déjalas en los comentarios!</p>]]></content><author><name></name></author><category term="redes" /><category term="OSI" /><category term="redes" /><category term="CCNA" /><category term="protocolos" /><category term="arquitectura de red" /><summary type="html"><![CDATA[Una explicación detallada del Modelo OSI y sus siete capas que forman la base de todas las comunicaciones de red modernas. Indispensable para estudiantes de CCNA.]]></summary></entry><entry><title type="html">Welcome To Jekyll</title><link href="http://localhost:4000/2023/01/01/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome To Jekyll" /><published>2023-01-01T00:00:00-05:00</published><updated>2023-01-01T00:00:00-05:00</updated><id>http://localhost:4000/2023/01/01/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/2023/01/01/welcome-to-jekyll/"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry></feed>
