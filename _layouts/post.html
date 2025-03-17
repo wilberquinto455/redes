@@ -14,12 +14,6 @@ layout: default
     </div>
   </header>
 
-  <!-- Tabla de contenidos para facilitar la navegación dentro del artículo -->
-  <div class="table-of-contents">
-    <h2>Contenido del artículo</h2>
-    <ul id="toc"></ul>
-  </div>
-
   <!-- Contenido del post -->
   <div class="post-body">
     {{ content }}
@@ -66,41 +60,8 @@ layout: default
   
   <!-- Botón para volver al temario principal -->
   <div class="back-to-temario">
-    <a href="{{ '/#temario-ccna' | relative_url }}" class="temario-link">
+    <a href="{{ site.baseurl }}/#temario-ccna" class="temario-link">
       <i class="fas fa-arrow-left"></i> Volver al temario CCNA completo
     </a>
   </div>
 </article>
-
-<script>
-  // Script para generar automáticamente la tabla de contenidos
-  document.addEventListener('DOMContentLoaded', function() {
-    const headings = document.querySelectorAll('.post-body h2, .post-body h3');
-    const toc = document.getElementById('toc');
-    
-    if (headings.length > 0) {
-      headings.forEach(function(heading, index) {
-        // Añadir ID al heading si no tiene uno
-        if (!heading.id) {
-          heading.id = 'heading-' + index;
-        }
-        
-        // Crear elemento de lista para TOC
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        a.href = '#' + heading.id;
-        a.textContent = heading.textContent;
-        
-        // Añadir clase según nivel de heading
-        if (heading.tagName === 'H3') {
-          li.classList.add('toc-sub-item');
-        }
-        
-        li.appendChild(a);
-        toc.appendChild(li);
-      });
-    } else {
-      document.querySelector('.table-of-contents').style.display = 'none';
-    }
-  });
-</script>
