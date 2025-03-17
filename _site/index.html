@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }} - {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/post.css' | relative_url }}">
+  <title> - Sr. Torres Blogs</title>
+  <link rel="stylesheet" href="/redes/assets/style.css">
+  <link rel="stylesheet" href="/redes/assets/post.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
@@ -14,8 +14,8 @@
     <nav class="navbar">
       <div class="navbar-logo">
         <a href="/" class="navbar-brand">
-          <img src="{{ site.baseurl }}/assets/images/logo.png" alt="{{ site.title }} Logo">
-          <span>{{ site.title }}</span>
+          <img src="/redes/assets/images/logo.png" alt="Sr. Torres Blogs Logo">
+          <span>Sr. Torres Blogs</span>
         </a>
       </div>
       
@@ -25,23 +25,23 @@
       
       <ul class="navbar-menu">
         <li class="navbar-item">
-          <a href="{{ '/redes' | relative_url }}" class="navbar-link"><i class="fas fa-meteor"></i> Inicio</a>
+          <a href="/redes/redes" class="navbar-link"><i class="fas fa-meteor"></i> Inicio</a>
         </li>
         <li class="navbar-item">
-          <a href="{{ '/redes' | relative_url }}" class="navbar-link"><i class="fab fa-phoenix-framework"></i> Quien soy</a>
+          <a href="/redes/redes" class="navbar-link"><i class="fab fa-phoenix-framework"></i> Quien soy</a>
         </li>
         <li class="navbar-item">
-          <a href="{{ '/redes' | relative_url }}" class="navbar-link"><i class="fab fa-themeco"></i> Contenido</a>
+          <a href="/redes/redes" class="navbar-link"><i class="fab fa-themeco"></i> Contenido</a>
         </li>
         <li class="navbar-item">
-          <a href="{{ '/redes' | relative_url }}" class="navbar-link"><i class="fas fa-address-card"></i> Contacto</a>
+          <a href="/redes/redes" class="navbar-link"><i class="fas fa-address-card"></i> Contacto</a>
         </li>
       </ul>
     </nav>
     
     <div class="hero">
       <div class="container">
-        <p>{{ site.description }}</p>
+        <p>La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.</p>
         <a href="#latest-video" class="hero-btn">
           <i class="fas fa-th-list"></i> Mostrar temario
         </a>
@@ -51,7 +51,7 @@
   
   <main>
     <div class="container">
-      {% if page.url == "/" %}
+      
       <section class="featured-video" id="latest-video">
         <div class="featured-video-container">
           <div class="container">
@@ -215,9 +215,80 @@
           </div>
         </div>
       </section>
-      {% endif %}
       
-      {{ content }}
+      
+      <!-- Example for use in index.html or blog.html -->
+<h1>Ultimo post</h1>
+<div class="posts-list">
+  
+  <article class="post-item">
+    <div class="post-thumbnail">
+      
+      <img src="/redes/assets/images/osi-thumbnail.jpg" alt="Modelo de Referencia OSI: La base de las comunicaciones de red modernas">
+      
+    </div>
+    
+    <h2 class="post-title">
+      <a href="/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI/">Modelo de Referencia OSI: La base de las comunicaciones de red modernas</a>
+    </h2>
+    
+    <div class="post-meta">
+      <span class="post-date">
+        <i class="far fa-calendar-alt"></i> March 07, 2025
+      </span>
+      <div class="post-stats">
+        <span><i class="far fa-eye"></i> 1.2K</span>
+        <span><i class="far fa-comment"></i> 24</span>
+      </div>
+    </div>
+    
+    <div class="post-tags">
+      
+      <span class="post-tag">OSI</span>
+      
+      <span class="post-tag">redes</span>
+      
+      <span class="post-tag">CCNA</span>
+      
+    </div>
+    
+    <p class="post-excerpt">Una explicación detallada del Modelo OSI y sus siete capas que forman la base de todas las comunicaciones de red modernas. Indispensable para estudiantes de CCNA.</p>
+    
+    <a href="/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+  </article>
+  
+  <article class="post-item">
+    <div class="post-thumbnail">
+      
+      <img src="../redes/assets/images/logo.svg" height="45" width="45" alt="Welcome To Jekyll">
+      
+    </div>
+    
+    <h2 class="post-title">
+      <a href="/redes/2023/01/01/welcome-to-jekyll/">Welcome To Jekyll</a>
+    </h2>
+    
+    <div class="post-meta">
+      <span class="post-date">
+        <i class="far fa-calendar-alt"></i> January 01, 2023
+      </span>
+      <div class="post-stats">
+        <span><i class="far fa-eye"></i> 1.2K</span>
+        <span><i class="far fa-comment"></i> 24</span>
+      </div>
+    </div>
+    
+    <div class="post-tags">
+      
+    </div>
+    
+    <p class="post-excerpt">
+</p>
+    
+    <a href="/redes/2023/01/01/welcome-to-jekyll/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+  </article>
+  
+</div>
     </div>
   </main>
   
@@ -238,7 +309,7 @@
         </form>
       </div>
       
-      <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} - All Rights Reserved Wilder Andres Quinto Torres</p>
+      <p>&copy; 2025 Sr. Torres Blogs - All Rights Reserved Wilder Andres Quinto Torres</p>
     </div>
   </footer>
 

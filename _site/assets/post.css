@@ -1,0 +1,252 @@
+/* Estilos para posts individuales */
+.post-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .post-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 20px;
+  }
+  
+  .post-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a2a3a;
+    margin-bottom: 10px;
+  }
+  
+  .post-meta {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  .post-tags {
+    margin-top: 15px;
+  }
+  
+  .post-tag {
+    display: inline-block;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    padding: 5px 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+  }
+  
+  .post-tag i {
+    margin-right: 5px;
+    color: #ff4d4d;
+  }
+  
+  /* Tabla de contenidos */
+  .table-of-contents {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .table-of-contents h2 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    color: #1a2a3a;
+    margin-bottom: 15px;
+  }
+  
+  #toc {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  #toc li {
+    margin-bottom: 8px;
+  }
+  
+  #toc a {
+    color: #495057;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  #toc a:hover {
+    color: #ff4d4d;
+  }
+  
+  .toc-sub-item {
+    padding-left: 20px;
+  }
+  
+  /* Contenido del post */
+  .post-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .post-body h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    color: #1a2a3a;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+  }
+  
+  .post-body h3 {
+    font-size: 1.4rem;
+    margin-top: 30px;
+    color: #1a2a3a;
+  }
+  
+  .post-body strong {
+    font-weight: 600;
+    color: #1a2a3a;
+  }
+  
+  .post-body ul, .post-body ol {
+    padding-left: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .post-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  .post-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+  }
+  
+  .post-body th, .post-body td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .post-body th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+  }
+  
+  .post-body tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  /* Navegación entre posts */
+  .post-navigation {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid #f0f0f0;
+  }
+  
+  .post-navigation h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  .related-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .related-post-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .related-post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .related-post-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+  }
+  
+  .placeholder-thumbnail {
+    width: 100%;
+    height: 120px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .placeholder-thumbnail i {
+    font-size: 2rem;
+    color: #6c757d;
+  }
+  
+  .related-post-item h4 {
+    padding: 15px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  
+  /* Botón para volver al temario */
+  .back-to-temario {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .temario-link {
+    display: inline-block;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+  }
+  
+  .temario-link:hover {
+    background-color: #ff3333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 77, 77, 0.4);
+    color: white;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .post-title {
+      font-size: 2rem;
+    }
+    
+    .related-posts {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .post-content {
+      padding: 15px;
+    }
+    
+    .post-title {
+      font-size: 1.8rem;
+    }
+    
+    .related-posts {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+
+  
+
+  
