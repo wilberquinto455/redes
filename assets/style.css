@@ -20,6 +20,7 @@ header {
 }
 
 
+/* Contenedor de la onda */
 .wave-container {
   position: absolute;
   bottom: -1px; /* Ajusta para eliminar cualquier espacio */
@@ -34,6 +35,24 @@ header {
   width: 100%;
   height: 60px; /* Ajusta la altura de la onda */
 }
+
+/* Contenedor de la onda en el lado izquierdo */
+.wave-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px; /* Ajusta el ancho de la onda */
+  height: 100%; /* La onda ocupa toda la altura del navbar */
+  overflow: hidden;
+  z-index: -1; /* Coloca la onda detrás del contenido */
+}
+
+.wave-right svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 
 .wave-container path {
   animation: wave-animation 4s infinite linear;
