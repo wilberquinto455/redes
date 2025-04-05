@@ -487,3 +487,40 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.wave-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: -1; /* para que no tape nada de la navbar */
+  margin-top: -5px; /* junta la ola con la navbar */
+}
+
+.wave {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100px;
+  animation: waveMove 8s linear infinite;
+}
+
+.wave-back {
+  opacity: 0.5;
+  animation: waveMove 10s linear infinite reverse;
+}
+
+.wave-front {
+  opacity: 0.8;
+  animation: waveMove 6s linear infinite;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
