@@ -15,8 +15,23 @@
   padding: 0 20px;
 }
 
+header {
+  position: relative;
+}
+
+
+.wave-container {
+  position: absolute;
+  bottom: -1px; /* Ajusta para eliminar cualquier espacio */
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  overflow: hidden;
+}
+
 /* Modern Navbar with Logo */
 .navbar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
