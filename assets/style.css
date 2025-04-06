@@ -41,7 +41,6 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-  width: 100px; /* Ajusta el ancho de la onda */
   height: 100%; /* La onda ocupa toda la altura del navbar */
   overflow: hidden;
   z-index: -1; /* Coloca la onda detrás del contenido */
