@@ -566,3 +566,139 @@ footer p {
 }
 
 
+/* Posts Grid Styles */
+.posts-grid {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: rgba(0, 183, 201, 0.05);
+  border-radius: 8px;
+}
+
+.posts-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.posts-header h2 {
+  color: #00B7C9;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.posts-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #00B7C9;
+  color: #8cdbdc;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #00B7C9;
+  color: #011627;
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background: #011627;
+  border: 1px solid rgba(0, 183, 201, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.post-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-card-image-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 183, 201, 0.1);
+  color: #00B7C9;
+  font-size: 3rem;
+}
+
+.post-card-content {
+  padding: 1.5rem;
+}
+
+.post-card-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #8cdbdc;
+  margin-bottom: 1rem;
+}
+
+.post-card-meta i {
+  margin-right: 0.3rem;
+}
+
+.post-card-title {
+  color: #00B7C9;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.post-card-excerpt {
+  color: #eaeaea;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.post-card-link {
+  color: #00B7C9;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-card-link:hover {
+  color: #8cdbdc;
+}
+
+@media (max-width: 768px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .posts-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+

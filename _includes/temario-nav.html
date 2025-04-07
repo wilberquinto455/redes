@@ -1,3 +1,47 @@
-<div class="temario-navigation">
-    <div class="temario-nav-header">
-      <h3>Temario CCNA <span class="temario-badge">2023-2025</span>
+<section class="posts-grid">
+  <div class="posts-header">
+    <h2>Últimos artículos</h2>
+    <div class="posts-filters">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="fundamentos">Fundamentos</button>
+      <button class="filter-btn" data-filter="switching">Switching</button>
+      <button class="filter-btn" data-filter="routing">Routing</button>
+      <button class="filter-btn" data-filter="security">Seguridad</button>
+    </div>
+  </div>
+
+  <div class="posts-container">
+    {% for post in site.posts %}
+    <article class="post-card" data-categories="{{ post.categories | join: ' ' }}">
+      <div class="post-card-image">
+        {% if post.thumbnail %}
+        <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+        {% else %}
+        <div class="post-card-image-placeholder">
+          <i class="fas fa-network-wired"></i>
+        </div>
+        {% endif %}
+      </div>
+      <div class="post-card-content">
+        <div class="post-card-meta">
+          <span class="post-date">
+            <i class="far fa-calendar-alt"></i>
+            {{ post.date | date: "%d %b, %Y" }}
+          </span>
+          {% if post.reading_time %}
+          <span class="reading-time">
+            <i class="far fa-clock"></i>
+            {{ post.reading_time }} min lectura
+          </span>
+          {% endif %}
+        </div>
+        <h3 class="post-card-title">{{ post.title }}</h3>
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <a href="{{ post.url | relative_url }}" class="post-card-link">
+          Leer más <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
