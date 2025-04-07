@@ -580,7 +580,7 @@ footer p {
 }
 
 .posts-header h2 {
-  color: #00B7C9;
+  color: #045a8c;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -616,7 +616,7 @@ footer p {
 }
 
 .post-card {
-  background: #011627;
+  background: #ffffff;
   border: 1px solid rgba(0, 183, 201, 0.2);
   border-radius: 8px;
   overflow: hidden;
