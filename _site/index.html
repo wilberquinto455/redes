@@ -1,342 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> - Sr. Torres Blogs</title>
-  <link rel="stylesheet" href="/redes/assets/style.css">
-  <link rel="stylesheet" href="/redes/assets/post.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <a href="/" class="navbar-brand">
-          <img src="/redes/assets/images/logo.png" alt="Sr. Torres Blogs Logo">
-          <span>Sr. Torres Blogs</span>
-        </a>
-      </div>
-      
-      <button class="navbar-toggle" aria-label="Toggle navigation">
-        <span class="navbar-toggle-icon"></span>
-      </button>
-      
-      <ul class="navbar-menu">
-        <li class="navbar-item">
-          <a href="/redes/redes" class="navbar-link"><i class="fas fa-meteor"></i> Inicio</a>
-        </li>
-        <li class="navbar-item">
-          <a href="/redes/redes" class="navbar-link"><i class="fab fa-phoenix-framework"></i> Quien soy</a>
-        </li>
-        <li class="navbar-item">
-          <a href="/redes/redes" class="navbar-link"><i class="fab fa-themeco"></i> Contenido</a>
-        </li>
-        <li class="navbar-item">
-          <a href="/redes/redes" class="navbar-link"><i class="fas fa-address-card"></i> Contacto</a>
-        </li>
-      </ul>
-    </nav>
-    
-    <div class="hero">
-      <div class="container">
-        <p>La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.</p>
-        <a href="#latest-video" class="hero-btn">
-          <i class="fas fa-th-list"></i> Mostrar temario
-        </a>
-      </div>
+---
+layout: default
+title: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <p>La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.</p>
+    <a href="#latest-posts" class="hero-btn">
+      <i class="fas fa-th-list"></i> Ver últimos artículos
+    </a>
+  </div>
+</section>
+
+<!-- Latest Posts Section -->
+<section id="latest-posts" class="posts-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Últimos artículos</h2>
+      <p>Explora los conceptos más recientes de redes y CCNA</p>
     </div>
-  </header>
-  
-  <main>
-    <div class="container">
-      
-      <section class="featured-video" id="latest-video">
-        <div class="featured-video-container">
-          <div class="container">
-            <section class="temario-section" id="temario-ccna">
-              <h2>Temario CCNA <span class="temario-badge">2023-2025</span></h2>
-              <p>El examen Cisco Certified Network Associate (CCNA) prueba tus conocimientos y habilidades relacionados con los fundamentos de redes, acceso a redes, conectividad IP, servicios IP, fundamentos de seguridad y automatización y programabilidad.</p>
-              
-              <div class="cisco-badge">
-                <img src="../redes/assets/images/badge.jpg" alt="CCNA Badge">
-                <div class="cisco-badge-content">
-                  <h3>Cisco Certified Network Associate</h3>
-                  <p>Certificación reconocida mundialmente que valida tus habilidades para administrar y optimizar las redes actuales.</p>
-                </div>
-              </div>
-              
-              <div class="temario-grid">
-                <div class="temario-card">
-                  <div class="temario-header">
-                    <h3><i class="fas fa-network-wired temario-icon"></i> Fundamentos de Redes</h3>
-                  </div>
-                  <div class="temario-content">
-                    <ul class="temario-list">
-                      <li>Modelos de redes (OSI y TCP/IP)</li>
-                      <li>Descripción general de los componentes de red</li>
-                      <li>Conexiones físicas y topologías</li>
-                      <li>Señalización y transmisión</li>
-                      <li>Protocolos de comunicación</li>
-                      <li>Flujo de datos y encapsulamiento</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="temario-card">
-                  <div class="temario-header">
-                    <h3><i class="fas fa-exchange-alt temario-icon"></i> Ethernet y Conmutación</h3>
-                  </div>
-                  <div class="temario-content">
-                    <ul class="temario-list">
-                      <li>Operación de switches de capa 2</li>
-                      <li>Configuración básica de switches</li>
-                      <li>VLANs y trunking</li>
-                      <li>Spanning Tree Protocol (STP)</li>
-                      <li>EtherChannel</li>
-                      <li>Seguridad de puerto</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="temario-card">
-                  <div class="temario-header">
-                    <h3><i class="fas fa-sitemap temario-icon"></i> Direccionamiento IP</h3>
-                  </div>
-                  <div class="temario-content">
-                    <ul class="temario-list">
-                      <li>IPv4: estructura y notación</li>
-                      <li>Cálculo de subredes</li>
-                      <li>VLSM y CIDR</li>
-                      <li>IPv6: características y formato</li>
-                      <li>Configuración de direcciones IP</li>
-                      <li>Diagnóstico de problemas de dirección IP</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="temario-card">
-                  <div class="temario-header">
-                    <h3><i class="fas fa-route temario-icon"></i> Enrutamiento IP</h3>
-                  </div>
-                  <div class="temario-content">
-                    <ul class="temario-list">
-                      <li>Conceptos básicos de enrutamiento</li>
-                      <li>Enrutamiento estático</li>
-                      <li>Protocolos de enrutamiento (OSPF)</li>
-                      <li>Enrutamiento entre VLANs</li>
-                      <li>First Hop Redundancy Protocols</li>
-                      <li>Solución de problemas de enrutamiento</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="temario-card">
-                  <div class="temario-header">
-                    <h3><i class="fas fa-server temario-icon"></i> Servicios de Red</h3>
-                  </div>
-                  <div class="temario-content">
-                    <ul class="temario-list">
-                      <li>NAT/PAT</li>
-                      <li>DHCP</li>
-                      <li>Servicios DNS</li>
-                      <li>NTP</li>
-                      <li>QoS básica</li>
-                      <li>Configuración de servicios de red</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="temario-card">
-                  <div class="temario-header">
-                    <h3><i class="fas fa-shield-alt temario-icon"></i> Seguridad de Red</h3>
-                  </div>
-                  <div class="temario-content">
-                    <ul class="temario-list">
-                      <li>Conceptos de seguridad</li>
-                      <li>Listas de control de acceso (ACL)</li>
-                      <li>Seguridad de puerto</li>
-                      <li>VPN e IPsec básicos</li>
-                      <li>Autenticación, Autorización y Contabilidad</li>
-                      <li>Amenazas comunes y mitigación</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="temario-card">
-                  <div class="temario-header">
-                    <h3><i class="fas fa-wifi temario-icon"></i> Redes Inalámbricas</h3>
-                  </div>
-                  <div class="temario-content">
-                    <ul class="temario-list">
-                      <li>Conceptos básicos de WLAN</li>
-                      <li>Estándares 802.11</li>
-                      <li>Componentes de WLAN</li>
-                      <li>Autenticación y seguridad WLAN</li>
-                      <li>Configuración básica de AP</li>
-                      <li>Verificación y solución de problemas WLAN</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="temario-card">
-                  <div class="temario-header">
-                    <h3><i class="fas fa-code temario-icon"></i> Automatización y Programabilidad</h3>
-                  </div>
-                  <div class="temario-content">
-                    <ul class="temario-list">
-                      <li>Conceptos de automatización de red</li>
-                      <li>Comparación de métodos tradicionales vs automatizados</li>
-                      <li>Controladores e interfaces (API, REST)</li>
-                      <li>Protocolos de configuración (NETCONF, RESTCONF)</li>
-                      <li>Formatos de datos (JSON, XML, YAML)</li>
-                      <li>Herramientas de automatización (Python)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
-            
-            <section class="temario-section">
-              <h2>¿Por qué obtener la certificación CCNA?</h2>
-              <p>La certificación CCNA es una de las más reconocidas en la industria IT y proporciona los conocimientos fundamentales necesarios para una carrera exitosa en redes. Al obtener esta certificación demostrarás tus habilidades en:</p>
-              
-              <ul>
-                <li>Implementación y administración de soluciones de red</li>
-                <li>Identificación y resolución de problemas de conectividad</li>
-                <li>Mejora de la seguridad en infraestructuras de red</li>
-                <li>Automatización y programación de redes modernas</li>
-                <li>Comprensión de tecnologías emergentes como SD-WAN, cloud networking y virtualización</li>
-              </ul>
-              
-              <p>Este temario está diseñado para cubrir todos los temas necesarios para aprobar el examen CCNA 200-301, válido hasta 2025.</p>
-            </section>
+
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+      <article class="post-card">
+        <div class="post-card-image">
+          {% if post.thumbnail %}
+          <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+          {% else %}
+          <div class="post-card-image-placeholder">
+            <i class="fas fa-network-wired"></i>
           </div>
+          {% endif %}
         </div>
-      </section>
-      
+        
+        <div class="post-card-content">
+          <div class="post-meta">
+            <span class="post-date">
+              <i class="far fa-calendar-alt"></i>
+              {{ post.date | date: "%d %b, %Y" }}
+            </span>
+            {% if post.reading_time %}
+            <span class="reading-time">
+              <i class="far fa-clock"></i>
+              {{ post.reading_time }} min lectura
+            </span>
+            {% endif %}
+          </div>
 
-      <div class="container">
-        {% include temario-nav.html %}
-      </div>
-      
-      <!-- Example for use in index.html or blog.html -->
-<h1>Ultimo post</h1>
-<div class="posts-list">
-  
-  <article class="post-item">
-    <div class="post-thumbnail">
-      
-      <img src="/redes/assets/images/osi-thumbnail.jpg" alt="Modelo de Referencia OSI: La base de las comunicaciones de red modernas">
-      
-    </div>
-    
-    <h2 class="post-title">
-      <a href="/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI/">Modelo de Referencia OSI: La base de las comunicaciones de red modernas</a>
-    </h2>
-    
-    <div class="post-meta">
-      <span class="post-date">
-        <i class="far fa-calendar-alt"></i> March 07, 2025
-      </span>
-      <div class="post-stats">
-        <span><i class="far fa-eye"></i> 1.2K</span>
-        <span><i class="far fa-comment"></i> 24</span>
-      </div>
-    </div>
-    
-    <div class="post-tags">
-      
-      <span class="post-tag">OSI</span>
-      
-      <span class="post-tag">redes</span>
-      
-      <span class="post-tag">CCNA</span>
-      
-    </div>
-    
-    <p class="post-excerpt">Una explicación detallada del Modelo OSI y sus siete capas que forman la base de todas las comunicaciones de red modernas. Indispensable para estudiantes de CCNA.</p>
-    
-    <a href="/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-  </article>
-  
-  <article class="post-item">
-    <div class="post-thumbnail">
-      
-      <img src="../redes/assets/images/logo.svg" height="45" width="45" alt="Welcome To Jekyll">
-      
-    </div>
-    
-    <h2 class="post-title">
-      <a href="/redes/2023/01/01/welcome-to-jekyll/">Welcome To Jekyll</a>
-    </h2>
-    
-    <div class="post-meta">
-      <span class="post-date">
-        <i class="far fa-calendar-alt"></i> January 01, 2023
-      </span>
-      <div class="post-stats">
-        <span><i class="far fa-eye"></i> 1.2K</span>
-        <span><i class="far fa-comment"></i> 24</span>
-      </div>
-    </div>
-    
-    <div class="post-tags">
-      
-    </div>
-    
-    <p class="post-excerpt">
-</p>
-    
-    <a href="/redes/2023/01/01/welcome-to-jekyll/" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-  </article>
-  
-</div>
-    </div>
-  </main>
-  
-  <footer>
-    <div class="container">
-      <div class="social-links">
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      </div>
-      
-      <div class="newsletter">
-        <p>Stay updated with my latest videos!</p>
-        <form class="newsletter-form">
-          <input type="email" class="newsletter-input" placeholder="Your email address" required>
-          <button type="submit" class="newsletter-button">Subscribe</button>
-        </form>
-      </div>
-      
-      <p>&copy; 2025 Sr. Torres Blogs - All Rights Reserved Wilder Andres Quinto Torres</p>
-    </div>
-  </footer>
+          <h3 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
 
-  <script>
-    // Código para el menú responsive
-    document.addEventListener('DOMContentLoaded', function() {
-      const navbarToggle = document.querySelector('.navbar-toggle');
-      const navbarMenu = document.querySelector('.navbar-menu');
-      
-      navbarToggle.addEventListener('click', function() {
-        navbarMenu.classList.toggle('active');
-      });
-      
-      // Cerrar menú al hacer clic en un enlace
-      const navbarLinks = document.querySelectorAll('.navbar-link');
-      navbarLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          if (navbarMenu.classList.contains('active')) {
-            navbarMenu.classList.remove('active');
-          }
-        });
-      });
-    });
-  </script>
-</body>
-</html>
+          <p class="post-card-excerpt">
+            {{ post.excerpt | strip_html | truncatewords: 30 }}
+          </p>
+
+          {% if post.tags %}
+          <div class="post-tags">
+            {% for tag in post.tags %}
+            <span class="post-tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <a href="{{ post.url | relative_url }}" class="read-more">
+            Leer más <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CCNA Temario Section -->
+<section class="temario-section" id="temario-ccna">
+  <div class="container">
+    <div class="section-header">
+      <h2>Temario CCNA <span class="temario-badge">2023-2025</span></h2>
+      <p>Explora el contenido completo del curso CCNA</p>
+    </div>
+
+    {% include temario-nav.html %}
+  </div>
+</section>

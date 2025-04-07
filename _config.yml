@@ -1,14 +1,59 @@
+# Site settings
 title: Sr. Torres Blogs
 email: wilberquint455@gamil.com
-description: La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.
+description: >-
+  La sencillez y la elegancia son impopulares porque requieren trabajo duro 
+  y disciplina para conseguirlas y educación para ser apreciadas.
 baseurl: "/redes"
-url: "https://github.com/wilberquinto455/redes.git"
-theme: jekyll-theme-cayman
+url: "https://wilberquinto455.github.io"
+author: Sr. Torres
+
+# Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /:categories/:year/:month/:day/:title/
+theme: jekyll-theme-cayman
+
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+
+# Default front matter
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Sr. Torres"
+      reading_time: 10
+      comments: true
+
+# Social media
+social:
+  github: wilberquinto455
+  linkedin: your-linkedin
+  twitter: your-twitter
+
+# Navigation
+navigation:
+  - title: Inicio
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: Sobre mí
+    url: /about/
+  - title: CCNA
+    url: /ccna/
+
+# Exclude from processing
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -19,3 +64,11 @@ exclude:
   - .jekyll-cache
   - .sass-cache
   - .DS_Store
+
+# SEO settings
+twitter:
+  username: your-twitter
+  card: summary_large_image
+
+logo: /assets/images/logo.png
+locale: es_ES
