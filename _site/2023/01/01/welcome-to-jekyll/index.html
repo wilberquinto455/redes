@@ -1,1 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome To Jekyll - Sr. Torres Blogs</title>
+  <link rel="stylesheet" href="/redes/assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="#" class="navbar-brand">
+          <img src="/redes/assets/images/logo.png" alt="Señor Torres Logo">
+          <span>Señor Torres Blog</span>
+        </a>
+      </div>
+      
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <span class="navbar-toggle-icon"></span>
+      </button>
+      
+      <ul class="navbar-menu">
+        <li class="navbar-item">
+          <a href="#" class="navbar-link"><i class="fas fa-meteor"></i> Inicio</a>
+        </li>
+        <li class="navbar-item">
+          <a href="#" class="navbar-link"><i class="fab fa-phoenix-framework"></i> Quien soy</a>
+        </li>
+        <li class="navbar-item">
+          <a href="#" class="navbar-link"><i class="fab fa-themeco"></i> Contenido</a>
+        </li>
+        <li class="navbar-item">
+          <a href="#" class="navbar-link"><i class="fas fa-address-card"></i> Contacto</a>
+        </li>
+      </ul>
+        <!-- Contenedor para la onda -->
+        <div class="wave-right">
+          <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150">
+            <style>
+              .path-0 {
+                animation: pathAnim-0 4s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+              }
+              @keyframes pathAnim-0 {
+                0% {
+                  d: path("M 0,200 L 0,70 C 165,65 330,60 495,65 C 660,70 825,85 990,85 C 1155,85 1320,70 1440,65 L 1440,200 L 0,200 Z");
+                }
+                33% {
+                  d: path("M 0,200 L 0,75 C 165,80 330,85 495,75 C 660,65 825,40 990,35 C 1155,30 1320,45 1440,50 L 1440,200 L 0,200 Z");
+                }
+                66% {
+                  d: path("M 0,200 L 0,65 C 165,75 330,85 495,80 C 660,75 825,55 990,50 C 1155,45 1320,55 1440,60 L 1440,200 L 0,200 Z");
+                }
+                100% {
+                  d: path("M 0,200 L 0,70 C 165,65 330,60 495,65 C 660,70 825,85 990,85 C 1155,85 1320,70 1440,65 L 1440,200 L 0,200 Z");
+                }
+              }
+            </style>
+            <path d="M 0,200 L 0,70 C 165,65 330,60 495,65 C 660,70 825,85 990,85 C 1155,85 1320,70 1440,65 L 1440,200 L 0,200 Z" stroke="none" stroke-width="0" fill="#0693e3" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+            
+            <style>
+              .path-1 {
+                animation: pathAnim-1 4s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+              }
+              @keyframes pathAnim-1 {
+                0% {
+                  d: path("M 0,200 L 0,130 C 165,135 330,140 495,135 C 660,130 825,115 990,115 C 1155,115 1320,130 1440,135 L 1440,200 L 0,200 Z");
+                }
+                33% {
+                  d: path("M 0,200 L 0,125 C 165,120 330,115 495,125 C 660,135 825,160 990,165 C 1155,170 1320,155 1440,150 L 1440,200 L 0,200 Z");
+                }
+                66% {
+                  d: path("M 0,200 L 0,135 C 165,125 330,115 495,120 C 660,125 825,145 990,150 C 1155,155 1320,145 1440,140 L 1440,200 L 0,200 Z");
+                }
+                100% {
+                  d: path("M 0,200 L 0,130 C 165,135 330,140 495,135 C 660,130 825,115 990,115 C 1155,115 1320,130 1440,135 L 1440,200 L 0,200 Z");
+                }
+              }
+            </style>
+            <path d="M 0,200 L 0,130 C 165,135 330,140 495,135 C 660,130 825,115 990,115 C 1155,115 1320,130 1440,135 L 1440,200 L 0,200 Z" stroke="none" stroke-width="0" fill="#0693e3" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-1"></path>
+          </svg>
+        </div>
+    </nav>
+      </header>
+    
+    <div class="hero">
+      <div class="container">
+        <p>La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.</p>
+        <a href="#temario-ccna" class="hero-btn">
+          <i class="fas fa-th-list"></i> Mostrar temario
+        </a>
+      </div>
+    </div>
 
+    <section class="search-section">
+      <div class="search-container">
+        <form class="search-form">
+          <input type="text" class="search-input" placeholder="Buscar contenido de networking...">
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Añade esta sección de índice antes de tu sección temario-ccna -->
+<section class="index-section">
+  <h2>Índice de Contenidos</h2>
+  <div class="index-grid">
+    <div class="index-item">
+      <a href="#fundamentos" class="index-link">
+        <i class="fas fa-network-wired"></i>
+        <span>Fundamentos de Redes</span>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="#ethernet" class="index-link">
+        <i class="fas fa-exchange-alt"></i>
+        <span>Ethernet y Conmutación</span>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="#direccionamiento" class="index-link">
+        <i class="fas fa-sitemap"></i>
+        <span>Direccionamiento IP</span>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="#enrutamiento" class="index-link">
+        <i class="fas fa-route"></i>
+        <span>Enrutamiento IP</span>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="#servicios" class="index-link">
+        <i class="fas fa-server"></i>
+        <span>Servicios de Red</span>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="#seguridad" class="index-link">
+        <i class="fas fa-shield-alt"></i>
+        <span>Seguridad de Red</span>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="#wireless" class="index-link">
+        <i class="fas fa-wifi"></i>
+        <span>Redes Inalámbricas</span>
+      </a>
+    </div>
+    <div class="index-item">
+      <a href="#automatizacion" class="index-link">
+        <i class="fas fa-code"></i>
+        <span>Automatización y Programabilidad</span>
+      </a>
+    </div>
+  </div>
+</section>
+  
+  <main>
+    <div class="container">
+      <section class="temario-section" id="temario-ccna">
+        <div class="temario-title">
+          <h2>Temario CCNA</h2>
+          <span class="temario-badge">2023-2025</span>
+        </div>
+        
+        <div class="temario-description">
+          <p>El examen Cisco Certified Network Associate (CCNA) prueba tus conocimientos y habilidades relacionados con los fundamentos de redes, acceso a redes, conectividad IP, servicios IP, fundamentos de seguridad y automatización y programabilidad.</p>
+        </div>
+        
+        <div class="cisco-badge">
+          <img src="/redes/assets/images/badge.jpg" width="60px"  height="50px" alt="CCNA Badge">
+          <div class="cisco-badge-content">
+            <h3>Cisco Certified Network Associate</h3>
+            <p>Certificación reconocida mundialmente que valida tus habilidades para administrar y optimizar las redes actuales.</p>
+          </div>
+        </div>
+        
+        <div class="temario-grid">
+          <div class="temario-card" id="fundamentos">
+            <div class="temario-header">
+              <h3><i class="fas fa-network-wired temario-icon"></i> Fundamentos de Redes</h3>
+            </div>
+            <div class="temario-content">
+              <ul class="temario-list">
+                <li>Modelos de redes (OSI y TCP/IP)</li>
+                <li>Descripción general de los componentes de red</li>
+                <li>Conexiones físicas y topologías</li>
+                <li>Señalización y transmisión</li>
+                <li>Protocolos de comunicación</li>
+                <li>Flujo de datos y encapsulamiento</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="temario-card" id="ethernet">
+            <div class="temario-header">
+              <h3><i class="fas fa-exchange-alt temario-icon"></i> Ethernet y Conmutación</h3>
+            </div>
+            <div class="temario-content">
+              <ul class="temario-list">
+                <li>Operación de switches de capa 2</li>
+                <li>Configuración básica de switches</li>
+                <li>VLANs y trunking</li>
+                <li>Spanning Tree Protocol (STP)</li>
+                <li>EtherChannel</li>
+                <li>Seguridad de puerto</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="temario-card" ="id="direccionamiento">
+            <div class="temario-header">
+              <h3><i class="fas fa-sitemap temario-icon"></i> Direccionamiento IP</h3>
+            </div>
+            <div class="temario-content">
+              <ul class="temario-list">
+                <li>IPv4: estructura y notación</li>
+                <li>Cálculo de subredes</li>
+                <li>VLSM y CIDR</li>
+                <li>IPv6: características y formato</li>
+                <li>Configuración de direcciones IP</li>
+                <li>Diagnóstico de problemas de dirección IP</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="temario-card" id="enrutamiento">
+            <div class="temario-header">
+              <h3><i class="fas fa-route temario-icon"></i> Enrutamiento IP</h3>
+            </div>
+            <div class="temario-content">
+              <ul class="temario-list">
+                <li>Conceptos básicos de enrutamiento</li>
+                <li>Enrutamiento estático</li>
+                <li>Protocolos de enrutamiento (OSPF)</li>
+                <li>Enrutamiento entre VLANs</li>
+                <li>First Hop Redundancy Protocols</li>
+                <li>Solución de problemas de enrutamiento</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="temario-card" id="servicios">
+            <div class="temario-header">
+              <h3><i class="fas fa-server temario-icon"></i> Servicios de Red</h3>
+            </div>
+            <div class="temario-content">
+              <ul class="temario-list">
+                <li>NAT/PAT</li>
+                <li>DHCP</li>
+                <li>Servicios DNS</li>
+                <li>NTP</li>
+                <li>QoS básica</li>
+                <li>Configuración de servicios de red</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="temario-card" id="seguridad">
+            <div class="temario-header">
+              <h3><i class="fas fa-shield-alt temario-icon"></i> Seguridad de Red</h3>
+            </div>
+            <div class="temario-content">
+              <ul class="temario-list">
+                <li>Conceptos de seguridad</li>
+                <li>Listas de control de acceso (ACL)</li>
+                <li>Seguridad de puerto</li>
+                <li>VPN e IPsec básicos</li>
+                <li>Autenticación, Autorización y Contabilidad</li>
+                <li>Amenazas comunes y mitigación</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="temario-card" id="wireless">
+            <div class="temario-header">
+              <h3><i class="fas fa-wifi temario-icon"></i> Redes Inalámbricas</h3>
+            </div>
+            <div class="temario-content">
+              <ul class="temario-list">
+                <li>Conceptos básicos de WLAN</li>
+                <li>Estándares 802.11</li>
+                <li>Componentes de WLAN</li>
+                <li>Autenticación y seguridad WLAN</li>
+                <li>Configuración básica de AP</li>
+                <li>Verificación y solución de problemas WLAN</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="temario-card" id="automatizacion">
+            <div class="temario-header">
+              <h3><i class="fas fa-code temario-icon"></i> Automatización y Programabilidad</h3>
+            </div>
+            <div class="temario-content">
+              <ul class="temario-list">
+                <li>Conceptos de automatización de red</li>
+                <li>Comparación de métodos tradicionales vs automatizados</li>
+                <li>Controladores e interfaces (API, REST)</li>
+                <li>Protocolos de configuración (NETCONF, RESTCONF)</li>
+                <li>Formatos de datos (JSON, XML, YAML)</li>
+                <li>Herramientas de automatización (Python)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="temario-section">
+        <h2>¿Por qué obtener la certificación CCNA?</h2>
+        <p>La certificación CCNA es una de las más reconocidas en la industria IT y proporciona los conocimientos fundamentales necesarios para una carrera exitosa en redes. Al obtener esta certificación demostrarás tus habilidades en:</p>
+        
+        <ul>
+          <li>Implementación y administración de soluciones de red</li>
+          <li>Identificación y resolución de problemas de conectividad</li>
+          <li>Mejora de la seguridad en infraestructuras de red</li>
+          <li>Automatización y programación de redes modernas</li>
+          <li>Comprensión de tecnologías emergentes como SD-WAN, cloud networking y virtualización</li>
+        </ul>
+        
+        <p>Este temario está diseñado para cubrir todos los temas necesarios para aprobar el examen CCNA 200-301, válido hasta 2025.</p>
+      </section>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+      
+      <div class="newsletter">
+        <p>¡Mantente actualizado con mis últimos videos!</p>
+        <form class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+          <button type="submit" class="newsletter-button">Suscribirse</button>
+        </form>
+      </div>
+      
+      <p>&copy; 2025 Sensei Torres - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    // Código para el menú responsive
+    document.addEventListener('DOMContentLoaded', function() {
+      const navbarToggle = document.querySelector('.navbar-toggle');
+      const navbarMenu = document.querySelector('.navbar-menu');
+      
+      navbarToggle.addEventListener('click', function() {
+        navbarMenu.classList.toggle('active');
+      });
+      
+      // Cerrar menú al hacer clic en un enlace
+      const navbarLinks = document.querySelectorAll('.navbar-link');
+      navbarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (navbarMenu.classList.contains('active')) {
+            navbarMenu.classList.remove('active');
+          }
+        });
+      });
+      
+      // Smooth scroll para enlaces internos
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>

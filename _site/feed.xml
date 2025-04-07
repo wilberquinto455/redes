@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://github.com/wilberquinto455/redes.git/redes/feed.xml" rel="self" type="application/atom+xml" /><link href="https://github.com/wilberquinto455/redes.git/redes/" rel="alternate" type="text/html" /><updated>2025-03-16T21:06:31-05:00</updated><id>https://github.com/wilberquinto455/redes.git/redes/feed.xml</id><title type="html">Sr. Torres Blogs</title><subtitle>La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.</subtitle><entry><title type="html">Modelo de Referencia OSI: La base de las comunicaciones de red modernas</title><link href="https://github.com/wilberquinto455/redes.git/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI/" rel="alternate" type="text/html" title="Modelo de Referencia OSI: La base de las comunicaciones de red modernas" /><published>2025-03-07T12:00:00-05:00</published><updated>2025-03-07T12:00:00-05:00</updated><id>https://github.com/wilberquinto455/redes.git/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI</id><content type="html" xml:base="https://github.com/wilberquinto455/redes.git/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI/"><![CDATA[<h1 id="modelo-de-referencia-osi-entendiendo-el-fundamento-de-las-redes">Modelo de Referencia OSI: Entendiendo el fundamento de las redes</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://wilberquinto455.github.io/redes/feed.xml" rel="self" type="application/atom+xml" /><link href="https://wilberquinto455.github.io/redes/" rel="alternate" type="text/html" /><updated>2025-04-06T20:19:17-05:00</updated><id>https://wilberquinto455.github.io/redes/feed.xml</id><title type="html">Sr. Torres Blogs</title><subtitle>La sencillez y la elegancia son impopulares porque requieren trabajo duro  y disciplina para conseguirlas y educación para ser apreciadas.</subtitle><author><name>Sr. Torres</name></author><entry><title type="html">Modelo TCP/IP: La base de las redes modernas</title><link href="https://wilberquinto455.github.io/redes/redes/2025/03/08/Modelo-TCP-IP/" rel="alternate" type="text/html" title="Modelo TCP/IP: La base de las redes modernas" /><published>2025-03-08T12:00:00-05:00</published><updated>2025-03-08T12:00:00-05:00</updated><id>https://wilberquinto455.github.io/redes/redes/2025/03/08/Modelo-TCP-IP</id><content type="html" xml:base="https://wilberquinto455.github.io/redes/redes/2025/03/08/Modelo-TCP-IP/"><![CDATA[<h1 id="modelo-tcpip-entendiendo-su-importancia">Modelo TCP/IP: Entendiendo su importancia</h1>
+
+<p>El modelo TCP/IP (Transmission Control Protocol/Internet Protocol) es un marco conceptual que describe cómo los datos se transmiten a través de redes. A diferencia del modelo OSI, TCP/IP es más práctico y ampliamente utilizado en redes modernas.</p>
+
+<h2 id="estructura-del-modelo-tcpip">Estructura del Modelo TCP/IP</h2>
+
+<p>El modelo TCP/IP consta de 4 capas principales:</p>
+
+<h3 id="1-capa-de-aplicación">1. Capa de Aplicación</h3>
+<p>Proporciona servicios de red a las aplicaciones del usuario final, como HTTP, FTP, SMTP, y DNS.</p>
+
+<h3 id="2-capa-de-transporte">2. Capa de Transporte</h3>
+<p>Asegura la transferencia de datos de extremo a extremo. Protocolos comunes incluyen TCP y UDP.</p>
+
+<h3 id="3-capa-de-internet">3. Capa de Internet</h3>
+<p>Se encarga del direccionamiento lógico y el enrutamiento de paquetes. Protocolos como IPv4, IPv6, y ICMP operan aquí.</p>
+
+<h3 id="4-capa-de-acceso-a-red">4. Capa de Acceso a Red</h3>
+<p>Define cómo los datos se transmiten físicamente a través de la red. Incluye Ethernet, Wi-Fi, y otros estándares.</p>
+
+<h2 id="comparación-con-el-modelo-osi">Comparación con el Modelo OSI</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Modelo OSI</th>
+      <th>Modelo TCP/IP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>7. Aplicación</td>
+      <td>4. Aplicación</td>
+    </tr>
+    <tr>
+      <td>6. Presentación</td>
+      <td>↑</td>
+    </tr>
+    <tr>
+      <td>5. Sesión</td>
+      <td>↑</td>
+    </tr>
+    <tr>
+      <td>4. Transporte</td>
+      <td>3. Transporte</td>
+    </tr>
+    <tr>
+      <td>3. Red</td>
+      <td>2. Internet</td>
+    </tr>
+    <tr>
+      <td>2. Enlace de Datos</td>
+      <td>1. Acceso a Red</td>
+    </tr>
+    <tr>
+      <td>1. Física</td>
+      <td>↑</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="conclusión">Conclusión</h2>
+
+<p>El modelo TCP/IP es esencial para entender cómo funcionan las redes modernas. Su simplicidad y enfoque práctico lo convierten en el estándar de facto para la comunicación en redes.</p>
+
+<p>¿Tienes dudas sobre el modelo TCP/IP? ¡Déjalas en los comentarios!</p>]]></content><author><name>Sr. Torres</name></author><category term="redes" /><category term="TCP/IP" /><category term="redes" /><category term="CCNA" /><category term="protocolos" /><category term="arquitectura de red" /><summary type="html"><![CDATA[Exploramos el modelo TCP/IP, su estructura de capas y cómo se utiliza en las redes modernas. Indispensable para estudiantes de CCNA.]]></summary></entry><entry><title type="html">Modelo de Referencia OSI: La base de las comunicaciones de red modernas</title><link href="https://wilberquinto455.github.io/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI/" rel="alternate" type="text/html" title="Modelo de Referencia OSI: La base de las comunicaciones de red modernas" /><published>2025-03-07T12:00:00-05:00</published><updated>2025-03-07T12:00:00-05:00</updated><id>https://wilberquinto455.github.io/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI</id><content type="html" xml:base="https://wilberquinto455.github.io/redes/redes/2025/03/07/Moldelo-de-Referencia-OSI/"><![CDATA[<h1 id="modelo-de-referencia-osi-entendiendo-el-fundamento-de-las-redes">Modelo de Referencia OSI: Entendiendo el fundamento de las redes</h1>
 
 <p>El modelo de referencia OSI (Open Systems Interconnection) es un marco conceptual que caracteriza y estandariza las funciones de un sistema de comunicación o red de telecomunicaciones en términos de capas abstractas. Desarrollado por la Organización Internacional de Normalización (ISO) en 1984, este modelo es fundamental para entender cómo funcionan las redes modernas.</p>
 
@@ -248,4 +313,4 @@
   <li>Tanenbaum, A. S., &amp; Wetherall, D. J. (2021). <em>Computer Networks</em></li>
 </ol>
 
-<p>¿Tienes dudas sobre alguna de las capas del modelo OSI? ¡Déjalas en los comentarios!</p>]]></content><author><name></name></author><category term="redes" /><category term="OSI" /><category term="redes" /><category term="CCNA" /><category term="protocolos" /><category term="arquitectura de red" /><summary type="html"><![CDATA[Una explicación detallada del Modelo OSI y sus siete capas que forman la base de todas las comunicaciones de red modernas. Indispensable para estudiantes de CCNA.]]></summary></entry><entry><title type="html">Welcome To Jekyll</title><link href="https://github.com/wilberquinto455/redes.git/redes/2023/01/01/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome To Jekyll" /><published>2023-01-01T00:00:00-05:00</published><updated>2023-01-01T00:00:00-05:00</updated><id>https://github.com/wilberquinto455/redes.git/redes/2023/01/01/welcome-to-jekyll</id><content type="html" xml:base="https://github.com/wilberquinto455/redes.git/redes/2023/01/01/welcome-to-jekyll/"><![CDATA[]]></content><author><name></name></author><summary type="html"><![CDATA[]]></summary></entry></feed>
+<p>¿Tienes dudas sobre alguna de las capas del modelo OSI? ¡Déjalas en los comentarios!</p>]]></content><author><name>Sr. Torres</name></author><category term="redes" /><category term="OSI" /><category term="redes" /><category term="CCNA" /><category term="protocolos" /><category term="arquitectura de red" /><summary type="html"><![CDATA[Una explicación detallada del Modelo OSI y sus siete capas que forman la base de todas las comunicaciones de red modernas. Indispensable para estudiantes de CCNA.]]></summary></entry><entry><title type="html">Welcome To Jekyll</title><link href="https://wilberquinto455.github.io/redes/2023/01/01/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome To Jekyll" /><published>2023-01-01T00:00:00-05:00</published><updated>2023-01-01T00:00:00-05:00</updated><id>https://wilberquinto455.github.io/redes/2023/01/01/welcome-to-jekyll</id><content type="html" xml:base="https://wilberquinto455.github.io/redes/2023/01/01/welcome-to-jekyll/"><![CDATA[]]></content><author><name>Sr. Torres</name></author><summary type="html"><![CDATA[]]></summary></entry></feed>
