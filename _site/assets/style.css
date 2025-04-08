@@ -1,0 +1,704 @@
+/* Esquema de Colores Turquesa Base */
+:root {
+  --primary-turquoise: #0693e3;
+  --secondary-turquoise: #05a8f4;
+  --light-turquoise: #9cdcf1;
+  --dark-turquoise: #045a8c;
+  --accent-turquoise: #0be6d6;
+  --background-light: #f5fdff;
+  --text-dark: #333;
+  --text-light: #f9f9f9;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  margin: 0;
+  padding: 0;
+}
+
+/* Barra de Navegación Mejorada */
+.navbar {
+  background: linear-gradient(135deg, var(--primary-turquoise) 0%, var(--dark-turquoise) 100%);
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 100;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.navbar-brand img {
+  height: 90px;
+  margin-right: 10px;
+  filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-item {
+  margin: 0 0.5rem;
+}
+
+.navbar-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.navbar-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.navbar-link i {
+  margin-right: 5px;
+  font-size: 0.9rem;
+}
+
+/* Animación de Onda Mejorada */
+.wave-right {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: -1;
+}
+
+/* Sección Hero Mejorada */
+.hero {
+  background: linear-gradient(rgba(6, 147, 227, 0.85), rgba(6, 147, 227, 0.65)), url('/redes/assets/images/network-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.hero .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: white;
+  color: var(--primary-turquoise);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--accent-turquoise);
+  color: white;
+}
+
+.hero-btn i {
+  margin-right: 8px;
+}
+
+/* Estilo del Contenido Principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Sección de Temario Mejorada */
+.temario-section {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.temario-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.temario-title h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--dark-turquoise);
+  position: relative;
+}
+
+.temario-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-turquoise);
+  border-radius: 2px;
+}
+
+.temario-badge {
+  background-color: var(--primary-turquoise);
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  margin-left: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.temario-description {
+  max-width: 800px;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Insignia de Cisco Mejorada */
+.cisco-badge {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #f1f9ff, #e1f5fe);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 5px solid var(--primary-turquoise);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cisco-badge img {
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
+}
+
+.cisco-badge-content {
+  margin-left: 1rem;
+}
+
+.cisco-badge-content h3 {
+  margin: 0 0 0.3rem;
+  color: var(--dark-turquoise);
+  font-size: 1.2rem;
+}
+
+.cisco-badge-content p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Diseño de Cuadrícula de Tarjetas Mejorado */
+.temario-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.temario-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--primary-turquoise);
+}
+
+.temario-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.temario-header {
+  background-color: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.temario-header h3 {
+  margin: 0;
+  color: var(--dark-turquoise);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.temario-icon {
+  color: var(--primary-turquoise);
+  margin-right: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.temario-content {
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.temario-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.temario-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.4;
+}
+
+.temario-list li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-turquoise);
+  border-radius: 50%;
+}
+
+/* Pie de Página Mejorado */
+footer {
+  background: linear-gradient(to right, var(--dark-turquoise), var(--primary-turquoise));
+  color: white;
+  padding: 3rem 0;
+  margin-top: 3rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: white;
+  color: var(--primary-turquoise);
+  transform: translateY(-3px);
+}
+
+.newsletter {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.newsletter p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-family: inherit;
+}
+
+.newsletter-button {
+  background-color: var(--accent-turquoise);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0 4px 4px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #09c9bc;
+}
+
+footer p {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Sección de Índice Mejorada */
+.index-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.index-section h2 {
+  color: var(--dark-turquoise);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.index-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60px;
+  background-color: var(--primary-turquoise);
+}
+
+.index-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.index-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.index-link {
+  display: flex;
+  align-items: center;
+  background-color: #f5f9fc;
+  padding: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text-dark);
+  border-left: 3px solid var(--primary-turquoise);
+  transition: all 0.2s ease;
+}
+
+.index-link:hover {
+  background-color: #e6f7fc;
+  transform: translateX(3px);
+}
+
+.index-link i {
+  color: var(--primary-turquoise);
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.index-link span {
+  font-weight: 500;
+}
+
+/* Sección de Búsqueda Avanzada */
+.search-section {
+  background: linear-gradient(to right, #f0f8ff, #e6f7fc);
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.search-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-form {
+  display: flex;
+  background-color: white;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-button {
+  background-color: var(--primary-turquoise);
+  color: white;
+  border: none;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: var(--dark-turquoise);
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--primary-turquoise);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .navbar-menu.active {
+    display: flex;
+  }
+  
+  .navbar-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-item {
+    margin: 0;
+  }
+  
+  .navbar-link {
+    padding: 1rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .temario-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-input {
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .newsletter-button {
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  main h1 {
+    font-size: 1.8rem;
+  }
+  
+  .temario-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Posts Grid Styles */
+.posts-grid {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: rgba(0, 183, 201, 0.05);
+  border-radius: 8px;
+}
+
+.posts-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.posts-header h2 {
+  color: #045a8c;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.posts-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #00B7C9;
+  color: #8cdbdc;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #00B7C9;
+  color: #011627;
+}
+
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.post-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 183, 201, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+}
+
+.post-card-image {
+  height: 200px;
+  overflow: hidden;
+}
+
+.post-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-card-image-placeholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 183, 201, 0.1);
+  color: #00B7C9;
+  font-size: 3rem;
+}
+
+.post-card-content {
+  padding: 1.5rem;
+}
+
+.post-card-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+  color: #8cdbdc;
+  margin-bottom: 1rem;
+}
+
+.post-card-meta i {
+  margin-right: 0.3rem;
+}
+
+.post-card-title {
+  color: #00B7C9;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.post-card-excerpt {
+  color: #eaeaea;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.post-card-link {
+  color: #00B7C9;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-card-link:hover {
+  color: #8cdbdc;
+}
+
+@media (max-width: 768px) {
+  .posts-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .posts-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+

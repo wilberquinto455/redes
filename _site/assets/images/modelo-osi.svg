@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <!-- Título -->
+  <text x="250" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Modelo OSI (Open Systems Interconnection)</text>
+  
+  <!-- Capas del modelo OSI -->
+  <rect x="100" y="60" width="300" height="40" fill="#FF6347" stroke="black"/>
+  <text x="250" y="85" font-family="Arial" font-size="16" text-anchor="middle" fill="white">7. Aplicación</text>
+  
+  <rect x="100" y="100" width="300" height="40" fill="#FFA500" stroke="black"/>
+  <text x="250" y="125" font-family="Arial" font-size="16" text-anchor="middle" fill="white">6. Presentación</text>
+  
+  <rect x="100" y="140" width="300" height="40" fill="#FFD700" stroke="black"/>
+  <text x="250" y="165" font-family="Arial" font-size="16" text-anchor="middle" fill="black">5. Sesión</text>
+  
+  <rect x="100" y="180" width="300" height="40" fill="#32CD32" stroke="black"/>
+  <text x="250" y="205" font-family="Arial" font-size="16" text-anchor="middle" fill="white">4. Transporte</text>
+  
+  <rect x="100" y="220" width="300" height="40" fill="#00BFFF" stroke="black"/>
+  <text x="250" y="245" font-family="Arial" font-size="16" text-anchor="middle" fill="white">3. Red</text>
+  
+  <rect x="100" y="260" width="300" height="40" fill="#4169E1" stroke="black"/>
+  <text x="250" y="285" font-family="Arial" font-size="16" text-anchor="middle" fill="white">2. Enlace de datos</text>
+  
+  <rect x="100" y="300" width="300" height="40" fill="#8A2BE2" stroke="black"/>
+  <text x="250" y="325" font-family="Arial" font-size="16" text-anchor="middle" fill="white">1. Física</text>
+  
+  <!-- Ejemplos de protocolos y funciones por capa -->
+  <text x="430" y="85" font-family="Arial" font-size="12" text-anchor="start">HTTP, FTP, SMTP, DNS</text>
+  <text x="430" y="125" font-family="Arial" font-size="12" text-anchor="start">ASCII, JPEG, MPEG</text>
+  <text x="430" y="165" font-family="Arial" font-size="12" text-anchor="start">NetBIOS, RPC</text>
+  <text x="430" y="205" font-family="Arial" font-size="12" text-anchor="start">TCP, UDP</text>
+  <text x="430" y="245" font-family="Arial" font-size="12" text-anchor="start">IP, ICMP, OSPF</text>
+  <text x="430" y="285" font-family="Arial" font-size="12" text-anchor="start">Ethernet, PPP, HDLC</text>
+  <text x="430" y="325" font-family="Arial" font-size="12" text-anchor="start">Cables, señales, bits</text>
+  
+  <!-- Información adicional -->
+  <text x="250" y="370" font-family="Arial" font-size="14" text-anchor="middle" font-style="italic">Capas 7-5: Orientadas a la aplicación</text>
+  <text x="250" y="390" font-family="Arial" font-size="14" text-anchor="middle" font-style="italic">Capas 4-1: Orientadas al transporte de datos</text>
+</svg>
