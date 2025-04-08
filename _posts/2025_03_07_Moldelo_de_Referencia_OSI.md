@@ -4,16 +4,17 @@ title: "Modelo de Referencia OSI: La base de las comunicaciones de red modernas"
 date: 2025-03-07 12:00:00 -0500
 categories: redes
 tags: [OSI, redes, CCNA, protocolos, arquitectura de red]
-thumbnail: ../redes/assets/images/osi-thumbnail.jpg
-permalink: /blog/:year/:month/:day/:title
+thumbnail: /assets/images/osi-thumbnail.jpg
+permalink: /blog/:categories/:year/:month/:day/:title
 excerpt: "Una explicación detallada del Modelo OSI y sus siete capas que forman la base de todas las comunicaciones de red modernas. Indispensable para estudiantes de CCNA."
 ---
+//
 
 # Modelo de Referencia OSI: Entendiendo el fundamento de las redes
 
 El modelo de referencia OSI (Open Systems Interconnection) es un marco conceptual que caracteriza y estandariza las funciones de un sistema de comunicación o red de telecomunicaciones en términos de capas abstractas. Desarrollado por la Organización Internacional de Normalización (ISO) en 1984, este modelo es fundamental para entender cómo funcionan las redes modernas.
 
-![Modelo OSI]({{ site.baseurl }}/assets/images/contenido/modelo-osi.svg)
+![Modelo OSI]({{ "/assets/images/contenido/modelo-osi.svg" | relative_url }})
 *Representación de las siete capas del Modelo OSI*
 
 El modelo OSI surgió ante la necesidad de un estándar unificado para las redes de comunicación. En sus inicios, cada fabricante desarrollaba su propio sistema de comunicación, lo que impedía la interoperabilidad entre dispositivos de diferentes marcas. Para solucionar este problema, la ISO creó el modelo OSI, que establece un esquema de siete capas de abstracción a través del cual la información fluye de manera bidireccional, desde la capa superior hasta la inferior y viceversa.

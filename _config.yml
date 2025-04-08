@@ -32,7 +32,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Sr. Torres"
+      author: "Wilder Andres Quinto Torres"
       reading_time: 10
       comments: true
 
