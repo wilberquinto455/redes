@@ -1,0 +1,95 @@
+---
+layout: default
+title: Inicio
+---
+
+<!-- Sección Hero -->
+<section class="hero">
+  <div class="container">
+    <h1>Recursos de Redes y CCNA</h1>
+    <p>La sencillez y la elegancia son impopulares porque requieren trabajo duro y disciplina para conseguirlas y educación para ser apreciadas.</p>
+    <a href="#ultimos-posts" class="hero-btn">
+      <i class="fas fa-th-list"></i> Ver últimos artículos
+    </a>
+  </div>
+</section>
+
+<!-- Sección de Búsqueda -->
+<section class="search-section">
+  <div class="container">
+    <div class="search-container">
+      <form class="search-form">
+        <input type="text" class="search-input" placeholder="Buscar contenido de redes...">
+        <button type="submit" class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Últimos Posts -->
+<section id="ultimos-posts" class="posts-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Últimos Artículos</h2>
+      <p>Explora los conceptos más recientes de redes y CCNA</p>
+    </div>
+
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+        <article class="post-card">
+          {% if post.thumbnail %}
+          <div class="post-card-image">
+            <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}">
+          </div>
+          {% endif %}
+          
+          <div class="post-card-content">
+            <div class="post-meta">
+              <span class="post-date">
+                <i class="far fa-calendar-alt"></i>
+                {{ post.date | date: "%d %b, %Y" }}
+              </span>
+              {% if post.reading_time %}
+                <span class="reading-time">
+                  <i class="far fa-clock"></i>
+                  {{ post.reading_time }} min lectura
+                </span>
+              {% endif %}
+            </div>
+
+            <h3 class="post-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+
+            <p class="post-excerpt">{{ post.excerpt }}</p>
+
+            <a href="{{ post.url | relative_url }}" class="read-more">
+              Leer más <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Navegación por Temas -->
+{% include temario-nav.html %}
+
+<!-- Sección de Contenido CCNA -->
+<section class="temario-section" id="temario-ccna">
+  <div class="container">
+    <div class="temario-title">
+      <h2>Temario CCNA</h2>
+      <span class="temario-badge">2023-2025</span>
+    </div>
+    
+    <div class="temario-description">
+      <p>El examen Cisco Certified Network Associate (CCNA) valida tus conocimientos en fundamentos de redes, acceso a redes, conectividad IP, servicios IP, seguridad y automatización.</p>
+    </div>
+    
+    {% include ccna-content.html %}
+  </div>
+</section>

@@ -355,7 +355,7 @@
                   </div>
       
                   <h3 class="post-title">
-                    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                   </h3>
       
                   <p class="post-excerpt">{{ post.excerpt }}</p>
@@ -366,7 +366,7 @@
                     {% endfor %}
                   </div>
       
-                  <a href="{{ post.url | relative_url }}" class="read-more">
+                  <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">
                     Leer más <i class="fas fa-arrow-right"></i>
                   </a>
                 </div>
