@@ -10,7 +10,7 @@ author: Sr. Torres
 
 # Build settings
 markdown: kramdown
-permalink: /:categories/:year/:month/:day/:title/
+permalink: blog/:categories/:year/:month/:day/:title/
 theme: jekyll-theme-cayman
 
 # Plugins
@@ -22,7 +22,7 @@ plugins:
 collections:
   posts:
     output: true
-    permalink: /:categories/:year/:month/:day/:title/
+    permalink: blog/:categories/:year/:month/:day/:title/
 
 # Default front matter
 defaults:

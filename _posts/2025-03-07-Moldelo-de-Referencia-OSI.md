@@ -5,7 +5,6 @@ date: 2025-03-07 12:00:00 -0500
 categories: redes
 tags: [OSI, redes, CCNA, protocolos, arquitectura de red]
 thumbnail: /assets/images/osi-thumbnail.jpg
-permalink: /blog/:categories/:year/:month/:day/:title
 excerpt: "Una explicación detallada del Modelo OSI y sus siete capas que forman la base de todas las comunicaciones de red modernas. Indispensable para estudiantes de CCNA."
 ---
 //
