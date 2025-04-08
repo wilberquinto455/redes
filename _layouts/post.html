@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+
 <article class="post">
   <div class="container">
     <header class="post-header">
@@ -16,18 +17,22 @@ layout: default
           {{ page.reading_time }} min lectura
         </span>
         {% endif %}
-        {% if page.tags %}
-        <div class="post-tags">
-          {% for tag in page.tags %}
-          <span class="post-tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-        {% endif %}
       </div>
     </header>
 
     <div class="post-content">
       {{ content }}
     </div>
+
+    {% if page.tags %}
+    <footer class="post-footer">
+      <div class="post-tags">
+        <strong>Etiquetas:</strong>
+        {% for tag in page.tags %}
+        <span class="post-tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </footer>
+    {% endif %}
   </div>
 </article>

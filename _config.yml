@@ -1,59 +1,30 @@
-# Site settings
+# Configuración del sitio
 title: Sr. Torres Blogs
 email: wilberquint455@gamil.com
 description: >-
-  La sencillez y la elegancia son impopulares porque requieren trabajo duro 
-  y disciplina para conseguirlas y educación para ser apreciadas.
-baseurl: "/redes"
-url: "https://wilberquinto455.github.io"
-author: Sr. Torres
+  Blog sobre redes y tecnología. Aprende sobre CCNA, protocolos y más.
+baseurl: "/redes" # Cambia esto si tu blog no está en la raíz del dominio
+url: "https://wilberquinto455.github.io" # URL de tu sitio
+locale: es_ES
 
-# Build settings
-markdown: kramdown
-permalink: blog/:categories/:year/:month/:day/:title/
-theme: jekyll-theme-cayman
+# Configuración de URLs
+permalink: /blog/:categories/:year/:month/:day/:title/
+
+# Configuración de posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: "Sr. Torres"
 
 # Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: blog/:categories/:year/:month/:day/:title/
-
-# Default front matter
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "Wilder Andres Quinto Torres"
-      reading_time: 10
-      comments: true
-
-# Social media
-social:
-  github: wilberquinto455
-  linkedin: your-linkedin
-  twitter: your-twitter
-
-# Navigation
-navigation:
-  - title: Inicio
-    url: /
-  - title: Blog
-    url: /blog/
-  - title: Sobre mí
-    url: /about/
-  - title: CCNA
-    url: /ccna/
-
-# Exclude from processing
+# Excluir archivos innecesarios
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -64,11 +35,3 @@ exclude:
   - .jekyll-cache
   - .sass-cache
   - .DS_Store
-
-# SEO settings
-twitter:
-  username: your-twitter
-  card: summary_large_image
-
-logo: /assets/images/logo.png
-locale: es_ES
