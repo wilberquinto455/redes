@@ -20,6 +20,12 @@ El modelo OSI (Open Systems Interconnection) es un marco conceptual que caracter
   </div>
 </div>
 
+## Historia
+
+En la actualidad, muchos de los dispositivos que utilizamos en nuestra vida diaria, como tablets, computadoras, teléfonos y otros, operan bajo el modelo TCP/IP. Este modelo define cómo fluye la información a través de una red. Sin embargo, inicialmente este no fue el primer modelo de red utilizado. Cada fabricante desarrollaba su propio modelo de comunicación para sus dispositivos, lo que generaba incompatibilidades entre equipos de diferentes marcas. Esto hacía imposible establecer comunicación directa entre ellos, requiriendo métodos complejos para lograr la interoperabilidad.
+
+Para resolver este problema, la Organización Internacional de Normalización (ISO) desarrolló el modelo de Interconexión de Sistemas Abiertos (OSI, por sus siglas en inglés). Este modelo fue diseñado para estandarizar la comunicación entre dispositivos de diferentes fabricantes. Aunque el modelo OSI fue un avance significativo, su proceso de estandarización fue lento. Por esta razón, el Departamento de Defensa de los Estados Unidos (DoD) creó el modelo TCP/IP, una alternativa más práctica y ampliamente adoptada en las redes modernas. 
+
 ## Las siete capas del modelo OSI
 
 El modelo OSI divide las funciones de red en siete capas distintas. Cada capa tiene funciones específicas y se comunica con las capas adyacentes.
