@@ -74,7 +74,7 @@ El modelo TCP/IP consta de 4 capas principales:
     <tbody>
       <tr>
         <td>7. Aplicación<br>6. Presentación<br>5. Sesión</td>
-        <td rowspan="2">4. Aplicación</td>
+        <td rowspan="1">4. Aplicación</td>
       </tr>
       <tr>
         <td>4. Transporte</td>
@@ -111,7 +111,7 @@ Aunque el modelo OSI y el modelo TCP/IP comparten el objetivo de estandarizar la
    * El modelo OSI es más detallado y segmentado, lo que lo hace ideal para comprender conceptos teóricos.
    * El modelo TCP/IP combina capas para facilitar la implementación, lo que lo hace más eficiente en entornos reales.
 
-   ![Descripción de la imagen](redes/assets/images/diferenciaTCP-IP.png)
+   ![Descripción de la imagen](../../assets/images/diferenciaTCP-IP.png)
 
 ## Conclusión
 

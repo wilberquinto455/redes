@@ -186,7 +186,7 @@ Aunque el modelo OSI es principalmente teórico, el modelo TCP/IP es el que real
     <tbody>
       <tr>
         <td>7. Aplicación<br>6. Presentación<br>5. Sesión</td>
-        <td rowspan="3">4. Aplicación</td>
+        <td rowspan="2">4. Aplicación</td>
       </tr>
       <tr>
         <td>4. Transporte</td>
