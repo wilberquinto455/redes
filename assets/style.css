@@ -701,36 +701,103 @@ footer p {
   }
 }
 
+/* Estilos para la navegación entre posts */
 .post-navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #ddd;
+  margin: 40px 0;
+  padding: 20px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: #007BFF;
-  font-weight: 500;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  transition: color 0.3s ease;
+  padding: 12px 18px;
+  background: #f8fafc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  color: #334155;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  max-width: 45%;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
 }
 
 .nav-link:hover {
-  color: #0056b3;
+  background: #f1f5f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
-.prev-post i,
+.prev-post {
+  margin-right: auto;
+  border-left: 3px solid #3b82f6;
+}
+
+.next-post {
+  margin-left: auto;
+  border-right: 3px solid #3b82f6;
+}
+
+.prev-post:hover {
+  border-left: 3px solid #2563eb;
+}
+
+.next-post:hover {
+  border-right: 3px solid #2563eb;
+}
+
+.nav-link i {
+  font-size: 0.8rem;
+  color: #3b82f6;
+  transition: transform 0.3s ease;
+}
+
+.prev-post i {
+  margin-right: 10px;
+}
+
 .next-post i {
-  font-size: 1rem;
+  margin-left: 10px;
 }
 
+.prev-post:hover i {
+  transform: translateX(-3px);
+}
+
+.next-post:hover i {
+  transform: translateX(3px);
+}
+
+/* Para títulos largos, truncar con elipsis */
+.nav-link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Diseño responsive */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+  }
+  
+  .nav-link {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .prev-post, .next-post {
+    margin: 0;
+  }
+}
