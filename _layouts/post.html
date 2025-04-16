@@ -114,6 +114,27 @@
     </div>
   </main>
 
+    <div class="post-content">
+    {{ content }}
+  </div>
+  
+  <!-- Navegación entre posts -->
+  <nav class="post-navigation">
+    <div class="nav-links">
+      {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="nav-link prev-post">
+        <i class="fas fa-arrow-left"></i> {{ page.previous.title }}
+      </a>
+      {% endif %}
+  
+      {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="nav-link next-post">
+        {{ page.next.title }} <i class="fas fa-arrow-right"></i>
+      </a>
+      {% endif %}
+    </div>
+  </nav>
+
   <footer>
     <div class="container">
       <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }} - Todos los derechos reservados.</p>
