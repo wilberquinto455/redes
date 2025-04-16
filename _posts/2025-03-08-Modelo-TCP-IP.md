@@ -92,26 +92,53 @@ El modelo TCP/IP consta de 4 capas principales:
   </table>
 </div>
 
-## Diferencia entre el Modelo OSI y TCP/IP
+## Diferencias entre el Modelo OSI y TCP/IP
 
 Aunque el modelo OSI y el modelo TCP/IP comparten el objetivo de estandarizar la comunicación en redes, existen diferencias clave entre ambos:
-1. Número de capas:
-   * El modelo OSI consta de 7 capas, cada una con funciones específicas que separan claramente las responsabilidades de la comunicación en red.
-   * El modelo TCP/IP, en cambio, tiene 4 capas, combinando algunas de las funciones del modelo OSI para simplificar su implementación.
-2. Enfoque:
-   * El modelo OSI es un modelo teórico que sirve como referencia para entender cómo funcionan las redes. Fue diseñado para estandarizar la comunicación entre dispositivos de diferentes fabricantes.
-   * El modelo TCP/IP es un modelo práctico que se desarrolló para resolver problemas reales de comunicación en redes, siendo ampliamente adoptado en la implementación de Internet.
-3. Desarrollo:
-   * El modelo OSI fue desarrollado por la ISO en 1984 como un estándar internacional.
-   * El modelo TCP/IP fue creado por el Departamento de Defensa de los Estados Unidos (DoD) en los años 70, inicialmente para la red ARPANET, el precursor de Internet.
-4. Adopción:
-   * Aunque el modelo OSI es ampliamente utilizado como referencia educativa, no se implementa directamente en las redes modernas.
-   * El modelo TCP/IP es el estándar de facto en las redes actuales, incluyendo Internet, debido a su simplicidad y enfoque práctico.
-5. Compatibilidad:
-   * El modelo OSI es más detallado y segmentado, lo que lo hace ideal para comprender conceptos teóricos.
-   * El modelo TCP/IP combina capas para facilitar la implementación, lo que lo hace más eficiente en entornos reales.
 
-   ![Descripción de la imagen](../../assets/images/diferenciaTCP-IP.png)
+<div class="comparison-container">
+  <div class="comparison-item">
+    <h4>Número de capas</h4>
+    <p>
+      <strong>Modelo OSI:</strong> Consta de <strong>7 capas</strong>, cada una con funciones específicas que separan claramente las responsabilidades de la comunicación en red.<br>
+      <strong>Modelo TCP/IP:</strong> Tiene <strong>4 capas</strong>, combinando algunas de las funciones del modelo OSI para simplificar su implementación.
+    </p>
+  </div>
+
+  <div class="comparison-item">
+    <h4>Enfoque</h4>
+    <p>
+      <strong>Modelo OSI:</strong> Es un modelo <strong>teórico</strong> que sirve como referencia para entender cómo funcionan las redes.<br>
+      <strong>Modelo TCP/IP:</strong> Es un modelo <strong>práctico</strong> diseñado para resolver problemas reales de comunicación en redes.
+    </p>
+  </div>
+
+  <div class="comparison-item">
+    <h4>Desarrollo</h4>
+    <p>
+      <strong>Modelo OSI:</strong> Desarrollado por la <strong>ISO</strong> en 1984 como un estándar internacional.<br>
+      <strong>Modelo TCP/IP:</strong> Creado por el <strong>Departamento de Defensa de los Estados Unidos (DoD)</strong> en los años 70.
+    </p>
+  </div>
+
+  <div class="comparison-item">
+    <h4>Adopción</h4>
+    <p>
+      <strong>Modelo OSI:</strong> Utilizado como referencia educativa, pero no implementado directamente en redes modernas.<br>
+      <strong>Modelo TCP/IP:</strong> Es el estándar de facto en las redes actuales, incluyendo Internet.
+    </p>
+  </div>
+
+  <div class="comparison-item">
+    <h4>Compatibilidad</h4>
+    <p>
+      <strong>Modelo OSI:</strong> Más detallado y segmentado, ideal para comprender conceptos teóricos.<br>
+      <strong>Modelo TCP/IP:</strong> Combina capas para facilitar la implementación, siendo más eficiente en entornos reales.
+    </p>
+  </div>
+</div>
+
+   ![Descripción de la imagen](../../../../../../../assets/images/diferenciaTCP-IP.png)
 
 ## Conclusión
 
