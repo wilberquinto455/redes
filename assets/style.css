@@ -801,3 +801,159 @@ footer p {
     margin: 0;
   }
 }
+
+* Introducción */
+.intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--dark);
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: var(--light);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+/* Contenedor de comparación */
+.comparison-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin: 30px 0;
+}
+
+/* Elemento de comparación */
+.comparison-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparison-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Título de cada sección */
+.comparison-item h4 {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Contenido de cada sección */
+.comparison-item p {
+  padding: 20px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* Destacar modelos */
+.comparison-item strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+/* Estilos específicos para cada modelo */
+.osi-model {
+  color: var(--osi-color);
+  font-weight: 500;
+  background-color: rgba(12, 74, 110, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.tcp-model {
+  color: var(--tcp-color);
+  font-weight: 500;
+  background-color: rgba(14, 116, 144, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Tabla de comparación visual */
+.model-comparison {
+  display: flex;
+  margin: 40px 0;
+  gap: 30px;
+}
+
+.model-column {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.model-header {
+  color: white;
+  font-weight: 600;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.osi-header {
+  background-color: var(--osi-color);
+}
+
+.tcp-header {
+  background-color: var(--tcp-color);
+}
+
+.model-layers {
+  padding: 15px;
+  background-color: white;
+}
+
+.layer {
+  padding: 12px;
+  margin: 8px 0;
+  text-align: center;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid var(--border);
+}
+
+.osi-layer {
+  background-color: rgba(12, 74, 110, 0.1);
+  color: var(--osi-color);
+}
+
+.tcp-layer {
+  background-color: rgba(14, 116, 144, 0.1);
+  color: var(--tcp-color);
+}
+
+/* Estilos responsive */
+@media (min-width: 768px) {
+  .comparison-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .comparison-item:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .model-comparison {
+    flex-direction: column;
+  }
+}
+
+/* Conclusión */
+.conclusion {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: var(--light);
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+  font-size: 17px;
+  line-height: 1.6;
+}
