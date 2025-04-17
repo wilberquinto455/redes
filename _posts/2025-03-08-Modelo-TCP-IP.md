@@ -142,7 +142,14 @@ El modelo TCP/IP consta de 4 capas principales:
 
 El modelo TCP/IP es esencial para entender cómo funcionan las redes modernas. Su simplicidad y enfoque práctico lo convierten en el estándar de facto para la comunicación en redes.
 
-¿Tienes dudas sobre el modelo TCP/IP? ¡Déjalas en los comentarios!
+<div class="cta-container">
+  <h4>¿Te gustaría profundizar más?</h4>
+  <p>Revisa estos recursos adicionales:</p>
+  <ul>
+    <li><a href="{{ site.baseurl }}/2025-04-16-del-Modelo-TCP-IP">Capas del modelo TCP/IP</a></li>
+    <li><a href="#">Adyacencia entre capas del Modelo TCP/IP</a></li>
+  </ul>
+</div>
 
 <style>
 /* Estilos para el artículo del modelo OSI */

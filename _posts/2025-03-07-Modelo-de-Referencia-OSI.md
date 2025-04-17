@@ -186,7 +186,7 @@ Aunque el modelo OSI es principalmente teórico, el modelo TCP/IP es el que real
     <tbody>
       <tr>
         <td>7. Aplicación<br>6. Presentación<br>5. Sesión</td>
-        <td rowspan="2">4. Aplicación</td>
+        <td rowspan="1">4. Aplicación</td>
       </tr>
       <tr>
         <td>4. Transporte</td>
@@ -212,9 +212,9 @@ El modelo OSI, aunque es principalmente conceptual, sigue siendo una herramienta
   <h4>¿Te gustaría profundizar más?</h4>
   <p>Revisa estos recursos adicionales:</p>
   <ul>
-    <li><a href="{{ site.baseurl }}/blog/protocolos-tcp-ip/">Protocolos TCP/IP en detalle</a></li>
-    <li><a href="{{ site.baseurl }}/blog/seguridad-redes/">Seguridad en redes: conceptos básicos</a></li>
-    <li><a href="{{ site.baseurl }}/blog/redes-lan-wan/">Diferencias entre redes LAN y WAN</a></li>
+    <li><a href="{{ site.baseurl }}/2025-03-08-Modelo-TCP-IP">Protocolos TCP/IP en detalle</a></li>
+    <li><a href="#">Seguridad en redes: conceptos básicos</a></li>
+    <li><a href="#">Diferencias entre redes LAN y WAN</a></li>
   </ul>
 </div>
 
