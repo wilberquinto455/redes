@@ -351,7 +351,7 @@ Estos ejemplos muestran cómo la capa de aplicación proporciona servicios direc
 }
 
 .protocol-card {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -385,7 +385,7 @@ Estos ejemplos muestran cómo la capa de aplicación proporciona servicios direc
 }
 
 .example-box {
-  background-color: #e9ecef;
+  background-color: #e6f7fc;
   padding: 20px;
   margin: 20px 0;
   border-radius: 10px;
@@ -428,7 +428,8 @@ Estos ejemplos muestran cómo la capa de aplicación proporciona servicios direc
 }
 
 .code-snippet {
-  background-color: #f0f0f0;
+  color: #ffffff
+  background-color: #000000;
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 15px;
