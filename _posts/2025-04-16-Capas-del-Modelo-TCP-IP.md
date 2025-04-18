@@ -30,6 +30,12 @@ En esta sección te explicaré de manera clara y sencilla el rol de cada capa de
   </div>
 </div>
 Por ejemplo, si abres un navegador y escribes https://google.com o incluso solo google.com, notarás que aparece un prefijo como http o https. Ese prefijo indica el protocolo que se está utilizando para la comunicación, y es uno de los protocolos que opera en la capa de aplicación. A continuacion se describe alguno de los protocolos que operan en la capa de aplicacion del modelo TCP/IP.
+<div class="info-box">
+  <div class="info-icon"><i class="fas fa-info-circle"></i></div>
+  <div class="info-content">
+    <strong>¿Qué es un protocolo?</strong> Un protocolo de red se define como un conjunto de normas y procedimientos estandarizados que regulan la transmisión de datos entre dispositivos conectados. Estas reglas especifican cómo se formatean, direccionan, transmiten y reciben los paquetes de información, asegurando que tanto el emisor como el receptor interpreten correctamente los datos. Por ejemplo, el Protocolo de Transferencia de Hipertexto (HTTP) establece cómo un navegador solicita recursos a un servidor web y cómo este responde, utilizando métodos como GET o POST y códigos de estado como 404 o 200.
+  </div>
+</div>
 <div class="protocols-grid">
   <div class="protocol-card">
     <i class="fas fa-globe"></i>
@@ -105,7 +111,13 @@ Accept: text/html,application/xhtml+xml</pre>
 </div>
 Estos ejemplos muestran cómo la capa de aplicación proporciona servicios directamente utilizables por los usuarios finales, mientras que las capas inferiores (transporte, red y acceso a la red) se encargan del trabajo "invisible" de mover los datos de manera confiable entre los dispositivos.
 
-
+<div class="cta-container">
+  <h4>¿Te gustaría profundizar más?</h4>
+  <p>Revisa estos recursos adicionales:</p>
+  <ul>
+    <li><a href="https://docs.google.com/document/d/1xMRlZn9tTpOKSTDwzAEbV4YRyG7acaYD/edit?usp=sharing&ouid=100942887710428516849&rtpof=true&sd=true">¿Que son los Protocolos?</a></li>
+  </ul>
+</div>
 
 
 <style>
@@ -448,17 +460,8 @@ Estos ejemplos muestran cómo la capa de aplicación proporciona servicios direc
 .post-content {
   font-family: 'Arial', sans-serif; /* Cambia la fuente para una mejor lectura */
   line-height: 1.7; /* Aumenta el interlineado para más espacio entre líneas */
-  color: #34495e; /* Color de texto más agradable */
 }
 
-.post-content h2 {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  color: #2c3e50; /* Título más oscuro */
-  border-bottom: 2px solid #bdc3c7; /* Línea divisoria más clara */
-  padding-bottom: 10px;
-  font-size: 2rem; /* Aumenta el tamaño del título */
-}
 
 .post-content h3 {
   margin-top: 25px;
