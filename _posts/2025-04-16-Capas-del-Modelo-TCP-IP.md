@@ -428,7 +428,7 @@ Estos ejemplos muestran cómo la capa de aplicación proporciona servicios direc
 }
 
 .code-snippet {
-  color: #ffffff
+  color: #ffffff;
   background-color: #000000;
   padding: 15px;
   border-radius: 5px;
