@@ -29,8 +29,7 @@ En esta sección te explicaré de manera clara y sencilla el rol de cada capa de
     <strong>¿Qué es la Capa de Aplicación?</strong> Esta es la cuarta capa del modelo de comunicación TCP/IP y se encuentra más cerca del usuario y de los servicios de las aplicaciones. Gracias a esto, el usuario puede interactuar fácilmente con ella.
   </div>
 </div>
-Por ejemplo, si abres un navegador y escribes https://google.com o incluso solo google.com, notarás que aparece un prefijo como http o https. Ese prefijo indica el protocolo que se está utilizando para la comunicación, y es uno de los protocolos que opera en la capa de aplicación.
-Protocolos principales de la Capa de Aplicación
+Por ejemplo, si abres un navegador y escribes https://google.com o incluso solo google.com, notarás que aparece un prefijo como http o https. Ese prefijo indica el protocolo que se está utilizando para la comunicación, y es uno de los protocolos que opera en la capa de aplicación. A continuacion se describe alguno de los protocolos que operan en la capa de aplicacion del modelo TCP/IP.
 <div class="protocols-grid">
   <div class="protocol-card">
     <i class="fas fa-globe"></i>
@@ -341,6 +340,152 @@ Estos ejemplos muestran cómo la capa de aplicación proporciona servicios direc
   .layer-number {
     width: 100%;
     padding: 0.5rem 0;
+  }
+}
+
+.protocols-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta el ancho mínimo según sea necesario */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.protocol-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Añadido para centrar el contenido verticalmente */
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+
+.protocol-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.protocol-card i {
+  font-size: 40px; /* Aumenta el tamaño del icono */
+  margin-bottom: 15px;
+  color: #007bff; /* Un color que resalte, como el azul de Bootstrap */
+}
+
+.protocol-card h4 {
+  margin-bottom: 10px;
+  color: #333; /* Color de texto más oscuro para el encabezado */
+}
+
+.protocol-card p {
+  font-size: 1rem;
+  color: #555; /* Color de texto un poco más suave */
+  line-height: 1.5; /* Mejora la legibilidad del texto */
+}
+
+.example-box {
+  background-color: #e9ecef;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+}
+
+.example-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.example-header i {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #28a745; /* Un color llamativo para el icono del ejemplo */
+}
+
+.example-header h4 {
+  margin: 0;
+  color: #2c3e50; /* Color de texto más oscuro para el título del ejemplo */
+}
+
+.example-content p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.example-steps {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.example-steps li {
+  margin-bottom: 5px;
+}
+
+.code-snippet {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 0.9rem;
+  border: 1px solid #ddd;
+}
+
+.code-snippet pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+/* Estilos adicionales para mejorar la apariencia general */
+.post-content {
+  font-family: 'Arial', sans-serif; /* Cambia la fuente para una mejor lectura */
+  line-height: 1.7; /* Aumenta el interlineado para más espacio entre líneas */
+  color: #34495e; /* Color de texto más agradable */
+}
+
+.post-content h2 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #2c3e50; /* Título más oscuro */
+  border-bottom: 2px solid #bdc3c7; /* Línea divisoria más clara */
+  padding-bottom: 10px;
+  font-size: 2rem; /* Aumenta el tamaño del título */
+}
+
+.post-content h3 {
+  margin-top: 25px;
+  color: #3498db; /* Azul más vivo para los subtítulos */
+  font-size: 1.5rem; /* Aumenta el tamaño del subtítulo */
+}
+
+.post-content p {
+  font-size: 1.1rem; /* Aumenta el tamaño de la fuente del párrafo */
+  color: #555;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .protocols-grid {
+    grid-template-columns: 1fr; /* Volver a una sola columna en pantallas pequeñas */
+  }
+  
+  .protocol-card {
+    padding: 15px; /* Reduce el padding en pantallas pequeñas */
+  }
+  
+  .protocol-card i {
+    font-size: 32px; /* Reduce el tamaño del icono en pantallas pequeñas */
+  }
+  
+  .example-header i {
+    font-size: 20px; /* Reduce el tamaño del icono del ejemplo en pantallas pequeñas */
   }
 }
 </style>
