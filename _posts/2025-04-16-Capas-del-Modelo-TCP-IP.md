@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Capas del modelo TCP/IP: Vision general"
-date: 2025-04-16 12:00:00 -0500
+date: 2025-04-16 13:00:00 -0500
 categories: redes
 tags: [TCP/IP, redes, CCNA, protocolos, arquitectura de red, capas del modelo TCP/IP]
 thumbnail: /redes/assets/images/tcp-ip-thumbnail.jpg
@@ -115,7 +115,7 @@ Estos ejemplos muestran cómo la capa de aplicación proporciona servicios direc
   <h4>¿Te gustaría profundizar más?</h4>
   <p>Revisa estos recursos adicionales:</p>
   <ul>
-    <li><a href="https://docs.google.com/document/d/1xMRlZn9tTpOKSTDwzAEbV4YRyG7acaYD/edit?usp=sharing&ouid=100942887710428516849&rtpof=true&sd=true">¿Que son los Protocolos?</a></li>
+    <li><a href="https://docs.google.com/document/d/1xMRlZn9tTpOKSTDwzAEbV4YRyG7acaYD/edit?usp=sharing&ouid=100942887710428516849&rtpof=true&sd=true" target="_blank">¿Que son los Protocolos?</a></li>
   </ul>
 </div>
 
