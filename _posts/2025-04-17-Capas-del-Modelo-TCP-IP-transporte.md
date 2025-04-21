@@ -1,218 +1,574 @@
 ---
 layout: post
-title: "La Capa de Transporte: El Corazón de la Comunicación en Redes"
-description: "Aprende cómo la capa de transporte del modelo TCP/IP garantiza la entrega segura de los datos entre aplicaciones."
-date: 2025-04-20
-categories: [CCNA, Capa de Transporte]
-tags: [TCP, UDP, puertos, multiplexación]
-author: "Wilder Andrés Quinto Torres"
+title: "La Capa de Transporte: El Puente Digital Entre Aplicaciones"
+description: "Una explicación clara y visual de cómo la capa de transporte gestiona la comunicación entre aplicaciones en el mundo de las redes."
+date: 2025-04-21
+categories: [Redes, TCP/IP]
+tags: [TCP, UDP, puertos, multiplexación, CCNA]
+author: "Tu Nombre"
+image: /assets/images/transport-layer.jpg
 ---
 
 <!-- Hero del artículo -->
 <div class="hero-post">
-  <h1>🚀 La Capa de Transporte</h1>
-  <p class="subtitle">Entiende el papel clave del transporte de datos entre dispositivos y aplicaciones</p>
+  <h1>🚢 La Capa de Transporte</h1>
+  <p class="subtitle">El puente que conecta tus aplicaciones con el mundo digital</p>
 </div>
 
 <!-- Introducción -->
 <section class="post-section">
   <h2>📌 Introducción</h2>
-  <p>En el modelo TCP/IP, la capa de transporte actúa como intermediaria entre la capa de red y las aplicaciones. Su propósito principal es asegurar la entrega confiable de datos entre extremos, ¡y hoy te explico cómo lo hace!</p>
+  <p>Imagina que cada aplicación en tu computadora es una empresa diferente dentro de un enorme edificio (tu dispositivo). La capa de transporte actúa como el servicio postal interno que se asegura de que cada carta (paquete de datos) llegue al departamento correcto. Su trabajo es vital: sin ella, tus correos electrónicos, videos de YouTube y videojuegos en línea no sabrían cómo encontrar su camino.</p>
+  
+  <div class="analogy-box">
+    <div class="analogy-icon">💡</div>
+    <div class="analogy-content">
+      <h3>Analogía: El Sistema Postal Digital</h3>
+      <p>Si la Internet fuera una ciudad, la capa de transporte sería el sistema postal. Las cartas (datos) necesitan direcciones (IP) para llegar al edificio correcto, pero también necesitan un número de oficina (puerto) para llegar al destinatario exacto dentro del edificio.</p>
+    </div>
+  </div>
 </section>
 
-<!-- Desarrollo del contenido -->
+<!-- ¿Qué hace la capa de transporte? -->
 <section class="post-section">
-  <h2>🔍 TCP vs UDP: Protocolos en acción</h2>
-
-  <div class="info-box">
-    <strong>TCP (Transmission Control Protocol)</strong>
-    <p>Proporciona comunicación confiable, orientada a conexión. Asegura la entrega y el orden correcto de los segmentos.</p>
-  </div>
-
-  <div class="info-box">
-    <strong>UDP (User Datagram Protocol)</strong>
-    <p>Es más rápido pero no garantiza entrega. Ideal para aplicaciones como streaming o DNS.</p>
-  </div>
-
-  <ul class="checklist">
-    <li>✅ TCP asegura la entrega con ACKs</li>
-    <li>✅ UDP no tiene control de errores</li>
-    <li>✅ Ambos usan puertos para identificar procesos</li>
-  </ul>
-
-  <div class="card-box">
-    <h3>💡 Ejemplo práctico</h3>
-    <p>Cuando abres una página web, tu navegador establece una conexión TCP al puerto 80 (HTTP) o 443 (HTTPS). Esto asegura que los datos lleguen completos y en orden.</p>
+  <h2>🔍 ¿Qué hace exactamente la capa de transporte?</h2>
+  
+  <p>La capa de transporte tiene varias responsabilidades clave que permiten que tus aplicaciones se comuniquen a través de la red:</p>
+  
+  <div class="functions-grid">
+    <div class="function-card">
+      <div class="function-icon">🔢</div>
+      <h3>Identificación de Aplicaciones</h3>
+      <p>Usa números de puerto para dirigir los datos a la aplicación correcta. Es como si cada aplicación tuviera su propio buzón numerado.</p>
+    </div>
+    
+    <div class="function-card">
+      <div class="function-icon">✂️</div>
+      <h3>Segmentación</h3>
+      <p>Divide los grandes mensajes en segmentos más pequeños, como cortar una carta larga en varias páginas para que sea más fácil de enviar.</p>
+    </div>
+    
+    <div class="function-card">
+      <div class="function-icon">🔄</div>
+      <h3>Control de Flujo</h3>
+      <p>Regula la velocidad de envío para que el receptor no se vea abrumado, como un cartero que verifica si tu buzón tiene espacio antes de entregar más correo.</p>
+    </div>
+    
+    <div class="function-card">
+      <div class="function-icon">🛡️</div>
+      <h3>Control de Errores</h3>
+      <p>Verifica si hay datos dañados y, en algunos casos, solicita retransmisiones, actuando como un inspector de calidad para tus mensajes.</p>
+    </div>
   </div>
 </section>
 
-<!-- Comando CLI -->
-<section class="post-section">
-  <h2>🧪 Analizando puertos abiertos</h2>
-  <p>Con este comando puedes ver las conexiones activas en tu sistema:</p>
-  <pre><code class="language-bash">netstat -an | find "80"</code></pre>
+<!-- TCP vs UDP -->
+<section class="post-section" id="tcp-udp">
+  <h2>⚔️ TCP vs UDP: Los Dos Guerreros de la Capa de Transporte</h2>
+  
+  <p>La capa de transporte utiliza principalmente dos protocolos, cada uno con su propio conjunto de habilidades, como dos tipos diferentes de servicios de entrega:</p>
+
+  <div class="protocol-comparison">
+    <div class="protocol-card tcp">
+      <div class="protocol-header">
+        <div class="protocol-icon">🛡️</div>
+        <h3>TCP: El Guardián Confiable</h3>
+      </div>
+      <div class="protocol-content">
+        <p>El <strong>Transmission Control Protocol</strong> es como un servicio de entrega certificado con firma de recepción. Es meticuloso, cuidadoso y se asegura de que todo llegue perfectamente.</p>
+        
+        <h4>Características:</h4>
+        <ul class="feature-list">
+          <li>✅ <strong>Orientado a conexión</strong>: Establece un canal dedicado antes de enviar</li>
+          <li>✅ <strong>Entrega garantizada</strong>: Si algo se pierde, lo reenvía</li>
+          <li>✅ <strong>Ordenado</strong>: Mantiene la secuencia correcta de todos los datos</li>
+          <li>✅ <strong>Control de congestión</strong>: Ajusta la velocidad según las condiciones de la red</li>
+        </ul>
+        
+        <h4>Ideal para:</h4>
+        <div class="use-cases">
+          <span class="use-case">Navegación web</span>
+          <span class="use-case">Correo electrónico</span>
+          <span class="use-case">Transferencia de archivos</span>
+          <span class="use-case">Aplicaciones bancarias</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="protocol-card udp">
+      <div class="protocol-header">
+        <div class="protocol-icon">⚡</div>
+        <h3>UDP: El Velocista Ligero</h3>
+      </div>
+      <div class="protocol-content">
+        <p>El <strong>User Datagram Protocol</strong> es como un servicio de mensajería que lanza los paquetes y sigue adelante sin esperar confirmación. Es rápido, eficiente y no le importa si algún mensaje se pierde en el camino.</p>
+        
+        <h4>Características:</h4>
+        <ul class="feature-list">
+          <li>✅ <strong>Sin conexión</strong>: Envía datos sin establecer canal previo</li>
+          <li>✅ <strong>No garantiza entrega</strong>: No hay reenvíos automáticos</li>
+          <li>✅ <strong>Sin orden garantizado</strong>: Los paquetes pueden llegar desordenados</li>
+          <li>✅ <strong>Ligero y rápido</strong>: Mínima sobrecarga en las comunicaciones</li>
+        </ul>
+        
+        <h4>Ideal para:</h4>
+        <div class="use-cases">
+          <span class="use-case">Videollamadas</span>
+          <span class="use-case">Streaming de video</span>
+          <span class="use-case">Juegos en línea</span>
+          <span class="use-case">DNS (nombres de dominio)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="analogy-box">
+    <div class="analogy-icon">💡</div>
+    <div class="analogy-content">
+      <h3>Analogía: Transportes en la vida real</h3>
+      <p><strong>TCP es como un camión blindado:</strong> Seguro, confiable, confirma la entrega, pero más lento y pesado.</p>
+      <p><strong>UDP es como una motocicleta de mensajería:</strong> Rápida, ágil, eficiente, pero sin garantías si hay problemas en el camino.</p>
+    </div>
+  </div>
 </section>
 
-<!-- Frase motivadora -->
-<section class="motivational-quote">
-  <blockquote>🎯 “Aprender redes es entender cómo fluye el mundo digital.”</blockquote>
+<!-- Ejemplo visual del Three-Way Handshake -->
+<section class="post-section" id="handshake">
+  <h2>🤝 El Saludo de Tres Vías (Three-Way Handshake)</h2>
+  
+  <p>Antes de que TCP comience a enviar datos, establece una conexión mediante un proceso llamado "saludo de tres vías" (Three-Way Handshake). Es como cuando dos personas establecen una llamada telefónica:</p>
+  
+  <div class="handshake-container">
+    <div class="handshake-step">
+      <div class="step-number">1</div>
+      <div class="step-devices">
+        <div class="device client">Cliente<br>🖥️</div>
+        <div class="arrow">
+          <div class="arrow-label">SYN</div>
+          <div class="arrow-line">→</div>
+        </div>
+        <div class="device server">Servidor<br>🖧</div>
+      </div>
+      <div class="step-description">
+        <h4>Solicitud de conexión (SYN)</h4>
+        <p>"Hola, ¿podemos hablar?" - El cliente envía un bit SYN (sincronización) para iniciar la conexión.</p>
+      </div>
+    </div>
+    
+    <div class="handshake-step">
+      <div class="step-number">2</div>
+      <div class="step-devices">
+        <div class="device client">Cliente<br>🖥️</div>
+        <div class="arrow reverse">
+          <div class="arrow-label">SYN+ACK</div>
+          <div class="arrow-line">←</div>
+        </div>
+        <div class="device server">Servidor<br>🖧</div>
+      </div>
+      <div class="step-description">
+        <h4>Aceptación (SYN-ACK)</h4>
+        <p>"Sí, te escucho" - El servidor responde con un SYN-ACK (sincronización-reconocimiento).</p>
+      </div>
+    </div>
+    
+    <div class="handshake-step">
+      <div class="step-number">3</div>
+      <div class="step-devices">
+        <div class="device client">Cliente<br>🖥️</div>
+        <div class="arrow">
+          <div class="arrow-label">ACK</div>
+          <div class="arrow-line">→</div>
+        </div>
+        <div class="device server">Servidor<br>🖧</div>
+      </div>
+      <div class="step-description">
+        <h4>Confirmación (ACK)</h4>
+        <p>"¡Perfecto! Comencemos a hablar" - El cliente envía un ACK para confirmar y la conexión queda establecida.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="code-example">
+    <h4>🔍 Ejemplo de captura de Wireshark de un Three-Way Handshake</h4>
+    <pre><code>
+# Three-Way Handshake cuando tu navegador conecta a un sitio web:
+1. [Cliente → Servidor] TCP SYN Seq=0 Win=64240
+2. [Servidor → Cliente] TCP SYN+ACK Seq=0 Ack=1 Win=65535
+3. [Cliente → Servidor] TCP ACK Seq=1 Ack=1 Win=64240
+# Ahora la conexión está establecida y lista para transmitir datos
+    </code></pre>
+  </div>
+</section>
+
+<!-- Puertos -->
+<section class="post-section" id="ports">
+  <h2>🚪 Puertos: Las Puertas a las Aplicaciones</h2>
+  
+  <p>Los puertos son números que identifican a qué aplicación va dirigido un paquete de datos. Son como extensiones telefónicas en una empresa: la dirección IP te lleva al edificio correcto, pero necesitas el número de puerto para llegar a la oficina específica.</p>
+  
+  <div class="ports-container">
+    <div class="ports-group">
+      <h3>Puertos bien conocidos (0-1023)</h3>
+      <div class="port-examples">
+        <div class="port-example">
+          <span class="port-number">80</span>
+          <span class="port-name">HTTP</span>
+          <span class="port-icon">🌐</span>
+        </div>
+        <div class="port-example">
+          <span class="port-number">443</span>
+          <span class="port-name">HTTPS</span>
+          <span class="port-icon">🔒</span>
+        </div>
+        <div class="port-example">
+          <span class="port-number">21</span>
+          <span class="port-name">FTP</span>
+          <span class="port-icon">📁</span>
+        </div>
+        <div class="port-example">
+          <span class="port-number">22</span>
+          <span class="port-name">SSH</span>
+          <span class="port-icon">🔑</span>
+        </div>
+        <div class="port-example">
+          <span class="port-number">25</span>
+          <span class="port-name">SMTP</span>
+          <span class="port-icon">📧</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ports-group">
+      <h3>Puertos registrados (1024-49151)</h3>
+      <p>Usados por aplicaciones comunes como bases de datos, juegos y servicios personalizados.</p>
+    </div>
+    
+    <div class="ports-group">
+      <h3>Puertos dinámicos (49152-65535)</h3>
+      <p>Asignados temporalmente para conexiones salientes y comunicaciones efímeras.</p>
+    </div>
+  </div>
+
+  <div class="analogy-box">
+    <div class="analogy-icon">💡</div>
+    <div class="analogy-content">
+      <h3>Analogía: El Gran Hotel IP</h3>
+      <p>Piensa en un dispositivo como un enorme hotel. La dirección IP es la dirección del hotel, mientras que los puertos son los números de habitación. Cuando llega un paquete, el botones (la capa de transporte) mira el número de habitación (puerto) para saber exactamente dónde entregarlo.</p>
+    </div>
+  </div>
+
+  <div class="interactive-tip">
+    <h4>👨‍💻 Pruébalo tú mismo</h4>
+    <p>Para ver qué conexiones y puertos están activos en tu computadora, puedes usar estos comandos:</p>
+    
+    <div class="command-tabs">
+      <div class="command-tab" data-os="windows">Windows</div>
+      <div class="command-tab" data-os="linux">Linux/Mac</div>
+      
+      <div class="command-content" data-os="windows">
+        <pre><code>netstat -an | findstr "ESTABLISHED"</code></pre>
+      </div>
+      
+      <div class="command-content" data-os="linux">
+        <pre><code>netstat -tuln | grep LISTEN</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Multiplexación y demultiplexación -->
+<section class="post-section" id="multiplexing">
+  <h2>🔀 Multiplexación: El Arte de Combinar Múltiples Conversaciones</h2>
+  
+  <p>La multiplexación es como cuando varias personas comparten una misma línea telefónica. Permite que múltiples aplicaciones usen la misma conexión de red simultáneamente:</p>
+  
+  <div class="multiplexing-container">
+    <div class="multiplex-section">
+      <h3>Multiplexación</h3>
+      <div class="multiplex-illustration outgoing">
+        <div class="app-container">
+          <div class="app">🎮 Juego<br><small>Puerto 28960</small></div>
+          <div class="app">📧 Email<br><small>Puerto 143</small></div>
+          <div class="app">🎵 Música<br><small>Puerto 8080</small></div>
+        </div>
+        <div class="multiplex-arrows">➡️</div>
+        <div class="transport-layer">
+          Capa de<br>Transporte<br>
+          <div class="tag">Multiplexación</div>
+        </div>
+        <div class="multiplex-arrows">➡️</div>
+        <div class="network">
+          Internet
+        </div>
+      </div>
+      <p>La capa de transporte <strong>combina</strong> datos de diferentes aplicaciones, añadiendo información de puerto para identificar su origen.</p>
+    </div>
+    
+    <div class="multiplex-section">
+      <h3>Demultiplexación</h3>
+      <div class="multiplex-illustration incoming">
+        <div class="network">
+          Internet
+        </div>
+        <div class="multiplex-arrows">➡️</div>
+        <div class="transport-layer">
+          Capa de<br>Transporte<br>
+          <div class="tag">Demultiplexación</div>
+        </div>
+        <div class="multiplex-arrows">➡️</div>
+        <div class="app-container">
+          <div class="app">🎮 Juego<br><small>Puerto 28960</small></div>
+          <div class="app">📧 Email<br><small>Puerto 143</small></div>
+          <div class="app">🎵 Música<br><small>Puerto 8080</small></div>
+        </div>
+      </div>
+      <p>La capa de transporte <strong>separa</strong> los datos recibidos y los entrega a la aplicación correcta según el número de puerto de destino.</p>
+    </div>
+  </div>
+
+  <div class="real-example">
+    <h4>📱 Ejemplo real: Tu teléfono inteligente</h4>
+    <p>Cuando usas tu teléfono, puedes estar recibiendo notificaciones de WhatsApp, actualizando tu feed de Instagram y reproduciendo música en Spotify, todo al mismo tiempo. La capa de transporte se encarga de que cada bit de información llegue a la aplicación correcta.</p>
+  </div>
+</section>
+
+<!-- Caso de estudio -->
+<section class="post-section" id="case-study">
+  <h2>🔬 Caso de estudio: Navegando por la web</h2>
+  
+  <p>Veamos qué sucede con la capa de transporte cuando visitas una página web:</p>
+  
+  <div class="case-study-steps">
+    <div class="case-step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h4>Resolución DNS (usando UDP)</h4>
+        <p>Tu navegador necesita traducir "www.ejemplo.com" a una dirección IP. Envía una consulta UDP al puerto 53 (DNS) de tu servidor DNS.</p>
+        <div class="step-details">
+          <p>UDP es perfecto aquí porque es una consulta rápida y simple. Si se pierde, simplemente se reintenta.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="case-step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h4>Establecimiento de conexión TCP</h4>
+        <p>Una vez que tu navegador conoce la IP del sitio web, establece una conexión TCP con el servidor web en el puerto 443 (HTTPS).</p>
+        <div class="step-details">
+          <p>Aquí es donde ocurre el Three-Way Handshake explicado anteriormente.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="case-step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h4>Solicitud y respuesta HTTP</h4>
+        <p>Tu navegador envía una solicitud HTTP a través de la conexión TCP. El servidor procesa la solicitud y devuelve la página web.</p>
+        <div class="step-details">
+          <p>TCP garantiza que todos los paquetes que componen la página web lleguen correctamente y en orden.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="case-step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h4>Transferencia de recursos</h4>
+        <p>Para cargar imágenes, CSS, JavaScript y otros recursos, el navegador puede establecer conexiones TCP adicionales al mismo servidor.</p>
+        <div class="step-details">
+          <p>Los navegadores modernos establecen múltiples conexiones TCP para cargar los recursos en paralelo y acelerar la carga de la página.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="case-step">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <h4>Cierre de conexión</h4>
+        <p>Una vez completada la transferencia, se cierran las conexiones TCP mediante un proceso de cuatro pasos (FIN-ACK).</p>
+        <div class="step-details">
+          <p>Este proceso libera los recursos del servidor y del cliente para otras conexiones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ejemplo práctico avanzado -->
+<section class="post-section" id="practical-example">
+  <h2>🧪 Análisis práctico: Diseccionando un paquete</h2>
+  
+  <p>¿Cómo se ve realmente un segmento TCP o un datagrama UDP? Veamos la estructura de ambos:</p>
+  
+  <div class="packet-analysis">
+    <div class="packet tcp">
+      <h3>Estructura de un segmento TCP</h3>
+      <div class="packet-diagram">
+        <div class="packet-field source-port">Puerto Origen<br><small>2 bytes</small></div>
+        <div class="packet-field dest-port">Puerto Destino<br><small>2 bytes</small></div>
+        <div class="packet-field sequence">Número de Secuencia<br><small>4 bytes</small></div>
+        <div class="packet-field ack">Número de ACK<br><small>4 bytes</small></div>
+        <div class="packet-field header-len">HLEN<br><small>4 bits</small></div>
+        <div class="packet-field reserved">Reservado<br><small>6 bits</small></div>
+        <div class="packet-field flags">Flags<br><small>6 bits</small></div>
+        <div class="packet-field window">Ventana<br><small>2 bytes</small></div>
+        <div class="packet-field checksum">Checksum<br><small>2 bytes</small></div>
+        <div class="packet-field urgent">Puntero Urgente<br><small>2 bytes</small></div>
+        <div class="packet-field options">Opciones<br><small>Variable</small></div>
+        <div class="packet-field data">Datos<br><small>Variable</small></div>
+      </div>
+      <p>Un segmento TCP tiene una cabecera de 20 bytes (sin opciones) con campos para control de secuencia, control de flujo, y detección de errores.</p>
+    </div>
+    
+    <div class="packet udp">
+      <h3>Estructura de un datagrama UDP</h3>
+      <div class="packet-diagram udp">
+        <div class="packet-field source-port">Puerto Origen<br><small>2 bytes</small></div>
+        <div class="packet-field dest-port">Puerto Destino<br><small>2 bytes</small></div>
+        <div class="packet-field length">Longitud<br><small>2 bytes</small></div>
+        <div class="packet-field checksum">Checksum<br><small>2 bytes</small></div>
+        <div class="packet-field data large">Datos<br><small>Variable</small></div>
+      </div>
+      <p>Un datagrama UDP tiene una cabecera de solo 8 bytes, lo que lo hace más ligero y rápido, pero con menos capacidades de control.</p>
+    </div>
+  </div>
+
+  <div class="code-example">
+    <h4>🔍 Ejemplo de análisis de Wireshark</h4>
+    <pre><code>
+# Captura de una solicitud HTTP utilizando TCP
+Frame 42: 74 bytes on wire
+Ethernet II, Src: Dell_12:34:56 (00:14:22:12:34:56), Dst: Cisco_78:9a:bc (00:1a:2b:78:9a:bc)
+Internet Protocol Version 4, Src: 192.168.1.10, Dst: 93.184.216.34
+Transmission Control Protocol, Src Port: 54321, Dst Port: 80, Seq: 1, Ack: 1
+    Source Port: 54321
+    Destination Port: 80
+    Sequence number: 1    (relative sequence number)
+    Acknowledgment number: 1    (relative ack number)
+    Header Length: 20 bytes
+    Flags: 0x018 (PSH, ACK)
+    Window size value: 64240
+    Checksum: 0x5a32 [validation disabled]
+Hypertext Transfer Protocol
+    GET / HTTP/1.1\r\n
+    Host: example.com\r\n
+    Connection: keep-alive\r\n
+    ...
+    </code></pre>
+  </div>
 </section>
 
 <!-- Conclusión -->
-<section class="post-section">
-  <h2>📚 Conclusión</h2>
-  <p>La capa de transporte es vital para que los datos lleguen correctamente a su destino. Si entiendes TCP y UDP, estás un paso más cerca de dominar las redes. ¡Sigue practicando!</p>
+<section class="post-section" id="conclusion">
+  <h2>📝 Conclusión</h2>
+  
+  <p>La capa de transporte es el componente esencial que hace posible que múltiples aplicaciones utilicen la red simultáneamente. Es el puente que conecta tus aplicaciones con el vasto mundo de Internet, asegurando que cada bit de información llegue a su destino correcto.</p>
+  
+  <div class="key-takeaways">
+    <h4>Puntos clave para recordar:</h4>
+    <ul>
+      <li>✅ La capa de transporte es responsable de la comunicación extremo a extremo entre aplicaciones</li>
+      <li>✅ TCP proporciona conexiones confiables pero con mayor sobrecarga</li>
+      <li>✅ UDP ofrece velocidad pero sin garantías de entrega</li>
+      <li>✅ Los puertos permiten identificar a qué aplicación pertenecen los datos</li>
+      <li>✅ La multiplexación permite que múltiples aplicaciones compartan la conexión de red</li>
+    </ul>
+  </div>
+  
+  <div class="motivational-quote">
+    <blockquote>
+      "Comprender la capa de transporte es como tener las llaves del reino digital: sabrás exactamente cómo fluyen los datos de una aplicación a otra."
+    </blockquote>
+  </div>
 </section>
 
-<!-- Compartir -->
+<!-- Recursos adicionales -->
+<section class="post-section" id="resources">
+  <h2>📚 Recursos adicionales</h2>
+  
+  <div class="resources-grid">
+    <a href="#" class="resource-card">
+      <div class="resource-icon">📖</div>
+      <h4>Guía completa de TCP/IP</h4>
+      <p>Profundiza en todos los aspectos del modelo TCP/IP</p>
+    </a>
+    
+    <a href="#" class="resource-card">
+      <div class="resource-icon">🎬</div>
+      <h4>Video tutorial: TCP vs UDP</h4>
+      <p>Visualiza las diferencias con ejemplos animados</p>
+    </a>
+    
+    <a href="#" class="resource-card">
+      <div class="resource-icon">💻</div>
+      <h4>Laboratorio práctico</h4>
+      <p>Captura y analiza tu propio tráfico de red</p>
+    </a>
+    
+    <a href="#" class="resource-card">
+      <div class="resource-icon">🧩</div>
+      <h4>Quiz interactivo</h4>
+      <p>Pon a prueba tus conocimientos sobre la capa de transporte</p>
+    </a>
+  </div>
+</section>
+
+<!-- Compartir y comentarios -->
 <div class="social-share">
-  <p>📤 ¿Te gustó este artículo? ¡Compártelo con tus colegas o estudiantes!</p>
-</div>
-## Características de TCP
-
-TCP es un protocolo orientado a conexión que proporciona un servicio de entrega confiable de datos entre dispositivos. Sus principales características son:
-
-### Establecimiento de conexión (Three-Way Handshake)
-
-Antes de transmitir datos, TCP establece una conexión a través de un proceso llamado "Three-Way Handshake" (saludo de tres vías):
-
-1. **SYN**: El cliente envía un segmento con la bandera SYN activa.
-2. **SYN-ACK**: El servidor responde con un segmento con las banderas SYN y ACK activas.
-3. **ACK**: El cliente confirma con un segmento con la bandera ACK activa.
-
-### Control de flujo
-
-TCP implementa un mecanismo de "ventana deslizante" que permite al receptor controlar cuántos datos puede enviar el emisor antes de recibir una confirmación.
-
-### Control de congestión
-
-Para evitar la saturación de la red, TCP puede reducir la velocidad de transmisión cuando detecta pérdida de paquetes o retrasos.
-
-### Segmentación y reensamblaje
-
-TCP divide los datos en segmentos para su transmisión y los reensambla en el orden correcto en el destino.
-
-### Números de secuencia y acuse de recibo
-
-Cada byte de datos tiene un número de secuencia único que permite identificar y reordenar los segmentos en el destino.
-
-<div class="example-box">
-  <div class="example-header">
-    <i class="fas fa-laptop-code"></i>
-    <h4>Ejemplo de comunicación TCP</h4>
-  </div>
-  <div class="example-content">
-    <p>Supongamos que un navegador web quiere acceder a una página:</p>
-    <ol class="example-steps">
-      <li>El cliente establece una conexión TCP con el servidor web (puerto 80 o 443).</li>
-      <li>Se realiza el Three-Way Handshake para establecer la conexión.</li>
-      <li>El cliente envía una solicitud HTTP a través de la conexión TCP.</li>
-      <li>El servidor responde con los datos de la página web.</li>
-      <li>TCP asegura que todos los paquetes lleguen en orden y sin errores.</li>
-      <li>Cuando finaliza la transferencia, se cierra la conexión con un proceso de cierre de 4 vías.</li>
-    </ol>
-    <div class="code-snippet">
-      <pre>
-# Captura de Wireshark de un Three-Way Handshake
-1. Cliente → Servidor: [SYN] Seq=0 Win=65535
-2. Servidor → Cliente: [SYN, ACK] Seq=0 Ack=1 Win=65535
-3. Cliente → Servidor: [ACK] Seq=1 Ack=1 Win=65535
-      </pre>
-    </div>
+  <h3>¿Te resultó útil este artículo?</h3>
+  <p>Compártelo con tus colegas o deja un comentario abajo.</p>
+  <div class="share-buttons">
+    <a href="#" class="share-button twitter">Twitter</a>
+    <a href="#" class="share-button linkedin">LinkedIn</a>
+    <a href="#" class="share-button facebook">Facebook</a>
   </div>
 </div>
 
-## Características de UDP
+<style>
+/* Estilos generales */
+:root {
+  --color-primary: #0277bd;
+  --color-secondary: #00c853;
+  --color-tcp: #3949ab;
+  --color-udp: #e65100;
+  --color-bg-light: #f5f7fa;
+  --color-bg-dark: #263238;
+  --color-text: #37474f;
+  --color-text-light: #78909c;
+  --color-border: #cfd8dc;
+  --color-link: #039be5;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-UDP es un protocolo simple, sin conexión, que no garantiza la entrega de los datos pero ofrece mayor velocidad:
+body {
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+}
 
-### Sin establecimiento de conexión
+.post-section {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
 
-UDP no establece una conexión antes de enviar datos, lo que reduce la latencia inicial.
+h2 {
+  color: var(--color-primary);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
 
-### Sin garantía de entrega
-
-UDP no confirma la recepción de los paquetes ni realiza retransmisiones en caso de pérdida.
-
-### Sin control de orden
-
-Los datagramas UDP pueden llegar en un orden diferente al que fueron enviados.
-
-### Menor sobrecarga
-
-Al no implementar mecanismos de control, UDP tiene cabeceras más pequeñas (8 bytes frente a los 20 bytes de TCP).
-
-<div class="example-box">
-  <div class="example-header">
-    <i class="fas fa-gamepad"></i>
-    <h4>Ejemplo de comunicación UDP</h4>
-  </div>
-  <div class="example-content">
-    <p>Un juego en línea utiliza UDP para transmitir las posiciones de los jugadores:</p>
-    <ol class="example-steps">
-      <li>El cliente del juego envía datagramas UDP con su posición actual al servidor.</li>
-      <li>El servidor distribuye estas posiciones a todos los demás jugadores.</li>
-      <li>Si un paquete se pierde, el juego continúa con la información más reciente.</li>
-      <li>No hay establecimiento de conexión ni confirmaciones, lo que minimiza la latencia.</li>
-    </ol>
-    <div class="code-snippet">
-      <pre>
-# Estructura de un datagrama UDP
-Header UDP (8 bytes):
-- Puerto origen: 2 bytes
-- Puerto destino: 2 bytes
-- Longitud: 2 bytes
-- Checksum: 2 bytes
-+ Datos
-      </pre>
-    </div>
-  </div>
-</div>
-
-## Puertos y sockets
-
-Los puertos son identificadores numéricos de 16 bits que permiten distinguir entre diferentes aplicaciones o servicios que se ejecutan en un mismo dispositivo:
-
-- **Puertos bien conocidos**: 0-1023 (HTTP: 80, HTTPS: 443, FTP: 21, SSH: 22).
-- **Puertos registrados**: 1024-49151 (utilizados por aplicaciones comunes).
-- **Puertos dinámicos/privados**: 49152-65535 (asignados temporalmente).
-
-Un socket es la combinación de una dirección IP y un número de puerto, lo que permite identificar de forma única un proceso en una red.
-
-## Multiplexación y demultiplexación
-
-La multiplexación permite que múltiples aplicaciones utilicen simultáneamente los servicios de transporte:
-
-- **Multiplexación**: Proceso mediante el cual la capa de transporte combina datos de diferentes aplicaciones.
-- **Demultiplexación**: Proceso mediante el cual la capa de transporte entrega los datos recibidos a la aplicación correcta.
-
-## Importancia de la capa de transporte en redes
-
-La capa de transporte es esencial para:
-
-- Permitir que distintas aplicaciones compartan la misma infraestructura de red.
-- Garantizar la fiabilidad de las comunicaciones cuando es necesario (TCP).
-- Ofrecer comunicaciones rápidas cuando la fiabilidad no es crítica (UDP).
-- Gestionar el control de flujo y la congestión para mantener el rendimiento de la red.
-- Identificar a qué aplicación corresponden los datos mediante puertos.
-
-<div class="info-box">
-  <div class="info-icon"><i class="fas fa-info-circle"></i></div>
-  <div class="info-content">
-    <strong>¿Qué es la capa de transporte?</strong>
-    <p>La capa de transporte es la encargada de proporcionar servicios de comunicación de extremo a extremo entre aplicaciones, asegurando que los datos lleguen correctamente desde el origen hasta el destino. Actúa como intermediaria entre la capa de aplicación y la capa de red (Internet en el modelo TCP/IP), ofreciendo mecanismos para controlar el flujo de datos y, en el caso de TCP, garantizar la entrega confiable de la información.</p>
-  </div>
-</div>
-
-<div class="cta-container">
-  <h4>¿Te gustaría profundizar más?</h4>
-  <p>Revisa estos recursos adicionales:</p>
-  <ul>
-    <li><a href="https://docs.google.com/document/d/1xMRlZn9tTpOKSTDwzAEbV4YRyG7acaYD/edit?usp=sharing&ouid=100942887710428516849&rtpof=true&sd=true" target="_blank">¿Qué son los Protocolos?</a></li>
-    <li><a href="#" target="_blank">Análisis avanzado de TCP vs UDP</a></li>
-    <li><a href="#" target="_blank">Laboratorio práctico: Captura de tráfico TCP y UDP</a></li>
-  </ul>
-</div>
+h3 {
+  color: var(--color-primary);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
 
 
 <style>
