@@ -596,12 +596,7 @@ image: /assets/images/transport-layer.jpg # Ruta relativa a la raíz del sitio J
     });
 </script>
 ```
-
-**2. Archivo CSS (para guardar en `assets/css/`)**
-
-```css
-/* /assets/css/capa-transporte.css */
-
+<style>
 /* --- Base Styles & Variables --- */
 :root {
     --color-primary: #1e88e5; /* A slightly brighter blue */
@@ -1662,3 +1657,4 @@ image: /assets/images/transport-layer.jpg # Ruta relativa a la raíz del sitio J
         font-size: 0.6rem;
     }
 }
+</style>
