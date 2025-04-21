@@ -8,997 +8,1563 @@ tags: [TCP, UDP, puertos, multiplexación, CCNA]
 author: "Tu Nombre"
 image: /assets/images/transport-layer.jpg
 ---
+div class="container"> <header class="post-header">
+        </header>
 
-<!-- Hero del artículo -->
-<div class="hero-post">
-  <h1>🚢 La Capa de Transporte</h1>
-  <p class="subtitle">El puente que conecta tus aplicaciones con el mundo digital</p>
-</div>
+    <div class="hero-post">
+      <h1>🚢 La Capa de Transporte</h1>
+      <p class="subtitle">El puente que conecta tus aplicaciones con el mundo digital</p>
+    </div>
 
-<!-- Introducción -->
-<section class="post-section">
-  <h2>📌 Introducción</h2>
-  <p>Imagina que cada aplicación en tu computadora es una empresa diferente dentro de un enorme edificio (tu dispositivo). La capa de transporte actúa como el servicio postal interno que se asegura de que cada carta (paquete de datos) llegue al departamento correcto. Su trabajo es vital: sin ella, tus correos electrónicos, videos de YouTube y videojuegos en línea no sabrían cómo encontrar su camino.</p>
-  
-  <div class="analogy-box">
-    <div class="analogy-icon">💡</div>
-    <div class="analogy-content">
-      <h3>Analogía: El Sistema Postal Digital</h3>
-      <p>Si la Internet fuera una ciudad, la capa de transporte sería el sistema postal. Las cartas (datos) necesitan direcciones (IP) para llegar al edificio correcto, pero también necesitan un número de oficina (puerto) para llegar al destinatario exacto dentro del edificio.</p>
-    </div>
-  </div>
-</section>
+    <article class="post-content">
 
-<!-- ¿Qué hace la capa de transporte? -->
-<section class="post-section">
-  <h2>🔍 ¿Qué hace exactamente la capa de transporte?</h2>
-  
-  <p>La capa de transporte tiene varias responsabilidades clave que permiten que tus aplicaciones se comuniquen a través de la red:</p>
-  
-  <div class="functions-grid">
-    <div class="function-card">
-      <div class="function-icon">🔢</div>
-      <h3>Identificación de Aplicaciones</h3>
-      <p>Usa números de puerto para dirigir los datos a la aplicación correcta. Es como si cada aplicación tuviera su propio buzón numerado.</p>
-    </div>
-    
-    <div class="function-card">
-      <div class="function-icon">✂️</div>
-      <h3>Segmentación</h3>
-      <p>Divide los grandes mensajes en segmentos más pequeños, como cortar una carta larga en varias páginas para que sea más fácil de enviar.</p>
-    </div>
-    
-    <div class="function-card">
-      <div class="function-icon">🔄</div>
-      <h3>Control de Flujo</h3>
-      <p>Regula la velocidad de envío para que el receptor no se vea abrumado, como un cartero que verifica si tu buzón tiene espacio antes de entregar más correo.</p>
-    </div>
-    
-    <div class="function-card">
-      <div class="function-icon">🛡️</div>
-      <h3>Control de Errores</h3>
-      <p>Verifica si hay datos dañados y, en algunos casos, solicita retransmisiones, actuando como un inspector de calidad para tus mensajes.</p>
-    </div>
-  </div>
-</section>
+        <section class="post-section">
+          <h2>📌 Introducción</h2>
+          <p>Imagina que cada aplicación en tu computadora es una empresa diferente dentro de un enorme edificio (tu dispositivo). La capa de transporte actúa como el servicio postal interno que se asegura de que cada carta (paquete de datos) llegue al departamento correcto. Su trabajo es vital: sin ella, tus correos electrónicos, videos de YouTube y videojuegos en línea no sabrían cómo encontrar su camino.</p>
 
-<!-- TCP vs UDP -->
-<section class="post-section" id="tcp-udp">
-  <h2>⚔️ TCP vs UDP: Los Dos Guerreros de la Capa de Transporte</h2>
-  
-  <p>La capa de transporte utiliza principalmente dos protocolos, cada uno con su propio conjunto de habilidades, como dos tipos diferentes de servicios de entrega:</p>
+          <div class="analogy-box">
+            <div class="analogy-icon">💡</div>
+            <div class="analogy-content">
+              <h3>Analogía: El Sistema Postal Digital</h3>
+              <p>Si la Internet fuera una ciudad, la capa de transporte sería el sistema postal. Las cartas (datos) necesitan direcciones (IP) para llegar al edificio correcto, pero también necesitan un número de oficina (puerto) para llegar al destinatario exacto dentro del edificio.</p>
+            </div>
+          </div>
+        </section>
 
-  <div class="protocol-comparison">
-    <div class="protocol-card tcp">
-      <div class="protocol-header">
-        <div class="protocol-icon">🛡️</div>
-        <h3>TCP: El Guardián Confiable</h3>
-      </div>
-      <div class="protocol-content">
-        <p>El <strong>Transmission Control Protocol</strong> es como un servicio de entrega certificado con firma de recepción. Es meticuloso, cuidadoso y se asegura de que todo llegue perfectamente.</p>
-        
-        <h4>Características:</h4>
-        <ul class="feature-list">
-          <li>✅ <strong>Orientado a conexión</strong>: Establece un canal dedicado antes de enviar</li>
-          <li>✅ <strong>Entrega garantizada</strong>: Si algo se pierde, lo reenvía</li>
-          <li>✅ <strong>Ordenado</strong>: Mantiene la secuencia correcta de todos los datos</li>
-          <li>✅ <strong>Control de congestión</strong>: Ajusta la velocidad según las condiciones de la red</li>
-        </ul>
-        
-        <h4>Ideal para:</h4>
-        <div class="use-cases">
-          <span class="use-case">Navegación web</span>
-          <span class="use-case">Correo electrónico</span>
-          <span class="use-case">Transferencia de archivos</span>
-          <span class="use-case">Aplicaciones bancarias</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="protocol-card udp">
-      <div class="protocol-header">
-        <div class="protocol-icon">⚡</div>
-        <h3>UDP: El Velocista Ligero</h3>
-      </div>
-      <div class="protocol-content">
-        <p>El <strong>User Datagram Protocol</strong> es como un servicio de mensajería que lanza los paquetes y sigue adelante sin esperar confirmación. Es rápido, eficiente y no le importa si algún mensaje se pierde en el camino.</p>
-        
-        <h4>Características:</h4>
-        <ul class="feature-list">
-          <li>✅ <strong>Sin conexión</strong>: Envía datos sin establecer canal previo</li>
-          <li>✅ <strong>No garantiza entrega</strong>: No hay reenvíos automáticos</li>
-          <li>✅ <strong>Sin orden garantizado</strong>: Los paquetes pueden llegar desordenados</li>
-          <li>✅ <strong>Ligero y rápido</strong>: Mínima sobrecarga en las comunicaciones</li>
-        </ul>
-        
-        <h4>Ideal para:</h4>
-        <div class="use-cases">
-          <span class="use-case">Videollamadas</span>
-          <span class="use-case">Streaming de video</span>
-          <span class="use-case">Juegos en línea</span>
-          <span class="use-case">DNS (nombres de dominio)</span>
-        </div>
-      </div>
-    </div>
-  </div>
+        <section class="post-section">
+          <h2>🔍 ¿Qué hace exactamente la capa de transporte?</h2>
 
-  <div class="analogy-box">
-    <div class="analogy-icon">💡</div>
-    <div class="analogy-content">
-      <h3>Analogía: Transportes en la vida real</h3>
-      <p><strong>TCP es como un camión blindado:</strong> Seguro, confiable, confirma la entrega, pero más lento y pesado.</p>
-      <p><strong>UDP es como una motocicleta de mensajería:</strong> Rápida, ágil, eficiente, pero sin garantías si hay problemas en el camino.</p>
-    </div>
-  </div>
-</section>
+          <p>La capa de transporte tiene varias responsabilidades clave que permiten que tus aplicaciones se comuniquen a través de la red:</p>
 
-<!-- Ejemplo visual del Three-Way Handshake -->
-<section class="post-section" id="handshake">
-  <h2>🤝 El Saludo de Tres Vías (Three-Way Handshake)</h2>
-  
-  <p>Antes de que TCP comience a enviar datos, establece una conexión mediante un proceso llamado "saludo de tres vías" (Three-Way Handshake). Es como cuando dos personas establecen una llamada telefónica:</p>
-  
-  <div class="handshake-container">
-    <div class="handshake-step">
-      <div class="step-number">1</div>
-      <div class="step-devices">
-        <div class="device client">Cliente<br>🖥️</div>
-        <div class="arrow">
-          <div class="arrow-label">SYN</div>
-          <div class="arrow-line">→</div>
-        </div>
-        <div class="device server">Servidor<br>🖧</div>
-      </div>
-      <div class="step-description">
-        <h4>Solicitud de conexión (SYN)</h4>
-        <p>"Hola, ¿podemos hablar?" - El cliente envía un bit SYN (sincronización) para iniciar la conexión.</p>
-      </div>
-    </div>
-    
-    <div class="handshake-step">
-      <div class="step-number">2</div>
-      <div class="step-devices">
-        <div class="device client">Cliente<br>🖥️</div>
-        <div class="arrow reverse">
-          <div class="arrow-label">SYN+ACK</div>
-          <div class="arrow-line">←</div>
-        </div>
-        <div class="device server">Servidor<br>🖧</div>
-      </div>
-      <div class="step-description">
-        <h4>Aceptación (SYN-ACK)</h4>
-        <p>"Sí, te escucho" - El servidor responde con un SYN-ACK (sincronización-reconocimiento).</p>
-      </div>
-    </div>
-    
-    <div class="handshake-step">
-      <div class="step-number">3</div>
-      <div class="step-devices">
-        <div class="device client">Cliente<br>🖥️</div>
-        <div class="arrow">
-          <div class="arrow-label">ACK</div>
-          <div class="arrow-line">→</div>
-        </div>
-        <div class="device server">Servidor<br>🖧</div>
-      </div>
-      <div class="step-description">
-        <h4>Confirmación (ACK)</h4>
-        <p>"¡Perfecto! Comencemos a hablar" - El cliente envía un ACK para confirmar y la conexión queda establecida.</p>
-      </div>
-    </div>
-  </div>
+          <div class="functions-grid">
+            <div class="function-card">
+              <div class="function-icon">🔢</div>
+              <h3>Identificación de Aplicaciones</h3>
+              <p>Usa números de puerto para dirigir los datos a la aplicación correcta. Es como si cada aplicación tuviera su propio buzón numerado.</p>
+            </div>
 
-  <div class="code-example">
-    <h4>🔍 Ejemplo de captura de Wireshark de un Three-Way Handshake</h4>
-    <pre><code>
-# Three-Way Handshake cuando tu navegador conecta a un sitio web:
-1. [Cliente → Servidor] TCP SYN Seq=0 Win=64240
-2. [Servidor → Cliente] TCP SYN+ACK Seq=0 Ack=1 Win=65535
-3. [Cliente → Servidor] TCP ACK Seq=1 Ack=1 Win=64240
-# Ahora la conexión está establecida y lista para transmitir datos
-    </code></pre>
-  </div>
-</section>
+            <div class="function-card">
+              <div class="function-icon">✂️</div>
+              <h3>Segmentación</h3>
+              <p>Divide los grandes mensajes en segmentos más pequeños, como cortar una carta larga en varias páginas para que sea más fácil de enviar.</p>
+            </div>
 
-<!-- Puertos -->
-<section class="post-section" id="ports">
-  <h2>🚪 Puertos: Las Puertas a las Aplicaciones</h2>
-  
-  <p>Los puertos son números que identifican a qué aplicación va dirigido un paquete de datos. Son como extensiones telefónicas en una empresa: la dirección IP te lleva al edificio correcto, pero necesitas el número de puerto para llegar a la oficina específica.</p>
-  
-  <div class="ports-container">
-    <div class="ports-group">
-      <h3>Puertos bien conocidos (0-1023)</h3>
-      <div class="port-examples">
-        <div class="port-example">
-          <span class="port-number">80</span>
-          <span class="port-name">HTTP</span>
-          <span class="port-icon">🌐</span>
-        </div>
-        <div class="port-example">
-          <span class="port-number">443</span>
-          <span class="port-name">HTTPS</span>
-          <span class="port-icon">🔒</span>
-        </div>
-        <div class="port-example">
-          <span class="port-number">21</span>
-          <span class="port-name">FTP</span>
-          <span class="port-icon">📁</span>
-        </div>
-        <div class="port-example">
-          <span class="port-number">22</span>
-          <span class="port-name">SSH</span>
-          <span class="port-icon">🔑</span>
-        </div>
-        <div class="port-example">
-          <span class="port-number">25</span>
-          <span class="port-name">SMTP</span>
-          <span class="port-icon">📧</span>
-        </div>
-      </div>
-    </div>
-    
-    <div class="ports-group">
-      <h3>Puertos registrados (1024-49151)</h3>
-      <p>Usados por aplicaciones comunes como bases de datos, juegos y servicios personalizados.</p>
-    </div>
-    
-    <div class="ports-group">
-      <h3>Puertos dinámicos (49152-65535)</h3>
-      <p>Asignados temporalmente para conexiones salientes y comunicaciones efímeras.</p>
-    </div>
-  </div>
+            <div class="function-card">
+              <div class="function-icon">🔄</div>
+              <h3>Control de Flujo</h3>
+              <p>Regula la velocidad de envío para que el receptor no se vea abrumado, como un cartero que verifica si tu buzón tiene espacio antes de entregar más correo.</p>
+            </div>
 
-  <div class="analogy-box">
-    <div class="analogy-icon">💡</div>
-    <div class="analogy-content">
-      <h3>Analogía: El Gran Hotel IP</h3>
-      <p>Piensa en un dispositivo como un enorme hotel. La dirección IP es la dirección del hotel, mientras que los puertos son los números de habitación. Cuando llega un paquete, el botones (la capa de transporte) mira el número de habitación (puerto) para saber exactamente dónde entregarlo.</p>
-    </div>
-  </div>
+            <div class="function-card">
+              <div class="function-icon">🛡️</div>
+              <h3>Control de Errores</h3>
+              <p>Verifica si hay datos dañados y, en algunos casos, solicita retransmisiones, actuando como un inspector de calidad para tus mensajes.</p>
+            </div>
+          </div>
+        </section>
 
-  <div class="interactive-tip">
-    <h4>👨‍💻 Pruébalo tú mismo</h4>
-    <p>Para ver qué conexiones y puertos están activos en tu computadora, puedes usar estos comandos:</p>
-    
-    <div class="command-tabs">
-      <div class="command-tab" data-os="windows">Windows</div>
-      <div class="command-tab" data-os="linux">Linux/Mac</div>
-      
-      <div class="command-content" data-os="windows">
-        <pre><code>netstat -an | findstr "ESTABLISHED"</code></pre>
-      </div>
-      
-      <div class="command-content" data-os="linux">
-        <pre><code>netstat -tuln | grep LISTEN</code></pre>
-      </div>
-    </div>
-  </div>
-</section>
+        <section class="post-section" id="tcp-udp">
+          <h2>⚔️ TCP vs UDP: Los Dos Guerreros de la Capa de Transporte</h2>
 
-<!-- Multiplexación y demultiplexación -->
-<section class="post-section" id="multiplexing">
-  <h2>🔀 Multiplexación: El Arte de Combinar Múltiples Conversaciones</h2>
-  
-  <p>La multiplexación es como cuando varias personas comparten una misma línea telefónica. Permite que múltiples aplicaciones usen la misma conexión de red simultáneamente:</p>
-  
-  <div class="multiplexing-container">
-    <div class="multiplex-section">
-      <h3>Multiplexación</h3>
-      <div class="multiplex-illustration outgoing">
-        <div class="app-container">
-          <div class="app">🎮 Juego<br><small>Puerto 28960</small></div>
-          <div class="app">📧 Email<br><small>Puerto 143</small></div>
-          <div class="app">🎵 Música<br><small>Puerto 8080</small></div>
-        </div>
-        <div class="multiplex-arrows">➡️</div>
-        <div class="transport-layer">
-          Capa de<br>Transporte<br>
-          <div class="tag">Multiplexación</div>
-        </div>
-        <div class="multiplex-arrows">➡️</div>
-        <div class="network">
-          Internet
-        </div>
-      </div>
-      <p>La capa de transporte <strong>combina</strong> datos de diferentes aplicaciones, añadiendo información de puerto para identificar su origen.</p>
-    </div>
-    
-    <div class="multiplex-section">
-      <h3>Demultiplexación</h3>
-      <div class="multiplex-illustration incoming">
-        <div class="network">
-          Internet
-        </div>
-        <div class="multiplex-arrows">➡️</div>
-        <div class="transport-layer">
-          Capa de<br>Transporte<br>
-          <div class="tag">Demultiplexación</div>
-        </div>
-        <div class="multiplex-arrows">➡️</div>
-        <div class="app-container">
-          <div class="app">🎮 Juego<br><small>Puerto 28960</small></div>
-          <div class="app">📧 Email<br><small>Puerto 143</small></div>
-          <div class="app">🎵 Música<br><small>Puerto 8080</small></div>
-        </div>
-      </div>
-      <p>La capa de transporte <strong>separa</strong> los datos recibidos y los entrega a la aplicación correcta según el número de puerto de destino.</p>
-    </div>
-  </div>
+          <p>La capa de transporte utiliza principalmente dos protocolos, cada uno con su propio conjunto de habilidades, como dos tipos diferentes de servicios de entrega:</p>
 
-  <div class="real-example">
-    <h4>📱 Ejemplo real: Tu teléfono inteligente</h4>
-    <p>Cuando usas tu teléfono, puedes estar recibiendo notificaciones de WhatsApp, actualizando tu feed de Instagram y reproduciendo música en Spotify, todo al mismo tiempo. La capa de transporte se encarga de que cada bit de información llegue a la aplicación correcta.</p>
-  </div>
-</section>
+          <div class="protocol-comparison">
+            <div class="protocol-card tcp">
+              <div class="protocol-header">
+                <div class="protocol-icon">🛡️</div>
+                <h3>TCP: El Guardián Confiable</h3>
+              </div>
+              <div class="protocol-content">
+                <p>El <strong>Transmission Control Protocol</strong> es como un servicio de entrega certificado con firma de recepción. Es meticuloso, cuidadoso y se asegura de que todo llegue perfectamente.</p>
 
-<!-- Caso de estudio -->
-<section class="post-section" id="case-study">
-  <h2>🔬 Caso de estudio: Navegando por la web</h2>
-  
-  <p>Veamos qué sucede con la capa de transporte cuando visitas una página web:</p>
-  
-  <div class="case-study-steps">
-    <div class="case-step">
-      <div class="step-number">1</div>
-      <div class="step-content">
-        <h4>Resolución DNS (usando UDP)</h4>
-        <p>Tu navegador necesita traducir "www.ejemplo.com" a una dirección IP. Envía una consulta UDP al puerto 53 (DNS) de tu servidor DNS.</p>
-        <div class="step-details">
-          <p>UDP es perfecto aquí porque es una consulta rápida y simple. Si se pierde, simplemente se reintenta.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="case-step">
-      <div class="step-number">2</div>
-      <div class="step-content">
-        <h4>Establecimiento de conexión TCP</h4>
-        <p>Una vez que tu navegador conoce la IP del sitio web, establece una conexión TCP con el servidor web en el puerto 443 (HTTPS).</p>
-        <div class="step-details">
-          <p>Aquí es donde ocurre el Three-Way Handshake explicado anteriormente.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="case-step">
-      <div class="step-number">3</div>
-      <div class="step-content">
-        <h4>Solicitud y respuesta HTTP</h4>
-        <p>Tu navegador envía una solicitud HTTP a través de la conexión TCP. El servidor procesa la solicitud y devuelve la página web.</p>
-        <div class="step-details">
-          <p>TCP garantiza que todos los paquetes que componen la página web lleguen correctamente y en orden.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="case-step">
-      <div class="step-number">4</div>
-      <div class="step-content">
-        <h4>Transferencia de recursos</h4>
-        <p>Para cargar imágenes, CSS, JavaScript y otros recursos, el navegador puede establecer conexiones TCP adicionales al mismo servidor.</p>
-        <div class="step-details">
-          <p>Los navegadores modernos establecen múltiples conexiones TCP para cargar los recursos en paralelo y acelerar la carga de la página.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="case-step">
-      <div class="step-number">5</div>
-      <div class="step-content">
-        <h4>Cierre de conexión</h4>
-        <p>Una vez completada la transferencia, se cierran las conexiones TCP mediante un proceso de cuatro pasos (FIN-ACK).</p>
-        <div class="step-details">
-          <p>Este proceso libera los recursos del servidor y del cliente para otras conexiones.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                <h4>Características:</h4>
+                <ul class="feature-list">
+                  <li>Orientado a conexión: Establece un canal dedicado antes de enviar</li>
+                  <li>Entrega garantizada: Si algo se pierde, lo reenvía</li>
+                  <li>Ordenado: Mantiene la secuencia correcta de todos los datos</li>
+                  <li>Control de congestión: Ajusta la velocidad según las condiciones de la red</li>
+                </ul>
 
-<!-- Ejemplo práctico avanzado -->
-<section class="post-section" id="practical-example">
-  <h2>🧪 Análisis práctico: Diseccionando un paquete</h2>
-  
-  <p>¿Cómo se ve realmente un segmento TCP o un datagrama UDP? Veamos la estructura de ambos:</p>
-  
-  <div class="packet-analysis">
-    <div class="packet tcp">
-      <h3>Estructura de un segmento TCP</h3>
-      <div class="packet-diagram">
-        <div class="packet-field source-port">Puerto Origen<br><small>2 bytes</small></div>
-        <div class="packet-field dest-port">Puerto Destino<br><small>2 bytes</small></div>
-        <div class="packet-field sequence">Número de Secuencia<br><small>4 bytes</small></div>
-        <div class="packet-field ack">Número de ACK<br><small>4 bytes</small></div>
-        <div class="packet-field header-len">HLEN<br><small>4 bits</small></div>
-        <div class="packet-field reserved">Reservado<br><small>6 bits</small></div>
-        <div class="packet-field flags">Flags<br><small>6 bits</small></div>
-        <div class="packet-field window">Ventana<br><small>2 bytes</small></div>
-        <div class="packet-field checksum">Checksum<br><small>2 bytes</small></div>
-        <div class="packet-field urgent">Puntero Urgente<br><small>2 bytes</small></div>
-        <div class="packet-field options">Opciones<br><small>Variable</small></div>
-        <div class="packet-field data">Datos<br><small>Variable</small></div>
-      </div>
-      <p>Un segmento TCP tiene una cabecera de 20 bytes (sin opciones) con campos para control de secuencia, control de flujo, y detección de errores.</p>
-    </div>
-    
-    <div class="packet udp">
-      <h3>Estructura de un datagrama UDP</h3>
-      <div class="packet-diagram udp">
-        <div class="packet-field source-port">Puerto Origen<br><small>2 bytes</small></div>
-        <div class="packet-field dest-port">Puerto Destino<br><small>2 bytes</small></div>
-        <div class="packet-field length">Longitud<br><small>2 bytes</small></div>
-        <div class="packet-field checksum">Checksum<br><small>2 bytes</small></div>
-        <div class="packet-field data large">Datos<br><small>Variable</small></div>
-      </div>
-      <p>Un datagrama UDP tiene una cabecera de solo 8 bytes, lo que lo hace más ligero y rápido, pero con menos capacidades de control.</p>
-    </div>
-  </div>
+                <h4>Ideal para:</h4>
+                <div class="use-cases">
+                  <span class="use-case">Navegación web</span>
+                  <span class="use-case">Correo electrónico</span>
+                  <span class="use-case">Transferencia de archivos</span>
+                  <span class="use-case">Aplicaciones bancarias</span>
+                </div>
+              </div>
+            </div>
 
-  <div class="code-example">
-    <h4>🔍 Ejemplo de análisis de Wireshark</h4>
-    <pre><code>
-# Captura de una solicitud HTTP utilizando TCP
-Frame 42: 74 bytes on wire
-Ethernet II, Src: Dell_12:34:56 (00:14:22:12:34:56), Dst: Cisco_78:9a:bc (00:1a:2b:78:9a:bc)
-Internet Protocol Version 4, Src: 192.168.1.10, Dst: 93.184.216.34
-Transmission Control Protocol, Src Port: 54321, Dst Port: 80, Seq: 1, Ack: 1
+            <div class="protocol-card udp">
+              <div class="protocol-header">
+                <div class="protocol-icon">⚡</div>
+                <h3>UDP: El Velocista Ligero</h3>
+              </div>
+              <div class="protocol-content">
+                <p>El <strong>User Datagram Protocol</strong> es como un servicio de mensajería que lanza los paquetes y sigue adelante sin esperar confirmación. Es rápido, eficiente y no le importa si algún mensaje se pierde en el camino.</p>
+
+                <h4>Características:</h4>
+                <ul class="feature-list">
+                  <li>Sin conexión: Envía datos sin establecer canal previo</li>
+                  <li>No garantiza entrega: No hay reenvíos automáticos</li>
+                  <li>Sin orden garantizado: Los paquetes pueden llegar desordenados</li>
+                  <li>Ligero y rápido: Mínima sobrecarga en las comunicaciones</li>
+                </ul>
+
+                <h4>Ideal para:</h4>
+                <div class="use-cases">
+                  <span class="use-case">Videollamadas</span>
+                  <span class="use-case">Streaming de video</span>
+                  <span class="use-case">Juegos en línea</span>
+                  <span class="use-case">DNS (nombres de dominio)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="analogy-box">
+            <div class="analogy-icon">💡</div>
+            <div class="analogy-content">
+              <h3>Analogía: Transportes en la vida real</h3>
+              <p><strong>TCP es como un camión blindado:</strong> Seguro, confiable, confirma la entrega, pero más lento y pesado.</p>
+              <p><strong>UDP es como una motocicleta de mensajería:</strong> Rápida, ágil, eficiente, pero sin garantías si hay problemas en el camino.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="post-section" id="handshake">
+          <h2>🤝 El Saludo de Tres Vías (Three-Way Handshake)</h2>
+
+          <p>Antes de que TCP comience a enviar datos, establece una conexión mediante un proceso llamado "saludo de tres vías" (Three-Way Handshake). Es como cuando dos personas establecen una llamada telefónica:</p>
+
+          <div class="handshake-container">
+            <div class="handshake-step">
+              <div class="step-number">1</div>
+              <div class="step-devices">
+                <div class="device client">Cliente<br>🖥️</div>
+                <div class="arrow">
+                  <div class="arrow-label">SYN</div>
+                  <div class="arrow-line">→</div>
+                </div>
+                <div class="device server">Servidor<br>🖧</div>
+              </div>
+              <div class="step-description">
+                <h4>Solicitud de conexión (SYN)</h4>
+                <p>"Hola, ¿podemos hablar?" - El cliente envía un bit SYN (sincronización) para iniciar la conexión.</p>
+              </div>
+            </div>
+
+            <div class="handshake-step">
+              <div class="step-number">2</div>
+              <div class="step-devices">
+                <div class="device client">Cliente<br>🖥️</div>
+                <div class="arrow reverse">
+                  <div class="arrow-label">SYN+ACK</div>
+                  <div class="arrow-line">←</div>
+                </div>
+                <div class="device server">Servidor<br>🖧</div>
+              </div>
+              <div class="step-description">
+                <h4>Aceptación (SYN-ACK)</h4>
+                <p>"Sí, te escucho" - El servidor responde con un SYN-ACK (sincronización-reconocimiento).</p>
+              </div>
+            </div>
+
+            <div class="handshake-step">
+              <div class="step-number">3</div>
+              <div class="step-devices">
+                <div class="device client">Cliente<br>🖥️</div>
+                <div class="arrow">
+                  <div class="arrow-label">ACK</div>
+                  <div class="arrow-line">→</div>
+                </div>
+                <div class="device server">Servidor<br>🖧</div>
+              </div>
+              <div class="step-description">
+                <h4>Confirmación (ACK)</h4>
+                <p>"¡Perfecto! Comencemos a hablar" - El cliente envía un ACK para confirmar y la conexión queda establecida.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-example">
+            <h4>🔍 Ejemplo de captura de Wireshark de un Three-Way Handshake</h4>
+            <pre><code># Three-Way Handshake cuando tu navegador conecta a un sitio web:
+1. [Cliente → Servidor] TCP SYN Seq=0 Win=64240 Len=0 MSS=1460 WS=256 SACK_PERM=1
+2. [Servidor → Cliente] TCP SYN, ACK Seq=0 Ack=1 Win=65535 Len=0 MSS=1460 WS=256 SACK_PERM=1
+3. [Cliente → Servidor] TCP ACK Seq=1 Ack=1 Win=64240 Len=0
+# Ahora la conexión está establecida y lista para transmitir datos (e.g., HTTP GET)</code></pre>
+          </div>
+        </section>
+
+        <section class="post-section" id="ports">
+          <h2>🚪 Puertos: Las Puertas a las Aplicaciones</h2>
+
+          <p>Los puertos son números que identifican a qué aplicación va dirigido un paquete de datos. Son como extensiones telefónicas en una empresa: la dirección IP te lleva al edificio correcto, pero necesitas el número de puerto para llegar a la oficina específica.</p>
+
+          <div class="ports-container">
+            <div class="ports-group">
+              <h3>Puertos bien conocidos (0-1023)</h3>
+              <div class="port-examples">
+                <div class="port-example">
+                  <span class="port-number">80</span>
+                  <span class="port-name">HTTP</span>
+                  <span class="port-icon">🌐</span>
+                </div>
+                <div class="port-example">
+                  <span class="port-number">443</span>
+                  <span class="port-name">HTTPS</span>
+                  <span class="port-icon">🔒</span>
+                </div>
+                <div class="port-example">
+                  <span class="port-number">21</span>
+                  <span class="port-name">FTP</span>
+                  <span class="port-icon">📁</span>
+                </div>
+                <div class="port-example">
+                  <span class="port-number">22</span>
+                  <span class="port-name">SSH</span>
+                  <span class="port-icon">🔑</span>
+                </div>
+                <div class="port-example">
+                  <span class="port-number">25</span>
+                  <span class="port-name">SMTP</span>
+                  <span class="port-icon">📧</span>
+                </div>
+                 <div class="port-example">
+                  <span class="port-number">53</span>
+                  <span class="port-name">DNS</span>
+                  <span class="port-icon">🗺️</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ports-group">
+              <h3>Puertos registrados (1024-49151)</h3>
+              <p>Usados por aplicaciones comunes como bases de datos (ej. MySQL: 3306), juegos y servicios personalizados.</p>
+            </div>
+
+            <div class="ports-group">
+              <h3>Puertos dinámicos/privados (49152-65535)</h3>
+              <p>Asignados temporalmente por el sistema operativo del cliente para conexiones salientes (puertos efímeros).</p>
+            </div>
+          </div>
+
+          <div class="analogy-box">
+            <div class="analogy-icon">💡</div>
+            <div class="analogy-content">
+              <h3>Analogía: El Gran Hotel IP</h3>
+              <p>Piensa en un dispositivo como un enorme hotel. La dirección IP es la dirección del hotel, mientras que los puertos son los números de habitación. Cuando llega un paquete, el botones (la capa de transporte) mira el número de habitación (puerto de destino) para saber exactamente dónde entregarlo.</p>
+            </div>
+          </div>
+
+          <div class="interactive-tip">
+            <h4>👨‍💻 Pruébalo tú mismo</h4>
+            <p>Para ver qué conexiones y puertos están activos en tu computadora, puedes usar estos comandos en la terminal:</p>
+
+            <div class="command-tabs">
+              <div class="command-tab active" data-os="windows">Windows</div>
+              <div class="command-tab" data-os="linux">Linux/Mac</div>
+            </div>
+
+            <div class="command-content active" data-os="windows">
+              <pre><code>netstat -ano | findstr "ESTABLISHED"</code></pre>
+               <p><small>(Muestra conexiones TCP establecidas y el ID del proceso asociado)</small></p>
+               <pre><code>netstat -ano | findstr "LISTENING"</code></pre>
+               <p><small>(Muestra puertos TCP y UDP en escucha)</small></p>
+            </div>
+
+            <div class="command-content" data-os="linux">
+               <pre><code>ss -tulnp | grep LISTEN</code></pre>
+               <p><small>(Muestra puertos TCP y UDP en escucha con el proceso asociado - `ss` es más moderno que `netstat`)</small></p>
+               <pre><code>ss -tanp</code></pre>
+               <p><small>(Muestra todas las conexiones TCP activas con el proceso asociado)</small></p>
+            </div>
+          </div>
+        </section>
+
+        <section class="post-section" id="multiplexing">
+          <h2>🔀 Multiplexación y Demultiplexación</h2>
+
+          <p>La multiplexación permite que múltiples aplicaciones en un host envíen datos a través de una única interfaz de red. La demultiplexación es el proceso inverso en el receptor, entregando los datos a la aplicación correcta.</p>
+
+          <div class="multiplexing-container">
+            <div class="multiplex-section">
+              <h3>Multiplexación (Salida)</h3>
+              <div class="multiplex-illustration outgoing">
+                <div class="app-container">
+                  <div class="app">🎮 Juego<br><small>Origen: Puerto 51234</small></div>
+                  <div class="app">📧 Email<br><small>Origen: Puerto 51235</small></div>
+                  <div class="app">🎵 Música<br><small>Origen: Puerto 51236</small></div>
+                </div>
+                <div class="multiplex-arrows">➡️</div>
+                <div class="transport-layer">
+                  Capa de<br>Transporte<br>
+                  <div class="tag">Multiplexación</div>
+                </div>
+                <div class="multiplex-arrows">➡️</div>
+                <div class="network">
+                  Internet
+                </div>
+              </div>
+              <p>La capa de transporte <strong>recoge</strong> datos de diferentes sockets (aplicaciones), <strong>añade</strong> cabeceras (con puertos de origen/destino) y los <strong>pasa</strong> a la capa de red.</p>
+            </div>
+
+            <div class="multiplex-section">
+              <h3>Demultiplexación (Entrada)</h3>
+              <div class="multiplex-illustration incoming">
+                <div class="network">
+                  Internet
+                </div>
+                <div class="multiplex-arrows">➡️</div>
+                <div class="transport-layer">
+                  Capa de<br>Transporte<br>
+                  <div class="tag">Demultiplexación</div>
+                </div>
+                <div class="multiplex-arrows">➡️</div>
+                <div class="app-container">
+                  <div class="app">🎮 Juego<br><small>Destino: Puerto 28960</small></div>
+                  <div class="app">📧 Email<br><small>Destino: Puerto 143</small></div>
+                  <div class="app">🎵 Música<br><small>Destino: Puerto 8080</small></div>
+                </div>
+              </div>
+              <p>La capa de transporte <strong>recibe</strong> segmentos/datagramas de la capa de red, <strong>examina</strong> los puertos de destino y <strong>entrega</strong> los datos al socket/aplicación correcta.</p>
+            </div>
+          </div>
+
+          <div class="real-example">
+            <h4>📱 Ejemplo real: Tu teléfono inteligente</h4>
+            <p>Cuando usas tu teléfono, puedes estar recibiendo notificaciones de WhatsApp (usando un puerto), actualizando tu feed de Instagram (otro puerto) y reproduciendo música en Spotify (otro puerto), todo simultáneamente sobre la misma conexión Wi-Fi o de datos móviles. La capa de transporte gestiona este tráfico múltiple usando los números de puerto.</p>
+          </div>
+        </section>
+
+        <section class="post-section" id="case-study">
+          <h2>🔬 Caso de estudio: Navegando por la web (HTTPS)</h2>
+
+          <p>Veamos qué sucede con la capa de transporte cuando visitas <code>https://www.ejemplo.com</code>:</p>
+
+          <div class="case-study-steps">
+            <div class="case-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Resolución DNS (UDP)</h4>
+                <p>Tu navegador necesita la IP de "www.ejemplo.com". Envía una consulta DNS desde un puerto dinámico local al puerto 53 (DNS) de tu servidor DNS usando UDP.</p>
+                <div class="step-details">
+                  <p>UDP es rápido para esta simple consulta/respuesta. Si se pierde, la aplicación (navegador/SO) reintenta.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Conexión TCP (Handshake)</h4>
+                <p>Con la IP obtenida, tu navegador inicia una conexión TCP desde un puerto dinámico local al puerto 443 (HTTPS) del servidor web.</p>
+                <div class="step-details">
+                  <p>Se realiza el Three-Way Handshake (SYN → SYN/ACK → ACK) para establecer una conexión confiable.</p>
+                </div>
+              </div>
+            </div>
+
+             <div class="case-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Negociación TLS (sobre TCP)</h4>
+                <p>Se establece una conexión segura TLS/SSL sobre la conexión TCP existente. Esto implica un intercambio de certificados y claves.</p>
+                <div class="step-details">
+                  <p>TCP garantiza que todos los mensajes de la negociación TLS lleguen correctamente.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Solicitud y Respuesta HTTP (cifrada)</h4>
+                <p>Tu navegador envía la solicitud HTTP (ej. <code>GET /</code>) cifrada a través de la conexión TLS/TCP. El servidor responde con la página web (HTML, etc.) también cifrada.</p>
+                <div class="step-details">
+                  <p>TCP divide los datos en segmentos, los numera, asegura su entrega ordenada y gestiona el control de flujo.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h4>Transferencia de Recursos Adicionales</h4>
+                <p>Para cargar imágenes, CSS, JS, etc., el navegador puede abrir conexiones TCP/TLS adicionales (o reutilizar existentes con HTTP/2+) al mismo servidor u otros.</p>
+                <div class="step-details">
+                  <p>Cada recurso se solicita y transfiere de forma segura y confiable usando TCP.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-step">
+              <div class="step-number">6</div>
+              <div class="step-content">
+                <h4>Cierre de Conexión TCP</h4>
+                <p>Una vez completada la transferencia (o tras un tiempo de inactividad), las conexiones TCP se cierran mediante un intercambio de paquetes FIN y ACK.</p>
+                <div class="step-details">
+                  <p>Esto libera los recursos (puertos, memoria) en ambos extremos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="post-section" id="practical-example">
+          <h2>🧪 Análisis práctico: Cabeceras TCP y UDP</h2>
+
+          <p>¿Cómo se ven realmente un segmento TCP o un datagrama UDP? Veamos la estructura de sus cabeceras:</p>
+
+          <div class="packet-analysis">
+            <div class="packet tcp">
+              <h3>Estructura Cabecera TCP (mín. 20 Bytes)</h3>
+              <div class="packet-diagram">
+                <div class="packet-field source-port">Puerto Origen<br><small>2 bytes</small></div>
+                <div class="packet-field dest-port">Puerto Destino<br><small>2 bytes</small></div>
+                <div class="packet-field sequence">Número de Secuencia<br><small>4 bytes</small></div>
+                <div class="packet-field ack">Número de ACK<br><small>4 bytes</small></div>
+                <div class="packet-field header-len">HLEN<br><small>4 bits</small></div>
+                <div class="packet-field reserved">Reservado<br><small>6 bits</small></div>
+                <div class="packet-field flags">Flags (URG, ACK, PSH, RST, SYN, FIN)<br><small>6 bits</small></div>
+                <div class="packet-field window">Tamaño Ventana<br><small>2 bytes</small></div>
+                <div class="packet-field checksum">Checksum<br><small>2 bytes</small></div>
+                <div class="packet-field urgent">Puntero Urgente<br><small>2 bytes</small></div>
+                <div class="packet-field options">Opciones<br><small>Variable</small></div>
+                </div>
+              <p>La cabecera TCP contiene campos esenciales para la fiabilidad, el orden, el control de flujo y la gestión de la conexión.</p>
+            </div>
+
+            <div class="packet udp">
+              <h3>Estructura Cabecera UDP (8 Bytes)</h3>
+              <div class="packet-diagram udp">
+                <div class="packet-field source-port">Puerto Origen<br><small>2 bytes</small></div>
+                <div class="packet-field dest-port">Puerto Destino<br><small>2 bytes</small></div>
+                <div class="packet-field length">Longitud (Cabecera+Datos)<br><small>2 bytes</small></div>
+                <div class="packet-field checksum">Checksum (Opcional IPv4)<br><small>2 bytes</small></div>
+                 </div>
+              <p>La cabecera UDP es mínima, enfocada solo en la multiplexación/demultiplexación mediante puertos y la longitud del datagrama.</p>
+            </div>
+          </div>
+
+          <div class="code-example">
+            <h4>🔍 Ejemplo de análisis de Wireshark (Cabecera TCP)</h4>
+            <pre><code>Transmission Control Protocol, Src Port: 54321, Dst Port: 443, Seq: 1, Ack: 1, Len: 517
     Source Port: 54321
-    Destination Port: 80
+    Destination Port: 443  // Conectando a HTTPS
+    [Stream index: 1]
+    [TCP Segment Len: 517]
     Sequence number: 1    (relative sequence number)
+    Sequence number (raw): 123456789
+    [Next sequence number: 518    (relative sequence number)]
     Acknowledgment number: 1    (relative ack number)
-    Header Length: 20 bytes
-    Flags: 0x018 (PSH, ACK)
+    Acknowledgment number (raw): 987654321
+    Header Length: 32 bytes // Incluye opciones TCP
+    Flags: 0x018 (PSH, ACK) // Push y Acknowledgment flags activos
+        000. .... .... = Reserved: Not set
+        ...0 .... .... = Nonce: Not set
+        .... 0... .... = Congestion Window Reduced: Not set
+        .... .0.. .... = ECN-Echo: Not set
+        .... ..0. .... = Urgent: Not set
+        .... ...1 .... = Acknowledgment: Set
+        .... .... 1... = Push: Set
+        .... .... .0.. = Reset: Not set
+        .... .... ..0. = Syn: Not set
+        .... .... ...0 = Fin: Not set
     Window size value: 64240
-    Checksum: 0x5a32 [validation disabled]
-Hypertext Transfer Protocol
-    GET / HTTP/1.1\r\n
-    Host: example.com\r\n
-    Connection: keep-alive\r\n
-    ...
-    </code></pre>
-  </div>
-</section>
-
-<!-- Conclusión -->
-<section class="post-section" id="conclusion">
-  <h2>📝 Conclusión</h2>
-  
-  <p>La capa de transporte es el componente esencial que hace posible que múltiples aplicaciones utilicen la red simultáneamente. Es el puente que conecta tus aplicaciones con el vasto mundo de Internet, asegurando que cada bit de información llegue a su destino correcto.</p>
-  
-  <div class="key-takeaways">
-    <h4>Puntos clave para recordar:</h4>
-    <ul>
-      <li>✅ La capa de transporte es responsable de la comunicación extremo a extremo entre aplicaciones</li>
-      <li>✅ TCP proporciona conexiones confiables pero con mayor sobrecarga</li>
-      <li>✅ UDP ofrece velocidad pero sin garantías de entrega</li>
-      <li>✅ Los puertos permiten identificar a qué aplicación pertenecen los datos</li>
-      <li>✅ La multiplexación permite que múltiples aplicaciones compartan la conexión de red</li>
-    </ul>
-  </div>
-  
-  <div class="motivational-quote">
-    <blockquote>
-      "Comprender la capa de transporte es como tener las llaves del reino digital: sabrás exactamente cómo fluyen los datos de una aplicación a otra."
-    </blockquote>
-  </div>
-</section>
-
-<!-- Recursos adicionales -->
-<section class="post-section" id="resources">
-  <h2>📚 Recursos adicionales</h2>
-  
-  <div class="resources-grid">
-    <a href="#" class="resource-card">
-      <div class="resource-icon">📖</div>
-      <h4>Guía completa de TCP/IP</h4>
-      <p>Profundiza en todos los aspectos del modelo TCP/IP</p>
-    </a>
-    
-    <a href="#" class="resource-card">
-      <div class="resource-icon">🎬</div>
-      <h4>Video tutorial: TCP vs UDP</h4>
-      <p>Visualiza las diferencias con ejemplos animados</p>
-    </a>
-    
-    <a href="#" class="resource-card">
-      <div class="resource-icon">💻</div>
-      <h4>Laboratorio práctico</h4>
-      <p>Captura y analiza tu propio tráfico de red</p>
-    </a>
-    
-    <a href="#" class="resource-card">
-      <div class="resource-icon">🧩</div>
-      <h4>Quiz interactivo</h4>
-      <p>Pon a prueba tus conocimientos sobre la capa de transporte</p>
-    </a>
-  </div>
-</section>
-
-<!-- Compartir y comentarios -->
-<div class="social-share">
-  <h3>¿Te resultó útil este artículo?</h3>
-  <p>Compártelo con tus colegas o deja un comentario abajo.</p>
-  <div class="share-buttons">
-    <a href="#" class="share-button twitter">Twitter</a>
-    <a href="#" class="share-button linkedin">LinkedIn</a>
-    <a href="#" class="share-button facebook">Facebook</a>
-  </div>
-</div>
-
-<style>
-/* Estilos generales */
-:root {
-  --color-primary: #0277bd;
-  --color-secondary: #00c853;
-  --color-tcp: #3949ab;
-  --color-udp: #e65100;
-  --color-bg-light: #f5f7fa;
-  --color-bg-dark: #263238;
-  --color-text: #37474f;
-  --color-text-light: #78909c;
-  --color-border: #cfd8dc;
-  --color-link: #039be5;
-  --border-radius: 8px;
-  --box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-body {
-  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--color-text);
-}
-
-.post-section {
-  margin-bottom: 3rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
-}
-
-h2 {
-  color: var(--color-primary);
-  margin-top: 2rem;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-
-h3 {
-  color: var(--color-primary);
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-}
-
-
-<style>
-/* Estilos para el artículo del modelo OSI */
-.post-content {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #333;
-}
-
-.post-content h2 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #0693e3;
-  border-bottom: 2px solid #eaeaea;
-  padding-bottom: 0.5rem;
-}
-
-.post-content h3 {
-  margin-top: 1.5rem;
-  color: #0693e3;
-}
-
-/* Caja de información */
-.info-box {
-  background-color: #e8f4fd;
-  border-left: 5px solid #0693e3;
-  padding: 1rem;
-  margin: 1.5rem 0;
-  border-radius: 0 5px 5px 0;
-  display: flex;
-  align-items: flex-start;
-}
-
-.info-icon {
-  font-size: 1.5rem;
-  color: #0693e3;
-  margin-right: 1rem;
-}
-
-/* Contenedor del modelo OSI */
-.osi-model-container {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin: 2rem 0;
-}
-
-.osi-layer {
-  display: flex;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.layer-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  background-color: rgba(0,0,0,0.2);
-}
-
-.layer-content {
-  padding: 1rem;
-  flex-grow: 1;
-  color: #333;
-}
-
-.layer-content h3 {
-  margin: 0 0 0.5rem 0;
-  color: #333;
-}
-
-.layer-content p {
-  margin: 0 0 0.5rem 0;
-}
-
-.layer-examples {
-  font-size: 0.9rem;
-  font-style: italic;
-}
-
-/* Beneficios grid */
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.benefit-card {
-  background-color: #f5f9ff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-5px);
-}
-
-.benefit-icon {
-  font-size: 1.8rem;
-  color: #0693e3;
-  margin-bottom: 1rem;
-}
-
-.benefit-card h4 {
-  color: #0693e3;
-  margin: 0 0 0.5rem 0;
-}
-
-.benefit-card p {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-/* Diagrama de encapsulamiento */
-.encapsulation-diagram {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 2rem 0;
-  max-width: 600px;
-}
-
-.encap-step {
-  display: flex;
-  align-items: center;
-  background-color: #f5f9ff;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.encap-icon {
-  font-size: 1.5rem;
-  color: #0693e3;
-  margin-right: 1rem;
-  min-width: 2rem;
-  text-align: center;
-}
-
-.encap-content {
-  flex-grow: 1;
-}
-
-.encap-content h4 {
-  margin: 0 0 0.25rem 0;
-  color: #0693e3;
-}
-
-.encap-content p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-.encap-arrow {
-  text-align: center;
-  color: #0693e3;
-  font-size: 1.2rem;
-}
-
-/* Tabla de comparación */
-.comparison-table {
-  margin: 2rem 0;
-  overflow-x: auto;
-}
-
-.comparison-table table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.comparison-table th, .comparison-table td {
-  border: 1px solid #ddd;
-  padding: 0.75rem;
-  text-align: center;
-}
-
-.comparison-table th {
-  background-color: #0693e3;
-  color: white;
-}
-
-.comparison-table tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-/* Call to action */
-.cta-container {
-  background-color: #f5f9ff;
-  border: 1px solid #e1e8ed;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-top: 2rem;
-}
-
-.cta-container h4 {
-  color: #0693e3;
-  margin-top: 0;
-}
-
-.cta-container ul {
-  margin-bottom: 0;
-}
-
-.cta-container a {
-  color: #0693e3;
-  text-decoration: none;
-}
-
-.cta-container a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .osi-layer {
-    flex-direction: column;
-  }
-  
-  .layer-number {
-    width: 100%;
-    padding: 0.5rem 0;
-  }
-}
-
-.protocols-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta el ancho mínimo según sea necesario */
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.protocol-card {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex; /* Añadido para centrar el contenido verticalmente */
-  flex-direction: column;
-  align-items: center; /* Centra los elementos horizontalmente */
-  text-align: center; /* Centra el texto dentro de la tarjeta */
-}
-
-.protocol-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.protocol-card i {
-  font-size: 40px; /* Aumenta el tamaño del icono */
-  margin-bottom: 15px;
-  color: #007bff; /* Un color que resalte, como el azul de Bootstrap */
-}
-
-.protocol-card h4 {
-  margin-bottom: 10px;
-  color: #333; /* Color de texto más oscuro para el encabezado */
-}
-
-.protocol-card p {
-  font-size: 1rem;
-  color: #555; /* Color de texto un poco más suave */
-  line-height: 1.5; /* Mejora la legibilidad del texto */
-}
-
-.example-box {
-  background-color: #e6f7fc;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 10px;
-  border: 1px solid #ced4da;
-}
-
-.example-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.example-header i {
-  font-size: 24px;
-  margin-right: 10px;
-  color: #28a745; /* Un color llamativo para el icono del ejemplo */
-}
-
-.example-header h4 {
-  margin: 0;
-  color: #2c3e50; /* Color de texto más oscuro para el título del ejemplo */
-}
-
-.example-content p {
-  margin-bottom: 10px;
-  font-size: 1rem;
-  color: #555;
-}
-
-.example-steps {
-  list-style-position: inside;
-  padding-left: 0;
-  margin-bottom: 15px;
-  font-size: 1rem;
-  color: #555;
-}
-
-.example-steps li {
-  margin-bottom: 5px;
-}
-
-.code-snippet {
-  color: #ffffff;
-  background-color: #000000;
-  padding: 15px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  overflow-x: auto;
-  font-family: monospace;
-  font-size: 0.9rem;
-  border: 1px solid #ddd;
-}
-
-.code-snippet pre {
-  margin: 0;
-  white-space: pre-wrap;
-}
-
-/* Estilos adicionales para mejorar la apariencia general */
-.post-content {
-  font-family: 'Arial', sans-serif; /* Cambia la fuente para una mejor lectura */
-  line-height: 1.7; /* Aumenta el interlineado para más espacio entre líneas */
-}
-
-
-.post-content h3 {
-  margin-top: 25px;
-  color: #3498db; /* Azul más vivo para los subtítulos */
-  font-size: 1.5rem; /* Aumenta el tamaño del subtítulo */
-}
-
-.post-content p {
-  font-size: 1.1rem; /* Aumenta el tamaño de la fuente del párrafo */
-  color: #555;
-}
-
-/* Ajustes para pantallas más pequeñas */
-@media (max-width: 768px) {
-  .protocols-grid {
-    grid-template-columns: 1fr; /* Volver a una sola columna en pantallas pequeñas */
-  }
-  
-  .protocol-card {
-    padding: 15px; /* Reduce el padding en pantallas pequeñas */
-  }
-  
-  .protocol-card i {
-    font-size: 32px; /* Reduce el tamaño del icono en pantallas pequeñas */
-  }
-  
-  .example-header i {
-    font-size: 20px; /* Reduce el tamaño del icono del ejemplo en pantallas pequeñas */
-  }
-}
-
-.hero-post {
-  background: var(--color-bg-acento);
-  color: white;
-  padding: 2rem;
-  border-radius: 2xl;
-  margin-bottom: 1.5rem;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  opacity: 0.9;
-}
-
-.post-section {
-  margin-bottom: 2rem;
-}
-
-.info-box {
-  background-color: #f0f4ff;
-  border-left: 4px solid #4f8cf5;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 0.5rem;
-}
-
-.checklist li {
-  list-style: none;
-  padding-left: 1.5em;
-  text-indent: -1.2em;
-}
-
-.checklist li::before {
-  content: "✔️ ";
-  padding-right: 0.5em;
-}
-
-.card-box {
-  background-color: #eafbee;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-top: 1rem;
-}
-
-.motivational-quote blockquote {
-  font-style: italic;
-  background: #fff9e6;
-  border-left: 4px solid #ffc107;
-  padding: 1rem;
-  margin: 2rem 0;
-  border-radius: 0.5rem;
-}
-
-.social-share {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-</style>
+    [Calculated window size: 64240]
+    Checksum: 0xabcd [validation disabled]
+    Urgent pointer: 0
+    Options: (12 bytes), No-Operation (NOP), No-Operation (NOP), Timestamps
+        TCP Option - No-Operation (NOP)
+        TCP Option - No-Operation (NOP)
+        TCP Option - Timestamps: TSval 11111111, TSecr 22222222
+[Timestamps]</code></pre>
+          </div>
+        </section>
+
+        <section class="post-section" id="conclusion">
+          <h2>📝 Conclusión</h2>
+
+          <p>La capa de transporte es el motor silencioso pero fundamental que gestiona la comunicación entre las aplicaciones que usamos a diario en la red. Ya sea garantizando la entrega fiable de un correo electrónico con TCP o priorizando la velocidad para una videollamada con UDP, esta capa actúa como el puente indispensable entre el software y la infraestructura de red global.</p>
+
+          <div class="key-takeaways">
+            <h4>Puntos clave para recordar:</h4>
+            <ul>
+              <li>Es responsable de la comunicación lógica proceso a proceso (aplicación a aplicación).</li>
+              <li>Proporciona multiplexación y demultiplexación usando números de puerto.</li>
+              <li>Ofrece dos protocolos principales: TCP (fiable, orientado a conexión) y UDP (rápido, sin conexión).</li>
+              <li>TCP utiliza mecanismos como números de secuencia, ACKs y control de flujo/congestión.</li>
+              <li>UDP es ideal para aplicaciones sensibles a la latencia que pueden tolerar alguna pérdida.</li>
+              <li>Comprenderla es crucial para el diagnóstico de problemas de red y el desarrollo de aplicaciones.</li>
+            </ul>
+          </div>
+
+          <div class="motivational-quote">
+            <blockquote>
+              <p>"Dominar la capa de transporte te da la capacidad de entender no solo *si* los datos llegan, sino *cómo* y *por qué* llegan (o no) a su destino final en la aplicación."</p>
+            </blockquote>
+          </div>
+        </section>
+
+        <section class="post-section" id="resources">
+          <h2>📚 Recursos adicionales</h2>
+
+          <div class="resources-grid">
+            <a href="#" class="resource-card" target="_blank" rel="noopener noreferrer"> <div class="resource-icon">📖</div>
+              <h4>RFC 793 (TCP)</h4>
+              <p>La especificación oficial de TCP.</p>
+            </a>
+
+            <a href="#" class="resource-card" target="_blank" rel="noopener noreferrer">
+              <div class="resource-icon">📄</div>
+              <h4>RFC 768 (UDP)</h4>
+              <p>La especificación oficial de UDP.</p>
+            </a>
+
+            <a href="#" class="resource-card" target="_blank" rel="noopener noreferrer">
+              <div class="resource-icon">🎬</div>
+              <h4>Video: TCP Handshake Explained</h4>
+              <p>Visualización del saludo de tres vías.</p>
+            </a>
+
+            <a href="#" class="resource-card" target="_blank" rel="noopener noreferrer">
+              <div class="resource-icon">💻</div>
+              <h4>Wireshark</h4>
+              <p>Herramienta esencial para analizar tráfico.</p>
+            </a>
+          </div>
+        </section>
+
+    </article>
+
+    <footer class="post-footer">
+        <div class="social-share">
+          <h3>¿Te resultó útil este artículo?</h3>
+          <p>Compártelo en tus redes o deja un comentario.</p>
+          <div class="share-buttons">
+            <a href="#" class="share-button twitter" target="_blank" rel="noopener noreferrer">Compartir en Twitter</a>
+            <a href="#" class="share-button linkedin" target="_blank" rel="noopener noreferrer">Compartir en LinkedIn</a>
+            <a href="#" class="share-button facebook" target="_blank" rel="noopener noreferrer">Compartir en Facebook</a>
+          </div>
+        </div>
+        </footer>
+
+</div> <script>
+    // Simple script for command tabs
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.command-tab');
+        const contents = document.querySelectorAll('.command-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const os = tab.getAttribute('data-os');
+
+                // Deactivate all tabs and content
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Activate clicked tab and corresponding content
+                tab.classList.add('active');
+                document.querySelector(`.command-content[data-os="${os}"]`).classList.add('active');
+            });
+        });
+    });
+</script>
+
+ <style>
+        /* --- Base Styles & Variables --- */
+        :root {
+            --color-primary: #1e88e5; /* A slightly brighter blue */
+            --color-secondary: #43a047; /* A nice green */
+            --color-tcp: #3f51b5; /* Indigo for TCP */
+            --color-udp: #fb8c00; /* Orange for UDP */
+            --color-bg-light: #ffffff;
+            --color-bg-medium: #f7f9fc; /* Lighter background for cards */
+            --color-bg-dark: #37474f; /* Darker background */
+            --color-text: #263238; /* Dark grey for text */
+            --color-text-light: #546e7a; /* Lighter grey */
+            --color-border: #e0e0e0; /* Softer border color */
+            --color-link: var(--color-primary);
+            --border-radius: 12px; /* More rounded corners */
+            --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Softer shadow */
+            --box-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Use Inter font */
+            line-height: 1.7; /* Improved readability */
+            color: var(--color-text);
+            background-color: var(--color-bg-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container { /* Add a container for better centering and max-width */
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--color-text); /* Use dark text for headings */
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--color-primary);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--color-secondary);
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            color: var(--color-text);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--color-text-light);
+            font-size: 1.05rem; /* Slightly larger paragraph text */
+        }
+
+        a {
+            color: var(--color-link);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: darken(var(--color-link), 10%);
+            text-decoration: underline;
+        }
+
+        pre {
+            background-color: var(--color-bg-dark);
+            color: #f0f0f0;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        code {
+             /* Inline code styling */
+            background-color: #e0e0e0;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--color-text);
+        }
+
+        pre code { /* Reset inline code styles within pre blocks */
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            font-size: inherit;
+            color: inherit;
+        }
+
+        /* --- Layout & Sections --- */
+        .post-section {
+            margin-bottom: 3.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .post-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        /* --- Hero Section --- */
+        .hero-post {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 3rem;
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+
+        .hero-post h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            border-bottom: none; /* Remove border from H1 in hero */
+        }
+
+        .hero-post .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-top: 0;
+        }
+
+        /* --- Analogy Box --- */
+        .analogy-box {
+            background-color: var(--color-bg-medium);
+            border-left: 5px solid var(--color-secondary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            box-shadow: var(--box-shadow);
+        }
+
+        .analogy-icon {
+            font-size: 2rem;
+            color: var(--color-secondary);
+            line-height: 1;
+        }
+
+        .analogy-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: var(--color-secondary);
+        }
+        .analogy-content p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .analogy-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Functions Grid --- */
+        .functions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .function-card {
+            background-color: var(--color-bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .function-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .function-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+        }
+
+        .function-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            color: var(--color-primary);
+        }
+        .function-card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* --- TCP vs UDP Comparison --- */
+        .protocol-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .protocol-card {
+            background-color: var(--color-bg-light);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+         .protocol-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+
+        .protocol-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .protocol-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            color: white;
+        }
+
+        .protocol-card.tcp .protocol-icon { background-color: var(--color-tcp); }
+        .protocol-card.udp .protocol-icon { background-color: var(--color-udp); }
+
+        .protocol-card h3 {
+            margin: 0;
+            font-size: 1.4rem;
+        }
+        .protocol-card.tcp h3 { color: var(--color-tcp); }
+        .protocol-card.udp h3 { color: var(--color-udp); }
+
+        .protocol-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .protocol-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-text);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5em;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .feature-list li::before {
+            content: '✓'; /* Checkmark */
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+
+        .use-cases {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .use-case {
+            background-color: var(--color-bg-medium);
+            color: var(--color-text-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px; /* Pill shape */
+            font-size: 0.85rem;
+            border: 1px solid var(--color-border);
+        }
+        .protocol-card.tcp .use-case { border-color: var(--color-tcp); background-color: #e8eaf6; color: var(--color-tcp);}
+        .protocol-card.udp .use-case { border-color: var(--color-udp); background-color: #fff3e0; color: var(--color-udp);}
+
+
+        /* --- Three-Way Handshake --- */
+        .handshake-container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .handshake-step {
+            background-color: var(--color-bg-medium);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--color-border);
+        }
+
+        .step-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            background-color: var(--color-primary);
+            min-width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        .step-devices {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 180px; /* Ensure alignment */
+            font-size: 0.9rem;
+            text-align: center;
+        }
+         .device {
+            font-size: 1.5rem; /* Larger emojis */
+         }
+
+        .arrow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .arrow-line {
+            font-size: 1.8rem;
+            color: var(--color-primary);
+            font-weight: bold;
+        }
+        .arrow.reverse .arrow-line {
+             color: var(--color-secondary);
+        }
+
+        .arrow-label {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--color-text-light);
+            background-color: #e0e0e0;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            margin-bottom: 0.2rem; /* Space between label and arrow */
+        }
+        .arrow.reverse .arrow-label {
+             background-color: #c8e6c9; /* Light green background */
+             color: var(--color-secondary);
+        }
+
+
+        .step-description h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+        }
+        .step-description p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        /* --- Code Example Box --- */
+        .code-example {
+            margin-top: 2rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            overflow: hidden; /* Clip the pre tag */
+            box-shadow: var(--box-shadow);
+        }
+        .code-example h4 {
+             background-color: var(--color-bg-medium);
+             margin: 0;
+             padding: 0.8rem 1.5rem;
+             font-size: 1rem;
+             border-bottom: 1px solid var(--color-border);
+             color: var(--color-text-light);
+        }
+        .code-example pre {
+            margin: 0;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: none; /* Remove inner shadow */
+            border: none;
+        }
+
+        /* --- Ports Section --- */
+        .ports-container {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .ports-group {
+            background-color: var(--color-bg-medium);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+        }
+
+        .ports-group h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            color: var(--color-primary);
+        }
+
+        .port-examples {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .port-example {
+            background-color: var(--color-bg-light);
+            padding: 0.8rem 1rem;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: 1px solid var(--color-border);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            min-width: 120px; /* Minimum width for consistency */
+        }
+
+        .port-number {
+            font-weight: bold;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            min-width: 30px; /* Ensure space */
+            text-align: right;
+        }
+
+        .port-name {
+            font-size: 0.95rem;
+            color: var(--color-text);
+            flex-grow: 1; /* Take remaining space */
+        }
+
+        .port-icon {
+            font-size: 1.3rem;
+        }
+
+        /* --- Interactive Tip / Command Tabs --- */
+        .interactive-tip {
+            background-color: #e3f2fd; /* Light blue background */
+            border: 1px solid #90caf9;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+        .interactive-tip h4 {
+            margin-top: 0;
+            color: var(--color-primary);
+            font-size: 1.2rem;
+        }
+
+        .command-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #90caf9;
+        }
+
+        .command-tab {
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            background-color: #bbdefb; /* Lighter blue for inactive tabs */
+            color: var(--color-primary);
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            border: 1px solid transparent;
+            border-bottom: none;
+            position: relative;
+            bottom: -1px; /* Align with border */
+        }
+
+        .command-tab.active {
+            background-color: #e3f2fd; /* Match container background */
+            border-color: #90caf9;
+            border-bottom-color: #e3f2fd; /* Hide bottom border part */
+        }
+
+        .command-content {
+            display: none; /* Hide content by default */
+        }
+        .command-content.active {
+            display: block; /* Show active content */
+        }
+        .command-content pre {
+            background-color: var(--color-bg-dark);
+            color: #f0f0f0;
+            border-radius: 8px; /* Smaller radius inside */
+            margin-top: 0;
+        }
+
+        /* --- Multiplexing --- */
+        .multiplexing-container {
+            display: grid;
+            grid-template-columns: 1fr; /* Stack on small screens */
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .multiplex-section {
+            background-color: var(--color-bg-medium);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+        }
+
+        .multiplex-section h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            color: var(--color-primary);
+        }
+
+        .multiplex-illustration {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            align-items: stretch; /* Make apps same width */
+        }
+
+        .app {
+            background-color: var(--color-bg-light);
+            padding: 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            font-size: 0.9rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .app small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--color-text-light);
+            margin-top: 0.2rem;
+        }
+
+        .multiplex-arrows {
+            font-size: 2rem;
+            color: var(--color-primary);
+        }
+
+        .transport-layer, .network {
+            background-color: #b3e5fc; /* Light blue */
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            color: var(--color-primary);
+            border: 1px dashed var(--color-primary);
+            position: relative;
+            min-width: 100px; /* Ensure some width */
+        }
+        .network {
+             background-color: #c8e6c9; /* Light green */
+             color: var(--color-secondary);
+             border-color: var(--color-secondary);
+        }
+
+        .transport-layer .tag {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-primary);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            white-space: nowrap;
+        }
+
+        .multiplex-section p {
+            text-align: center;
+            font-size: 0.95rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        /* --- Real Example Box --- */
+        .real-example {
+            background-color: #fffde7; /* Light yellow */
+            border: 1px solid #fff59d;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+        .real-example h4 {
+            margin-top: 0;
+            color: #fbc02d; /* Amber */
+            font-size: 1.2rem;
+        }
+
+        /* --- Case Study --- */
+        .case-study-steps {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .case-step {
+            display: flex;
+            gap: 1.5rem;
+            background-color: var(--color-bg-medium);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--box-shadow);
+        }
+        .case-step .step-number {
+             background-color: var(--color-secondary); /* Use secondary color */
+        }
+
+        .step-content h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            color: var(--color-secondary);
+        }
+        .step-content p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+        .step-details {
+            background-color: var(--color-bg-light);
+            border: 1px dashed var(--color-border);
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+         .step-details p {
+             margin-bottom: 0;
+             font-size: 0.9rem;
+         }
+
+        /* --- Packet Analysis --- */
+        .packet-analysis {
+            display: grid;
+            grid-template-columns: 1fr; /* Stack on small screens */
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .packet {
+            background-color: var(--color-bg-medium);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--color-border);
+        }
+
+        .packet h3 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+        .packet.tcp h3 { color: var(--color-tcp); }
+        .packet.udp h3 { color: var(--color-udp); }
+
+        .packet-diagram {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2px; /* Minimal gap */
+            background-color: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden; /* Clip corners */
+            margin-bottom: 1rem;
+        }
+
+        .packet-field {
+            padding: 0.6rem 0.8rem;
+            font-size: 0.75rem;
+            text-align: center;
+            border: 1px solid var(--color-border); /* Use border instead of gap */
+            margin: -1px 0 0 -1px; /* Overlap borders */
+            flex-grow: 1;
+            background-color: #e8eaf6; /* Light Indigo for TCP fields */
+            color: var(--color-tcp);
+        }
+        .packet-diagram.udp .packet-field {
+            background-color: #fff3e0; /* Light Orange for UDP fields */
+            color: var(--color-udp);
+        }
+
+        .packet-field small {
+            display: block;
+            font-size: 0.65rem;
+            color: var(--color-text-light);
+            margin-top: 0.2rem;
+        }
+
+        /* Specific field widths for TCP */
+        .packet-field.source-port, .packet-field.dest-port,
+        .packet-field.window, .packet-field.checksum, .packet-field.urgent { flex-basis: calc(50% - 1px); } /* 2 bytes */
+        .packet-field.sequence, .packet-field.ack { flex-basis: calc(100% - 1px); } /* 4 bytes */
+        .packet-field.header-len { flex-basis: calc(25% - 1px); } /* 4 bits (approx) */
+        .packet-field.reserved, .packet-field.flags { flex-basis: calc(37.5% - 1px); } /* 6 bits (approx) */
+        .packet-field.options, .packet-field.data { flex-basis: calc(100% - 1px); background-color: #f5f5f5; color: var(--color-text); } /* Variable */
+
+        /* Specific field widths for UDP */
+        .packet-diagram.udp .packet-field.source-port, .packet-diagram.udp .packet-field.dest-port,
+        .packet-diagram.udp .packet-field.length, .packet-diagram.udp .packet-field.checksum { flex-basis: calc(50% - 1px); } /* 2 bytes */
+        .packet-diagram.udp .packet-field.data { flex-basis: calc(100% - 1px); background-color: #f5f5f5; color: var(--color-text); } /* Variable */
+
+        .packet p {
+            font-size: 0.95rem;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        /* --- Conclusion --- */
+        .key-takeaways {
+            background-color: #e8f5e9; /* Light green */
+            border-left: 5px solid var(--color-secondary);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        .key-takeaways h4 {
+            margin-top: 0;
+            color: var(--color-secondary);
+            font-size: 1.2rem;
+        }
+        .key-takeaways ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .key-takeaways li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5em;
+            position: relative;
+        }
+        .key-takeaways li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-secondary);
+            font-weight: bold;
+        }
+
+        .motivational-quote blockquote {
+            font-style: italic;
+            background: #fff9c4; /* Light yellow */
+            border-left: 5px solid #ffeb3b; /* Yellow */
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            font-size: 1.1rem;
+            color: #5d4037; /* Brownish text */
+        }
+         .motivational-quote blockquote p { margin-bottom: 0; }
+
+
+        /* --- Resources --- */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            display: block; /* Make the whole card clickable */
+            background-color: var(--color-bg-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--color-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: var(--color-text); /* Ensure text color is default */
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+            text-decoration: none; /* Remove underline on hover */
+            color: var(--color-primary); /* Change text color on hover */
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        .resource-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: inherit; /* Inherit color from parent link */
+        }
+        .resource-card p {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-bottom: 0;
+        }
+
+        /* --- Social Share --- */
+        .social-share {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+        }
+
+        .social-share h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            color: var(--color-text);
+        }
+        .social-share p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .share-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px; /* Pill shape */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .share-button:hover {
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        .share-button.twitter { background-color: #1DA1F2; }
+        .share-button.linkedin { background-color: #0A66C2; }
+        .share-button.facebook { background-color: #1877F2; }
+
+        .share-button.twitter:hover { background-color: #0c85d0; }
+        .share-button.linkedin:hover { background-color: #0855a0; }
+        .share-button.facebook:hover { background-color: #125cb9; }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .hero-post h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.4rem; }
+
+            .container {
+                margin: 1rem auto;
+                padding: 0 0.5rem;
+            }
+
+            .protocol-comparison {
+                grid-template-columns: 1fr; /* Stack TCP/UDP cards */
+                gap: 1.5rem;
+            }
+
+            .handshake-step {
+                flex-direction: column;
+                align-items: flex-start; /* Align items left */
+                gap: 1rem;
+            }
+             .step-devices {
+                 min-width: unset; /* Remove min-width */
+                 justify-content: space-between; /* Space out devices/arrow */
+                 width: 100%;
+             }
+             .arrow {
+                 flex-grow: 1; /* Allow arrow to take space */
+             }
+
+
+            .multiplexing-container {
+                grid-template-columns: 1fr;
+            }
+             .multiplex-illustration {
+                 flex-direction: column;
+                 gap: 1.5rem;
+             }
+             .multiplex-arrows {
+                 transform: rotate(90deg); /* Point arrows down */
+             }
+
+            .packet-analysis {
+                grid-template-columns: 1fr;
+            }
+
+            .resources-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .share-button {
+                width: 80%;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+             h1 { font-size: 1.8rem; }
+            .hero-post h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.2rem; }
+            p { font-size: 1rem;}
+
+            .functions-grid {
+                 grid-template-columns: 1fr; /* Single column */
+            }
+
+            .port-examples {
+                justify-content: center; /* Center ports */
+            }
+            .port-example {
+                min-width: 150px; /* Allow more wrapping */
+            }
+        }
+
+    </style>
