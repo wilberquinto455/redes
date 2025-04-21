@@ -1,99 +1,73 @@
 ---
 layout: post
-title: "Capas del modelo TCP/IP: Capa de Transporte"
-date: 2025-04-16 13:00:00 -0500
-categories: redes
-tags: [TCP/IP, redes, CCNA, protocolos, arquitectura de red, capas del modelo TCP/IP]
-thumbnail: /redes/assets/images/tcp-ip-thumbnail.jpg
-excerpt: "Exploramos la capa de trasporte y sus protocolos. Indispensable para estudiantes de CCNA."
+title: "La Capa de Transporte: El Corazón de la Comunicación en Redes"
+description: "Aprende cómo la capa de transporte del modelo TCP/IP garantiza la entrega segura de los datos entre aplicaciones."
+date: 2025-04-20
+categories: [CCNA, Capa de Transporte]
+tags: [TCP, UDP, puertos, multiplexación]
+author: "Wilder Andrés Quinto Torres"
 ---
 
-# Capas de Transporte TCP/IP
-
-Esta es la cuarta capa del modelo TCP/IP. La capa de transporte como lo indica su nombre se encarga de transportar la información y garantizar que la misma se envíe de forma correcta. Esta capa maneja pocos protocolos, los más relevantes son TCP y UDP. Estos protocolos son fundamentales para el funcionamiento de las aplicaciones en Internet.
-
-## ¿Qué es la capa de transporte?
-
-La capa de transporte actúa como intermediaria entre la capa de aplicación y la capa de Internet. Su función principal es proporcionar servicios de comunicación de extremo a extremo entre dispositivos a través de una red. Esta capa se encarga de:
-
-- Establecer, mantener y terminar las conexiones entre aplicaciones.
-- Segmentar los datos en unidades más pequeñas para su transmisión.
-- Identificar las aplicaciones correctas mediante números de puerto.
-- Asegurar la entrega confiable de datos (en el caso de TCP).
-- Controlar el flujo de datos para evitar la congestión.
-
-## Principales protocolos de la capa de transporte
-
-<div class="protocols-grid">
-  <div class="protocol-card">
-    <i class="fas fa-shield-alt"></i>
-    <h4>TCP (Transmission Control Protocol)</h4>
-    <p>Protocolo orientado a conexión que garantiza la entrega de datos, el orden correcto y la integridad de la información. Ideal para aplicaciones que requieren fiabilidad.</p>
-  </div>
-  
-  <div class="protocol-card">
-    <i class="fas fa-bolt"></i>
-    <h4>UDP (User Datagram Protocol)</h4>
-    <p>Protocolo sin conexión que no garantiza la entrega de datos, pero ofrece mayor velocidad y menor sobrecarga. Perfecto para aplicaciones donde la velocidad es prioritaria.</p>
-  </div>
+<!-- Hero del artículo -->
+<div class="hero-post">
+  <h1>🚀 La Capa de Transporte</h1>
+  <p class="subtitle">Entiende el papel clave del transporte de datos entre dispositivos y aplicaciones</p>
 </div>
 
-## Comparación entre TCP y UDP
+<!-- Introducción -->
+<section class="post-section">
+  <h2>📌 Introducción</h2>
+  <p>En el modelo TCP/IP, la capa de transporte actúa como intermediaria entre la capa de red y las aplicaciones. Su propósito principal es asegurar la entrega confiable de datos entre extremos, ¡y hoy te explico cómo lo hace!</p>
+</section>
 
-<div class="comparison-table">
-  <table>
-    <thead>
-      <tr>
-        <th>Característica</th>
-        <th>TCP</th>
-        <th>UDP</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Tipo de conexión</td>
-        <td>Orientado a conexión</td>
-        <td>Sin conexión</td>
-      </tr>
-      <tr>
-        <td>Fiabilidad</td>
-        <td>Alta (garantiza entrega)</td>
-        <td>Baja (no garantiza entrega)</td>
-      </tr>
-      <tr>
-        <td>Orden de los datos</td>
-        <td>Mantiene el orden</td>
-        <td>No garantiza el orden</td>
-      </tr>
-      <tr>
-        <td>Control de flujo</td>
-        <td>Sí</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td>Control de congestión</td>
-        <td>Sí</td>
-        <td>No</td>
-      </tr>
-      <tr>
-        <td>Sobrecarga</td>
-        <td>Mayor</td>
-        <td>Menor</td>
-      </tr>
-      <tr>
-        <td>Velocidad</td>
-        <td>Menor</td>
-        <td>Mayor</td>
-      </tr>
-      <tr>
-        <td>Usos típicos</td>
-        <td>Web, correo, transferencia de archivos</td>
-        <td>Streaming, VoIP, juegos en línea</td>
-      </tr>
-    </tbody>
-  </table>
+<!-- Desarrollo del contenido -->
+<section class="post-section">
+  <h2>🔍 TCP vs UDP: Protocolos en acción</h2>
+
+  <div class="info-box">
+    <strong>TCP (Transmission Control Protocol)</strong>
+    <p>Proporciona comunicación confiable, orientada a conexión. Asegura la entrega y el orden correcto de los segmentos.</p>
+  </div>
+
+  <div class="info-box">
+    <strong>UDP (User Datagram Protocol)</strong>
+    <p>Es más rápido pero no garantiza entrega. Ideal para aplicaciones como streaming o DNS.</p>
+  </div>
+
+  <ul class="checklist">
+    <li>✅ TCP asegura la entrega con ACKs</li>
+    <li>✅ UDP no tiene control de errores</li>
+    <li>✅ Ambos usan puertos para identificar procesos</li>
+  </ul>
+
+  <div class="card-box">
+    <h3>💡 Ejemplo práctico</h3>
+    <p>Cuando abres una página web, tu navegador establece una conexión TCP al puerto 80 (HTTP) o 443 (HTTPS). Esto asegura que los datos lleguen completos y en orden.</p>
+  </div>
+</section>
+
+<!-- Comando CLI -->
+<section class="post-section">
+  <h2>🧪 Analizando puertos abiertos</h2>
+  <p>Con este comando puedes ver las conexiones activas en tu sistema:</p>
+  <pre><code class="language-bash">netstat -an | find "80"</code></pre>
+</section>
+
+<!-- Frase motivadora -->
+<section class="motivational-quote">
+  <blockquote>🎯 “Aprender redes es entender cómo fluye el mundo digital.”</blockquote>
+</section>
+
+<!-- Conclusión -->
+<section class="post-section">
+  <h2>📚 Conclusión</h2>
+  <p>La capa de transporte es vital para que los datos lleguen correctamente a su destino. Si entiendes TCP y UDP, estás un paso más cerca de dominar las redes. ¡Sigue practicando!</p>
+</section>
+
+<!-- Compartir -->
+<div class="social-share">
+  <p>📤 ¿Te gustó este artículo? ¡Compártelo con tus colegas o estudiantes!</p>
 </div>
-
 ## Características de TCP
 
 TCP es un protocolo orientado a conexión que proporciona un servicio de entrega confiable de datos entre dispositivos. Sus principales características son:
@@ -613,4 +587,62 @@ La capa de transporte es esencial para:
     font-size: 20px; /* Reduce el tamaño del icono del ejemplo en pantallas pequeñas */
   }
 }
+
+.hero-post {
+  background: var(--color-bg-acento);
+  color: white;
+  padding: 2rem;
+  border-radius: 2xl;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.post-section {
+  margin-bottom: 2rem;
+}
+
+.info-box {
+  background-color: #f0f4ff;
+  border-left: 4px solid #4f8cf5;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.checklist li {
+  list-style: none;
+  padding-left: 1.5em;
+  text-indent: -1.2em;
+}
+
+.checklist li::before {
+  content: "✔️ ";
+  padding-right: 0.5em;
+}
+
+.card-box {
+  background-color: #eafbee;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+
+.motivational-quote blockquote {
+  font-style: italic;
+  background: #fff9e6;
+  border-left: 4px solid #ffc107;
+  padding: 1rem;
+  margin: 2rem 0;
+  border-radius: 0.5rem;
+}
+
+.social-share {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 </style>
