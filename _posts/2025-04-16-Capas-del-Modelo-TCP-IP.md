@@ -134,11 +134,9 @@ Accept: text/html,application/xhtml+xml</code></pre>
                 </ul>
             </div>
         </section>
-
         </article>
-
-    </div> 
-    <style>
+     </div> 
+   <style>
 /* --- Base Styles & Variables --- */
 :root {
     --color-primary: #1e88e5; /* A slightly brighter blue */
