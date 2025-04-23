@@ -154,14 +154,6 @@ Accept: text/html,application/xhtml+xml</code></pre>
 
             <p>Estos ejemplos muestran cómo la capa de aplicación proporciona servicios directamente utilizables por los usuarios finales, mientras que las capas inferiores (transporte, red y acceso a la red) se encargan del trabajo "invisible" de mover los datos de manera confiable entre los dispositivos.</p>
 
-            <div class="cta-box">
-              <h4>¿Te gustaría profundizar más?</h4>
-              <p>Revisa estos recursos adicionales:</p>
-              <ul>
-                <li><a href="https://docs.google.com/document/d/1xMRlZn9tTpOKSTDwzAEbV4YRyG7acaYD/edit?usp=sharing&ouid=100942887710428516849&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">¿Qué son los Protocolos?</a></li>
-                </ul>
-            </div>
-
             <div class="cta-container">
             <h4>¿Te gustaría profundizar más?</h4>
             <p>Revisa estos recursos adicionales:</p>
