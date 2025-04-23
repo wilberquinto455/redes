@@ -161,6 +161,15 @@ Accept: text/html,application/xhtml+xml</code></pre>
                 <li><a href="https://docs.google.com/document/d/1xMRlZn9tTpOKSTDwzAEbV4YRyG7acaYD/edit?usp=sharing&ouid=100942887710428516849&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">¿Qué son los Protocolos?</a></li>
                 </ul>
             </div>
+
+            <div class="cta-container">
+            <h4>¿Te gustaría profundizar más?</h4>
+            <p>Revisa estos recursos adicionales:</p>
+            <ul>
+             <li><a href="https://docs.google.com/document/d/1xMRlZn9tTpOKSTDwzAEbV4YRyG7acaYD/edit?usp=sharing&ouid=100942887710428516849&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">¿Qué son los Protocolos?</a></li>
+            </ul>
+          </div>
+            
         </section>
 
         </article>
@@ -1225,5 +1234,28 @@ Accept: text/html,application/xhtml+xml</code></pre>
     .packet-field small {
         font-size: 0.6rem;
     }
+}
+
+/* Call to action */
+.cta-container {
+  background-color: #f5f9ff;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cta-container h4 {
+  color: #0693e3;
+  margin-top: 0;
+}
+
+.cta-container ul {
+  margin-bottom: 0;
+}
+
+.cta-container a {
+  color: #0693e3;
+  text-decoration: none;
 }
 </style>
