@@ -96,6 +96,20 @@ image: /redes/assets/images/tcp-ip-thumbnail.jpg # Asegúrate que esta ruta sea 
                   <li>La respuesta contiene el código HTML de la página junto con un código de estado (por ejemplo, 200 OK si todo fue exitoso).</li>
                   <li>Tu navegador recibe esta respuesta, interpreta el HTML y muestra la página web.</li>
                 </ol>
+                <div class="analogy-box">
+                  <div class="analogy-icon">🗣️</div>
+                  <div class="analogy-content">
+                    <h3>Analogía: Pedir en un Restaurante</h3>
+                    <p><strong>HTTP es como el idioma que usas para pedir comida:</strong></p>
+                    <ul>
+                      <li>Tu navegador (cliente) le dice al camarero (protocolo HTTP) "Quiero la página principal" (solicitud GET).</li>
+                      <li>El camarero lleva la orden a la cocina (servidor).</li>
+                      <li>La cocina prepara el plato (página HTML).</li>
+                      <li>El camarero te trae el plato con una nota "¡Aquí tienes!" (respuesta HTTP 200 OK).</li>
+                      <li>Tú (navegador) recibes el plato y lo disfrutas (muestras la página).</li>
+                    </ul>
+                  </div>
+                </div>
                 <div class="code-example">
                      <h4>Solicitud HTTP (Simplificada)</h4>
                      <pre><code>GET / HTTP/1.1
@@ -120,6 +134,20 @@ Accept: text/html,application/xhtml+xml</code></pre>
                   <li>La respuesta DNS regresa con la dirección IP correspondiente.</li>
                   <li>Con esta IP, ahora tu sistema puede establecer una conexión con el servidor de Google.</li>
                 </ol>
+                 <div class="analogy-box">
+                  <div class="analogy-icon">🗺️</div>
+                  <div class="analogy-content">
+                    <h3>Analogía: La Guía Telefónica de Internet</h3>
+                    <p><strong>DNS es como preguntar por una dirección en una oficina de información:</strong></p>
+                    <ul>
+                      <li>Quieres ir a la "casa de Google" (google.com), pero no sabes la dirección exacta (IP).</li>
+                      <li>Preguntas al informador (servidor DNS): "¿Dónde está la casa de Google?".</li>
+                      <li>El informador busca en su mapa (caché/base de datos) o pregunta a otros informadores.</li>
+                      <li>Te da la dirección: "Está en la calle 142.250.190.78".</li>
+                      <li>Ahora ya sabes cómo llegar (puedes iniciar la conexión).</li>
+                    </ul>
+                  </div>
+                </div>
                 <p>Es como un directorio telefónico que traduce nombres a números: en lugar de memorizar <code>142.250.190.78</code>, simplemente recordamos "google.com".</p>
               </div>
             </div>
@@ -134,9 +162,11 @@ Accept: text/html,application/xhtml+xml</code></pre>
                 </ul>
             </div>
         </section>
+
         </article>
-     </div> 
-   <style>
+
+    </div>
+<style>
 /* --- Base Styles & Variables --- */
 :root {
     --color-primary: #1e88e5; /* A slightly brighter blue */
