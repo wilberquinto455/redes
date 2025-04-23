@@ -621,7 +621,6 @@ image: /assets/images/transport-layer.jpg # Ruta relativa a la raíz del sitio J
     font-family: 'Inter', sans-serif;
     line-height: 1.7;
     color: var(--color-text);
-    background-color: var(--color-bg-light);
 }
 
 /* Contenedor principal (si no está en el layout) */
