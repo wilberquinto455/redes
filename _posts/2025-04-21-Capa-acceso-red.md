@@ -2,7 +2,7 @@
 layout: post # O el layout que uses para tus posts
 title: "La Capa de Acceso a Red TCP/IP: Conectando al Medio Físico"
 description: "Explorando la Capa de Acceso a Red del modelo TCP/IP, responsable de la transmisión física y el direccionamiento local (MAC)."
-date: 2025-04-27 11:00:00 -0500 # Fecha sugerida, ajústala
+date: 2025-04-21 11:00:00 -0500 # Fecha sugerida, ajústala
 categories: [redes]
 tags: [TCP/IP, redes, CCNA, protocolos, capa de acceso a red, capa de enlace, capa fisica, Ethernet, Wi-Fi, MAC]
 author: "Tu Nombre" # Reemplaza con tu nombre

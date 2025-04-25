@@ -2,7 +2,7 @@
 layout: post # O el layout que uses para tus posts
 title: "La Capa de Internet TCP/IP: El Cartero de la Red"
 description: "Un vistazo detallado a la Capa de Internet del modelo TCP/IP, responsable del direccionamiento y enrutamiento de paquetes."
-date: 2025-04-26 10:00:00 -0500 # Fecha sugerida, ajústala
+date: 2025-04-20 10:00:00 -0500 # Fecha sugerida, ajústala
 categories: [redes]
 tags: [TCP/IP, redes, CCNA, protocolos, capa de internet, capa de red, IP, enrutamiento, ICMP]
 author: "Tu Nombre" # Reemplaza con tu nombre
