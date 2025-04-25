@@ -2,7 +2,7 @@
 layout: post # Asegúrate que este layout exista en _layouts/post.html
 title: "La Capa de Transporte: El Puente Digital Entre Aplicaciones"
 description: "Una explicación clara y visual de cómo la capa de transporte gestiona la comunicación entre aplicaciones en el mundo de las redes."
-date: 2025-04-21
+date: 2025-04-19
 categories: [Redes, TCP/IP]
 tags: [TCP, UDP, puertos, multiplexación, CCNA]
 author: "Tu Nombre"
