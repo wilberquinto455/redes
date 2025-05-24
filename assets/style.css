@@ -1,24 +1,107 @@
-/* Esquema de Colores Turquesa Base */
 :root {
-  --primary-turquoise: #0693e3;
-  --secondary-turquoise: #05a8f4;
-  --light-turquoise: #9cdcf1;
-  --dark-turquoise: #045a8c;
-  --accent-turquoise: #0be6d6;
-  --background-light: #f5fdff;
-  --text-dark: #333;
-  --text-light: #f9f9f9;
+  --bg: #f9f9f9;
+  --text: #1a1a1a;
+  --primary: #007bff;
+  --sidebar-bg: #ffffff;
+  --highlight: #e6f0ff;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #eaeaea;
+  --primary: #4dabf7;
+  --sidebar-bg: #1e1e1e;
+  --highlight: #2a2a2a;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.6;
-  color: var(--text-dark);
-  background-color: var(--background-light);
   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--sidebar-bg);
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+}
+
+.sidebar .logo {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sidebar .logo img {
+  width: 50px;
+}
+
+.sidebar .toc h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .toc ul {
+  list-style: none;
   padding: 0;
 }
 
+.sidebar .toc ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar .toc ul li a {
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.3s;
+}
+
+.sidebar .toc ul li a:hover {
+  color: var(--primary);
+}
+
+#toggleTheme {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  background-color: var(--highlight);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-right: none;
+  }
+  .content {
+    margin-left: 0;
+  }
+}
 /* Barra de Navegación Mejorada */
 .navbar {
   background: linear-gradient(135deg, var(--primary-turquoise) 0%, var(--dark-turquoise) 100%);
