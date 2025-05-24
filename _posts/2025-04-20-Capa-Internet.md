@@ -119,9 +119,6 @@ Destination IP: 142.250.190.78 (IP de Google)
 
     </article>
 
-    <footer class="post-footer">
-        </footer>
-
 </div>
 <style>
 /* --- Base Styles & Variables --- */

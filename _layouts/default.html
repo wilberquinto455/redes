@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,19 +97,27 @@
         </a>
       </div>
     </div>
-
-    <section class="search-section">
-      <div class="search-container">
-        <form class="search-form">
-          <input type="text" class="search-input" placeholder="Buscar contenido de networking...">
-          <button type="submit" class="search-button">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
+  <div class="wrapper">
+    <!-- Sidebar fijo -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="{{ "/assets/images/logo.png" | relative_url }}" alt="Logo" />
+        <h1>Sr. Torres Blog</h1>
       </div>
-    </section>
+      <nav class="toc">
+        <h2>Contenidos</h2>
+        <ul>
+          <li><a href="/redes/modelo-osi/">Modelo OSI</a></li>
+          <li><a href="/redes/ethernet/">Ethernet</a></li>
+          <li><a href="/redes/vlans/">VLANs</a></li>
+          <li><a href="/redes/switching/">Switching</a></li>
+          <!-- Agrega más enlaces aquí -->
+        </ul>
+      </nav>
+      <button id="toggleTheme">🌓</button>
+    </aside>
 
-    <!-- Añade esta sección de índice antes de tu sección temario-ccna -->
+      <!-- Añade esta sección de índice antes de tu sección temario-ccna -->
 <section class="index-section">
   <h2>Índice de Contenidos</h2>
   <div class="index-grid">
@@ -378,7 +386,13 @@
       </section>
     </div>
   </main>
-  
+
+    <!-- Contenido principal -->
+    <main class="content">
+      {{ content }}
+    </main>
+  </div>
+
   <footer>
     <div class="container">
       <div class="social-links">
@@ -401,8 +415,23 @@
   </footer>
 
   <script>
-    // Código para el menú responsive
-    document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('toggleTheme');
+    toggle.addEventListener('click', () => {
+      const root = document.documentElement;
+      const current = root.getAttribute('data-theme');
+      root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+      localStorage.setItem('theme', root.getAttribute('data-theme'));
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    });
+
+     // Código para el menú responsive
+     document.addEventListener('DOMContentLoaded', function() {
       const navbarToggle = document.querySelector('.navbar-toggle');
       const navbarMenu = document.querySelector('.navbar-menu');
       
@@ -434,3 +463,4 @@
   </script>
 </body>
 </html>
+
