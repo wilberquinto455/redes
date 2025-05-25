@@ -154,6 +154,26 @@
 </section>
   
   <main>
+        <!-- Menú lateral del blog -->
+        <div class="blog-sidebar" id="blogSidebar">
+          <div class="sidebar-header">
+              <h3 class="sidebar-title">Últimos Posts</h3>
+              <button class="toggle-btn" id="toggleBtn">
+                  <i class="fas fa-chevron-left"></i>
+              </button>
+          </div>
+          
+          <div class="blog-posts-list" id="blogPostsList">
+              <!-- Los posts se cargarán dinámicamente aquí -->
+          </div>
+          
+          <div class="sidebar-footer">
+              <button class="view-all-btn" onclick="viewAllPosts()">
+                  <i class="fas fa-th-list"></i>
+                  <span>Ver todos</span>
+              </button>
+          </div>
+      </div>
     <div class="container">
       <section class="temario-section" id="temario-ccna">
         <div class="temario-title">
@@ -420,6 +440,141 @@
         });
       });
     });
+
+    // Código para el menú lateral del blog
+    // Datos de ejemplo para los posts del blog
+    const blogPosts = [
+            {
+                title: "Fundamentos de CCNA: Introducción a Redes",
+                date: "2025-01-20",
+                tags: ["CCNA", "Redes", "Fundamentos"],
+                url: "/posts/fundamentos-ccna-introduccion"
+            },
+            {
+                title: "Configuración de VLANs en Switches Cisco",
+                date: "2025-01-18",
+                tags: ["VLANs", "Switches", "Cisco"],
+                url: "/posts/configuracion-vlans-cisco"
+            },
+            {
+                title: "Enrutamiento Estático vs Dinámico",
+                date: "2025-01-15",
+                tags: ["Enrutamiento", "OSPF", "RIP"],
+                url: "/posts/enrutamiento-estatico-dinamico"
+            },
+            {
+                title: "Seguridad en Redes: ACLs Básicas",
+                date: "2025-01-12",
+                tags: ["Seguridad", "ACL", "Firewall"],
+                url: "/posts/seguridad-redes-acls"
+            },
+            {
+                title: "Protocolo Spanning Tree (STP)",
+                date: "2025-01-10",
+                tags: ["STP", "Redundancia", "Switches"],
+                url: "/posts/protocolo-spanning-tree"
+            },
+            {
+                title: "Direccionamiento IPv6: Lo que debes saber",
+                date: "2025-01-08",
+                tags: ["IPv6", "Direccionamiento", "IP"],
+                url: "/posts/direccionamiento-ipv6"
+            }
+        ];
+
+        // Función para formatear fecha
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { day: 'numeric', month: 'short', year: 'numeric' };
+            return date.toLocaleDateString('es-ES', options);
+        }
+
+        // Función para cargar posts en el menú lateral
+        function loadBlogPosts() {
+            const postsContainer = document.getElementById('blogPostsList');
+            
+            blogPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.className = 'blog-post-item';
+                postElement.onclick = () => navigateToPost(post.url);
+                
+                postElement.innerHTML = `
+                    <i class="post-icon fas fa-file-alt"></i>
+                    <div class="post-content">
+                        <h4 class="post-title">${post.title}</h4>
+                        <div class="post-date">
+                            <i class="far fa-calendar-alt"></i>
+                            ${formatDate(post.date)}
+                        </div>
+                        <div class="post-tags">
+                            ${post.tags.map(tag => `<span class="post-tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+                
+                postsContainer.appendChild(postElement);
+            });
+        }
+
+        // Función para navegar a un post
+        function navigateToPost(url) {
+            console.log(`Navegando a: ${url}`);
+            // En tu implementación real, aquí harías: window.location.href = url;
+            alert(`Navegando a: ${url}`);
+        }
+
+        // Función para ver todos los posts
+        function viewAllPosts() {
+            console.log('Ver todos los posts');
+            // En tu implementación real, aquí navegarías a la página del blog
+            alert('Navegando a la página del blog completo');
+        }
+
+        // Función para toggle del menú lateral
+        function toggleSidebar() {
+            const sidebar = document.getElementById('blogSidebar');
+            const toggleBtn = document.getElementById('toggleBtn');
+            const icon = toggleBtn.querySelector('i');
+            
+            sidebar.classList.toggle('collapsed');
+            
+            if (sidebar.classList.contains('collapsed')) {
+                icon.className = 'fas fa-chevron-right';
+            } else {
+                icon.className = 'fas fa-chevron-left';
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBlogPosts();
+            
+            document.getElementById('toggleBtn').addEventListener('click', toggleSidebar);
+            
+            // Auto-colapsar en pantallas pequeñas
+            if (window.innerWidth <= 768) {
+                setTimeout(toggleSidebar, 1000);
+            }
+        });
+
+        // Función para integrar con Jekyll (para tu implementación real)
+        function loadJekyllPosts() {
+            // Esta función se conectaría con los posts de Jekyll
+            // Ejemplo de cómo podrías cargar posts reales:
+            /*
+            fetch('/posts.json') // Archivo JSON generado por Jekyll
+                .then(response => response.json())
+                .then(posts => {
+                    const postsContainer = document.getElementById('blogPostsList');
+                    postsContainer.innerHTML = '';
+                    
+                    posts.slice(0, 6).forEach(post => {
+                        // Crear elementos DOM para cada post real
+                    });
+                })
+                .catch(error => console.error('Error loading posts:', error));
+            */
+        }
   </script>
 </body>
 </html>
